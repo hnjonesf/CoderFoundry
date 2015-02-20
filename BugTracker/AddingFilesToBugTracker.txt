@@ -1,0 +1,106 @@
+BugTracker Media Files
+
+
+
+@using (Html.BeginForm("Create", "TicketAttachments", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+View:
+  @if (@Html.DisplayFor(model => model.MediaURL) != null)
+            {
+                <div class="col-md-7"><p>@Html.DisplayFor(model => model.MediaURL)</p></div>
+                <div class="col-md-5">
+                    <img src="@Model.MediaURL" class="img-responsive" alt="@Html.DisplayFor(model => model.MediaURL)" />
+                </div>
+            }
+            else
+            {
+                <div class="col-md-12"><p>@Html.DisplayFor(model => model.MediaURL)</p></div>
+            }
+
+
+        @Html.HiddenFor(model => model.MediaURL)
+        <div class="form-group">
+            @Html.Label("Image Upload", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" id="fileUpload" name="fileUpload" @*Important: the name!! see controller method parameters*@ class=" btn btn-primary form-control" />
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+
+Controller:
+
+ // POST: Posts/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Title,Body,MediaURL")] Post post,
+            HttpPostedFileBase fileUpload)
+        {
+            var file = Request.Files;
+
+            if (ModelState.IsValid)
+            {
+                //restricting to valid image uploads, only
+                if (fileUpload != null && fileUpload.ContentLength > 0)
+                {
+                    if (!fileUpload.ContentType.Contains("image"))
+                    {
+                        return new HttpStatusCodeResult(HttpStatusCode.UnsupportedMediaType);
+                    }
+                    var fileName = Path.GetFileName(fileUpload.FileName);
+                    fileUpload.SaveAs(Path.Combine(Server.MapPath("~/img/blog/"), fileName));
+                    post.MediaURL = "/img/blog/" + fileName;
+                }
+
+                post.Created = new DateTimeOffset(DateTime.Now);
+                db.Posts.Add(post);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(post);
+        }
+
+ 
+
+
+
+
+
+ // POST: Posts/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //public ActionResult Edit([Bind(Include = "Id,Created,Updated,Title,Body,MediaURL")] Post post)
+            //ok, do I pull the fields from the following Bind to keep them from the view?
+        public ActionResult Edit([Bind(Include = "Id,Title,Body,MediaURL")] Post post)
+        {
+            if (ModelState.IsValid)
+            {
+                var realPost = db.Posts.Find(post.Id);
+                realPost.Title = post.Title;
+                realPost.Body = post.Body;
+                realPost.Updated = DateTime.Now;
+                realPost.MediaURL = post.MediaURL;
+                db.Entry(realPost).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(post);
+        }
+Model:
+ [Key]
+        public int Id { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTimeOffset Created { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTimeOffset? Updated { get; set; }
+        public string Title { get; set; }
+        public string Body { get; set; }
+        public string MediaURL { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }

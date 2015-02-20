@@ -1,0 +1,453 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Hugh N Jones Coding Exercises</h1>
+    <p class="lead"></p>
+    <p><a href="http://www.LibreWorx.com" class="btn btn-primary btn-lg">My web site &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Max of five</h2>
+        <p>
+            A Function to show the maximum of five numbers.
+        </p><p>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#max">
+            Click for Max of Five &raquo;
+        </button>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>Sum or Multiply Numbers</h2>
+        <p>Your choice, add or multiply numbers.</p>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sum">
+            Click for Sum or Multiply &raquo;
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Factorial</h2>
+        <p>A Function factor a number.</p>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#factor">
+            Click for Factorial &raquo;
+        </button>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Palindrome</h2>
+        <p>Create your own palindrome.</p>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#palindrome">Click for Palindrome &raquo;</button>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Fizz, Buzz, or a Number</h2>
+        <p>Print from 1 to 100 Fizz on multiples of 3, Buzz on 5's, Both on both, or the number.</p>
+        <p><a class="btn btn-default" data-toggle="modal" data-target="#fizz">Click for Fizz, Buzz, or a Number &raquo;</a></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Examples of code examining Chapter 1 of Alice in Wonderland.</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Alice is Wondering</h2>
+        <p>Count the longest word.</p>
+        <p><a class="btn btn-default" href="" data-toggle="model" data-target="#longestWord">Click for longest word &raquo;</a></p>
+    </div>
+    <div class="col-md-6">
+        <h2>Count Alice</h2>
+        <p>Words longer than your input.</p>
+        <p><a class="btn btn-default" href="" data-toggle="model" data-target="#count">Click for Words longer than your input &raquo;</a></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h2>Alice is Popular</h2>
+        <p>Display the count of each word.</p>
+        <p><a class="btn btn-default" href="" data-toggle="model" data-target="#popular">Click for Word Count &raquo;</a></p>
+    </div>
+    <div class="col-md-6">
+        <h2>How Many Alice&#39;?</h2>
+        <p>How many times does Alice appear?</p>
+        <p><a class="btn btn-default" href="" data-toggle="model" data-target="#timesAlice">Click for Number of Alices &raquo;</a></p>
+    </div>
+</div>
+
+@*Modals for each exercise to follow*@
+<!-- Modal -->
+<div class="modal fade" id="max" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Max of 5</h4>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="col-sm-5">
+                    <p>Enter five numbers below:</p>
+                    <p>
+                        <input type="text" id="p1" maxlength="4" size="4" />
+                        <input type="text" id="p2" maxlength="4" size="4" />
+                        <input type="text" id="p3" maxlength="4" size="4" />
+                        <input type="text" id="p4" maxlength="4" size="4" />
+                        <input type="text" id="p5" maxlength="4" size="4" />
+                    </p>
+                    <p>
+                        <button onclick="GetMax()" class="btn btn-default">Get Max</button>
+                    </p>
+                    <hr />
+                    <div class="">
+                        <h6 id="maxResult"></h6>
+                    </div>
+                </div>
+                <div class="col-sm-7 margin-small">
+                    <pre class="brush: js text">
+function GetMax() {
+    input1 = parseInt($("#p1").val());
+    input2 = parseInt($("#p2").val());
+    input3 = parseInt($("#p3").val());
+    input4 = parseInt($("#p4").val());
+    input5 = parseInt($("#p5").val());
+    var max = Math.max(input1, input2, input3, input4, input5);
+    $("#maxResult").text(max);
+}
+                </pre>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function GetMax() {
+        input1 = parseInt($("#p1").val());
+        input2 = parseInt($("#p2").val());
+        input3 = parseInt($("#p3").val());
+        input4 = parseInt($("#p4").val());
+        input5 = parseInt($("#p5").val());
+        var max = Math.max(input1, input2, input3, input4, input5);
+        $("#maxResult").text(max);
+    }
+</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="sum" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Sum or Product</h4>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="col-sm-5">
+                    <p>Enter two numbers below:</p>
+                    <p>
+                        <input type="text" id="sum1" maxlength="4" size="4" />
+                        <input type="text" id="sum2" maxlength="4" size="4" />
+                    </p>
+                    <p>
+                        <button onclick="sumUp()" class="btn btn-default">Add</button>
+                        <button onclick="multiplyUp()" class="btn btn-default">Multiply</button>
+                    </p>
+                    <hr />
+                    <div class="">
+                        <h6 id="productResult"></h6>
+                    </div>
+                </div>
+                <div class="col-sm-7 margin-small">
+                    <pre class="brush: js text">
+function sumUp() {
+        product1 = parseInt($("#sum1").val());
+        product2 = parseInt($("#sum2").val());
+        var total = product1+product2;
+        $("#productResult").text(total);
+    }
+function multiplyUp() {
+        product1 = parseInt($("#sum1").val());
+        product2 = parseInt($("#sum2").val());
+        var total = product1*product2;
+        $("#productResult").text(total);
+        }
+                </pre>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function sumUp() {
+        product1 = parseInt($("#sum1").val());
+        product2 = parseInt($("#sum2").val());
+        var total = product1 + product2;
+        $("#productResult").text(total);
+    }
+
+    function multiplyUp() {
+        product1 = parseInt($("#sum1").val());
+        product2 = parseInt($("#sum2").val());
+        var total = product1 * product2;
+        $("#productResult").text(total);
+    }
+
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="factor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Factor a Number</h4>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="col-sm-5">
+                    <p>Enter a number below:</p>
+                    <p>
+                        <input type="text" id="factor1" maxlength="4" size="4" />
+                    </p>
+                    <p>
+                        <button onclick="factor()" class="btn btn-default">Factor</button>
+                    </p>
+                    <hr />
+                    <div class="">
+                        <h6 id="factorResult"></h6>
+                    </div>
+                </div>
+                <div class="col-sm-7 margin-small">
+                    <pre class="brush: js text">
+function factor() {
+    number = parseInt($("#factor1").val());
+    var total = 1;
+    for (var i = number; i > 0; i--) {
+        total = total * i;
+    }
+    $("#factorResult").text(total);
+}
+                </pre>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function factor() {
+        number = parseInt($("#factor1").val());
+        var total = 1;
+        for (var i = number; i > 0; i--) {
+            total = total * i;
+        }
+        $("#factorResult").text(total);
+    }
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="palindrome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Palindrome</h4>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="col-sm-5">
+                    <p>A Palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward. Enter a word to find out if it is a Palindrome:</p>
+                    <p>
+                        <input type="text" id="palindromeInput" maxlength="20" size="20" />
+                    </p>
+                    <p>
+                        <button onclick="palindrome()" class="btn btn-default">Palindrome</button>
+                    </p>
+                    <hr />
+                    <div class="">
+                        <h6 id="palindromeResult"></h6>
+                    </div>
+                </div>
+                <div class="col-sm-7 margin-small">
+                    <pre class="brush: js text">
+var string1 = $("#palindromeInput").val();
+var string2 = "";
+for (var i = string1.length - 1; i >= 0; i--) {
+string2 += string1.charAt(i);
+}
+if (string1 == string2) {
+paladromeResult = "yes";
+} else {
+paladromeResult = "no";
+}
+$("#palindromeResult").text(paladromeResult);
+}
+                </pre>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function palindrome() {
+        var string1 = $("#palindromeInput").val();
+        var string2 = "";
+        for (var i = string1.length - 1; i >= 0; i--) {
+            string2 += string1.charAt(i);
+        }
+        if (string1 == string2) {
+            paladromeResult = "yes";
+        } else {
+            paladromeResult = "no";
+        }
+        $("#palindromeResult").text(paladromeResult);
+    }
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="fizz" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Fizz, Buzz, or Number</h4>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="col-sm-5">
+                    <p>This will iterate integers from 1 to 100, printing Fizz on multiples of 3, Buzz on 5's, both, or the Number.</p>
+                    <p>
+                        <button onclick="fizz()" class="btn btn-default">Fizz, Buzz, or Number</button>
+                    </p>
+                    <hr />
+                    <div class="">
+                        <h6 id="fizzResult"></h6>
+                    </div>
+                </div>
+                <div class="col-sm-7 margin-small">
+                    <pre class="brush: js text">
+code here when working
+                </pre>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function fizz() {
+        //begin with 1
+        var collector = "";
+        //Rotate Up to 100
+        for (var i = 1; i <= 100; i++) {
+            var str = "";
+            //compare 3 = Fizz
+            if (i % 3 === 0) {
+                //Fizz
+                str += "Fizz";
+            }
+            if (i % 5 === 0) {
+                //Buzz if / 5
+                str += "Buzz";
+            }
+            else if (str === "") {
+                str += i;
+            }
+            collector += str + "<br>";
+        }
+        $("#fizzResult").text(collector);
+    }
+</script>
+@*
+    ///////////////////////////////////////////////////////////////////////////////////
+
+    //NUMBER 6
+
+    document.getElementById("6").innerHTML = checkingNumber();
+
+    function checkingNumber() {
+        perfectNumberString = "";
+        for (i = 1; i <= 10000; i++) {
+            //calculate divisors for each number
+            store = 0;
+            for (p = 1; p <= i; p++) {
+                if (i % p === 0) {
+                    //sum divisors
+                    store += p;
+                    if (store === i) {
+                        perfectNumberString += i + "<br>";
+                    }
+                }
+
+            }
+
+        }
+        return perfectNumberString;
+    }
+
+    //Math.sqrt(i)
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    //NUMBER 7 HAPPY
+
+    //document.getElementById("7").innerHTML = myHappyFunction();
+
+
+    //function myHappyFunction() {
+
+
+
+    //  myHappyNumber = "Cannot do Yet";
+    //  return myHappyNumber;
+    //  }
+
+
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    //NUMBER ARMSTRONG
+
+    document.getElementById("8").innerHTML = myArmstrongFunction();
+
+    function myArmstrongFunction() {
+        armStrongNumber = "";
+        var z, b, c = 0;
+        //test numbers from 1 to 10000
+        for (var i = 100; i <= 999; i++) {
+            z = i;
+            c = 0;
+            while (z > 0) {
+                b = z % 10;
+                c = c + (b * b * b);
+                z = parseInt(z / 10);
+            }
+            if (i == c) {
+                armStrongNumber += i + "<br>";
+            }
+
+        }
+        return armStrongNumber;
+    }
+*@

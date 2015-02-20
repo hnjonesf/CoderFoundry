@@ -1,0 +1,17 @@
+            var pageList = tickets.ToList();
+            var pageNumber = page ?? 1;
+            return View(pageList.ToPagedList(pageNumber, 5));
+
+using PagedList and .Mvc;
+
+        public static SelectList ItemsPerPageList
+        {
+            get
+            {
+                return (new SelectList(new List { 5, 10, 25, 50, 100 },
+                selectedValue: 10));
+            }
+        }
+
+
+

@@ -1,0 +1,11 @@
+Password
+
+qR2NRDzXX5KgHW6
+
+smtp.server
+
+smtp.sendgrid.net
+
+username
+
+azure_26f9989dd05bfce3fb24bbb922b26fa7@azure.com

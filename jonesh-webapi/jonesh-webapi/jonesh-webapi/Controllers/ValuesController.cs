@@ -10,18 +10,26 @@ namespace jonesh_webapi.Controllers
     [RoutePrefix("api/values")]
     public class ValuesController : ApiController
     {
+
+        public class ThreeNumbers
+        {
+            public int first { get; set; }
+            public int second { get; set; }
+            public int third { get; set; }
+        }
+            
+
         /// <summary>
         /// Get Max Value from and Array
         /// </summary>
         /// <param name="values"></param>
         /// <returns>int values</returns>
-        [HttpGet]
+        [HttpPost]
         [Route("max")]
-        public int Max([FromUri] int[] values)
+        public int Max(ThreeNumbers nums)
         {
-            int currentMax = values.Max();
 
-            return currentMax;
+            return nums.first;
         }
 
         /// <summary>

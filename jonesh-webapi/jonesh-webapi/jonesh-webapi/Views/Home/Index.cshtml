@@ -1,27 +1,36 @@
-﻿<div class="jumbotron">
+﻿<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/NgApps/MainApp.js"></script>
+
+<div class="jumbotron">
     <h1>Angular/Web API Project</h1>
     <p class="lead">Angular/Web API Project</p>
 </div>
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
-<script src="~/Scripts/angular.min.js"></script>
-<script src="~/NgApps/mainApp.js"></script>
-
 <div>
     <h2>C# Exercises</h2>
 </div>
 <div class="container" ng-app="mainApp">
-    <div ng-controller="eventController">
-        <div>
-            <div>
-                <h2>Max</h2>
-                <input ng-model="maxn1" />
-                <input ng-model="maxn2" />
-                <input ng-model="maxn3" />
-                <button ng-click="MaxOfThree()" class="btn btn-primary">Calculate</button>
-                <div class="row"></div>
-                <span><a>{{max3answer}}</a></span>
-            </div>
-        </div>
+    <div ng-controller="MaxController">
+        <h2>Max</h2>
+        <input ng-model="numbers.maxn1" />
+        <input ng-model="numbers.maxn2" />
+        <input ng-model="numbers.maxn3" />
+        <button ng-click="MaxOfThree()" class="btn btn-primary">Calculate</button>
+        <br />
+        <h3><span><a class="text-capitalize">And the answer is:  {{max3answer}}</a></span></h3>
+    </div>
+    <div ng-controller="SumController">
+        <h2>Sum</h2>
+        <input ng-model="sumNumbers.sumn1" />
+        <input ng-model="sumNumbers.sumn2" />
+        <input ng-model="sumNumbers.sumn3" />
+        <button ng-click="SumOfThree()" class="btn btn-primary">Calculate</button>
+        <br />
+        <h3><span><a class="text-capitalize">And the answer is:  {{sum3answer}}</a></span></h3>
     </div>
 </div>
+
+
+
+
 

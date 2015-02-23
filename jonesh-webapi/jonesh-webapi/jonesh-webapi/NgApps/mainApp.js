@@ -1,41 +1,108 @@
-//module
-var mod = angular.module('mainApp', []);
+var mainApp = angular.module("mainApp", []);
 
 
-//controller declaration (DisplayController) for module. We set the initial state of the object
-mod.controller('eventController', ['$scope', '$http', 'eventModule', function ($scope, $http, eventModule)
-{
-    $scope.maxn1 = "",
-    $scope.maxn2 = "",
-    $scope.maxn3 = "",
-    $scope.max3answer = "";
+// controller declaration (DisplayController) for module
+mainApp.controller('MaxController', ['$scope', 'EventService', function ($scope, EventService) {
+    $scope.numbers = {
+        maxn1: 0,
+        maxn2: 0,
+        maxn3: 0
+    };
+    $scope.MaxOfThree = function () {
+        EventService.max($scope.numbers).then(function (data) {
+            $scope.max3answer = data;
+        });
 
-    $scope.MaxOfThree = function ()
-    {
-            eventModule.max($scope.maxn1, $scope.maxn2, $scope.maxn3).then(function (data)
-            {
-                $scope.max3answer = data;
-            });
-        
     }
 }]);
 
-
-//// factory declaration for module--this provides the connectivity to the web API controllers and actons
-mod.factory('eventModule', ['$http', function ($http)
-{
+////// factory declaration for module--this provides the connectivity to the web API controllers and actons
+mainApp.factory('EventService', ['$http', function ($http) {
     var factory = {};
 
-    factory.max = function (maxn1, maxn2, maxn3)
-    {
-        var options = { parms: { first: maxn1, second: maxn2, third: maxn3 } };
-        return $http.post('/api/values/max', options).then(function (response)
-        {
+    factory.max = function (numbers) {
+        return $http.post('/api/values/max', numbers).then(function (response) {
+            return response.data;
+        });
+    };
+
+    factory.sum = function (sumNumbers) {
+        return $http.post('/api/values/sum', sumNumbers).then(function (response) {
             return response.data;
         });
     };
     return factory;
 }]);
+
+//// controller declaration (DisplayController) for module
+mainApp.controller('SumController', ['$scope', 'EventService', function ($scope, EventService) {
+    $scope.sumNumbers = {
+        sumn1: 0,
+        sumn2: 0,
+        sumn3: 0
+    };
+    $scope.SumOfThree = function () {
+        EventService.sum($scope.sumNumbers).then(function (data) {
+            $scope.sum3answer = data;
+        });
+
+    }
+}]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//var mod = angular.module("mainApp", []);
+
+//////controller declaration (DisplayController) for module. We set the initial state of the object
+//mod.controller('EventController', ['$scope', '$http', 'eventModule', function ($scope, $http, EventModule)
+//{
+//    $scope.maxn1 = "",
+//    $scope.maxn2 = "",
+//    $scope.maxn3 = "",
+//    $scope.max3answer = "";
+
+//    $scope.MaxOfThree = function ()
+//    {
+//        EventModule.max($scope.maxn1, $scope.maxn2, $scope.maxn3).then(function (data)
+//            {
+//                $scope.max3answer = data;
+//            });
+        
+//    }
+//}]);
+
+
+    ////// factory declaration for module--this provides the connectivity to the web API controllers and actons
+    //mod.factory('EventModule', ['$http', function ($http)
+    //{
+    //    var factory = {};
+
+    //    factory.max = function (maxn1, maxn2, maxn3)
+    //    {
+    //        var options = { parms: { first: maxn1, second: maxn2, third: maxn3 } };
+    //        return $http.post('/api/values/max', options).then(function (response)
+    //        {
+    //            return response.data;
+    //        });
+    //    };
+    //    return factory;
+    //}]);
 
     //    factory.sum = function (numbers) {
             

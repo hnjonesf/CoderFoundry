@@ -93,7 +93,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="img\Hugh N Jones 2015.web.jpg" />
-    <Content Include="img\Thumbs.db" />
     <Content Include="LICENSE" />
     <Content Include="README.md" />
     <None Include="Properties\PublishProfiles\LibreWorx.pubxml" />
@@ -137,7 +136,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1478</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

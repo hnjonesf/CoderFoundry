@@ -31,14 +31,23 @@ mainApp.factory('EventService', ['$http', function ($http) {
             return response.data;
         });
     };
+
+    factory.multiply = function (numList) {
+        return $http.post('/api/values/multiply', numList).then(function (response) {
+            return response.data;
+        });
+    };
+
     return factory;
+
+
 }]);
 
 //// controller declaration (DisplayController) for module
 mainApp.controller('SumController', ['$scope', 'EventService', function ($scope, EventService) {
     $scope.sumNumbers = {
-        sumn1: 0,
-        sumn2: 0,
+        sumn1: 2,
+        sumn2: 3,
         sumn3: 0
     };
     $scope.SumOfThree = function () {
@@ -46,6 +55,18 @@ mainApp.controller('SumController', ['$scope', 'EventService', function ($scope,
             $scope.sum3answer = data;
         });
 
+    }
+}]);
+
+mainApp.controller('MultiplyController', ['$scope', 'EventService', function ($scope, EventService) {
+    $scope.numList = {
+        num1: 1,
+        num2: 2
+    };
+    $scope.Multiply = function() {
+        EventService.multiply($scope.numList).then(function (data) {
+            $scope.multiply3answer = data;
+        });
     }
 }]);
 
@@ -88,55 +109,55 @@ mainApp.controller('SumController', ['$scope', 'EventService', function ($scope,
 //}]);
 
 
-    ////// factory declaration for module--this provides the connectivity to the web API controllers and actons
-    //mod.factory('EventModule', ['$http', function ($http)
-    //{
-    //    var factory = {};
+////// factory declaration for module--this provides the connectivity to the web API controllers and actons
+//mod.factory('EventModule', ['$http', function ($http)
+//{
+//    var factory = {};
 
-    //    factory.max = function (maxn1, maxn2, maxn3)
-    //    {
-    //        var options = { parms: { first: maxn1, second: maxn2, third: maxn3 } };
-    //        return $http.post('/api/values/max', options).then(function (response)
-    //        {
-    //            return response.data;
-    //        });
-    //    };
-    //    return factory;
-    //}]);
+//    factory.max = function (maxn1, maxn2, maxn3)
+//    {
+//        var options = { parms: { first: maxn1, second: maxn2, third: maxn3 } };
+//        return $http.post('/api/values/max', options).then(function (response)
+//        {
+//            return response.data;
+//        });
+//    };
+//    return factory;
+//}]);
 
-    //    factory.sum = function (numbers) {
+//    factory.sum = function (numbers) {
             
-    //        return $http.get('/api/values/sum', options)
-    //            .then(function (response) {
-    //                return resonse.data;
-    //            });
-    //    };
+//        return $http.get('/api/values/sum', options)
+//            .then(function (response) {
+//                return resonse.data;
+//            });
+//    };
 
-    //    factory.multiply = function (numbers) {
-    //        var options = { parms: { model_year: year, make: make } };
-    //        return $http.get('/api/values/multiply', options)
-    //            .then(function (response) {
-    //                return resonse.data;
-    //            });
-    //    };
+//    factory.multiply = function (numbers) {
+//        var options = { parms: { model_year: year, make: make } };
+//        return $http.get('/api/values/multiply', options)
+//            .then(function (response) {
+//                return resonse.data;
+//            });
+//    };
 
-    //    factory.facNum = function (numberToFactor) {
-    //        var options = { parms: { model_year: year, make: make, model: model } };
-    //        return $http.get('/api/values/factorial', options)
-    //            .then(function (response) {
-    //                return resonse.data;
-    //            });
-    //    };
+//    factory.facNum = function (numberToFactor) {
+//        var options = { parms: { model_year: year, make: make, model: model } };
+//        return $http.get('/api/values/factorial', options)
+//            .then(function (response) {
+//                return resonse.data;
+//            });
+//    };
 
-    //    factory.isPalindrome = function (value) {
-    //        var options = { parms: { model_year: year, make: make, model: model } };
-    //        return $http.get('/api/values/isPalindrome', options)
-    //            .then(function (response) {
-    //                return resonse.data;
-    //            });
-    //    };
+//    factory.isPalindrome = function (value) {
+//        var options = { parms: { model_year: year, make: make, model: model } };
+//        return $http.get('/api/values/isPalindrome', options)
+//            .then(function (response) {
+//                return resonse.data;
+//            });
+//    };
 
-    //},
+//},
 
 
 ////// factory declaration for module--this provides the connectivity to the web API controllers and actons

@@ -42,6 +42,19 @@ namespace jonesh_webapi.Controllers
         }
 
 
+        public class TwoNumbers
+        {
+            public int num1 { get; set; }
+            public int num2 { get; set; }
+        }
+
+        [HttpPost]
+        [Route("multiply")]
+        public int Multiply(TwoNumbers numList)
+        {
+            return numList.num1 * numList.num2;
+        }
+
     }
 }
 

@@ -1,6 +1,8 @@
-﻿<div class="container" ng-app="CarFinderApp">
+﻿
+<script src="~/NgApps/CarFinderApp.js"></script>
+<div class="container" ng-app="CarFinderApp">
     <div ng-view>
-        <div ng-controller="CarFinderController">
+        <div ng-controller="DisplayController">
             <div class="col-sm-12">
                 <h2 class="section-title">Pick a Car</h2>
             </div>
@@ -14,6 +16,5 @@
         </div>
     </div>
 </div>
-<script src="~/NgApps/CarFinderApp.js" ng-controller ="DisplayController"></script>
-<div ng-bind-template="CarFinderDirectiveTemplate.html"
+
 

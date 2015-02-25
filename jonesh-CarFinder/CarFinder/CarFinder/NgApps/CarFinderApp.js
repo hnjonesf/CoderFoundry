@@ -26,28 +26,37 @@ angular.module('CarFinderApp')
         };
 
         factory.getMakes = function (year) {
-            var options = { parms: { model_year: year } };
+            var options = { params: { year: year } };
             return $http.get('/api/makes', options)
                 .then(function (response) {
-                    return resonse.data;
+                    return response.data;
                 });
         };
 
         factory.getModels = function (year, make) {
-            var options = { parms: { model_year: year, make: make } };
+            var options = { params: { year: year, make: make } };
             return $http.get('/api/models', options)
                 .then(function (response) {
-                    return resonse.data;
+                    return response.data;
                 });
         };
 
-        factory.getTrim = function (year, make, model) {
-            var options = { parms: { model_year: year, make: make, model: model } };
-            return $http.get('/api/trim', options)
+        factory.getTrims = function (year, make, model) {
+            var options = { params: { year: year, make: make, model: model } };
+            return $http.get('/api/trims', options)
                 .then(function ( response ) {
-                    return resonse.data;
-                } );
+                    return response.data;
+                });
         };
+
+        factory.getCars = function (year, make, model, trim) {
+            var options = { params: { year: year, make: make, model: model, trim: trim } };
+            return $http.get('/api/cars', options)
+            .then(function (response) {
+                return response.data;
+            });
+        };
+
         return factory;
     }]);
 
@@ -59,20 +68,60 @@ angular.module('CarFinderApp')
             restrict: 'AEC',
             //bind scope variable and attributes
             scope: {
-                selectedYear: '=year'
+                selectedYear: '=year',
+                selectedMake: '=make',
+                selectedModel: '=model',
+                selectedTrim: '=trim'
             },
             //define template
             templateUrl: '/NgApps/Templates/CarFinderDirectiveTemplate.html',
             //define all functional behavior for this directive
             link: function (scope, elem, attrs) {
                 scope.years = [];
-                scope.years = function () {
+                scope.makes = [];
+                scope.models = [];
+                scope.trims = [];
+                scope.selectedYear = "";
+                scope.selectedMake = "";
+                scope.selectedModel = "";
+                scope.selectedTrim = "";
+
+
+                scope.getYears = function () {
                     carSvc.getYears().then(function (data) {
                         scope.years = data;
                     });
                 }
+
+                scope.getMakes = function () {
+                    carSvc.getMakes(scope.selectedYear).then(function (data) {
+                        scope.makes = data;
+                    });
+                }
+
+                scope.getModels = function () {
+                    carSvc.getModels(scope.selectedYear, scope.selectedMake).then(function (data) {
+                        scope.models = data;
+                    });
+                }
+
+                scope.getTrims = function () {
+                    carSvc.getTrims(scope.selectedYear, scope.selectedMake, scope.selectedModel).then(function (data) {
+                        scope.trims = data;
+                    });
+                }
+
+                scope.getCars = function () {
+                    carSvc.getCars(scope.selectedYear, scope.selectedMake, scope.selectedModel, scope.selectedTrim).then(function (data) {
+                        console.log(data);
+                        scope.car = data;
+                    });
+                }
+
+
                 //get going
-                scope.years()
+                scope.getYears()
+
             }
         }
     }]);

@@ -1,15 +1,17 @@
 ﻿<div class="row">
     <div class="col-sm-3">
-        <select ng-model="selectedYear" ng-options="year for year in years" ng-change="getMakes()" class="form-control"</select>
+        <select ng-model="selectedYear" ng-options="year for year in years" ng-change="getMakes()" class="form-control"></select>
     </div>
     <div class="col-sm-3">
-        <select ng-model="selectedMake" ng-options="year for year in years" ng-change="getModels()" ng-disabled="selectedYear" class="form-control"</select>
-    </div>
-
-    <div class="col-sm-3">
-        <select ng-model="selectedModels" ng-options="year for year in years" ng-change="getTrim()" ng-disabled="selectedMake" class="form-control"</select>
+        <select ng-model="selectedMake" ng-options="make for make in makes" ng-change="getModels()" ng-disabled="selectedYear==''" class="form-control"></select>
     </div>
     <div class="col-sm-3">
-        <select ng-model="selectedTrim" ng-options="year for year in years" ng-change="showCarDetail()" ng-disabled="selectedModels" class="form-control"</select>
+        <select ng-model="selectedModel" ng-options="model for model in models" ng-change="getTrims()" ng-disabled="selectedMake==''" class="form-control"></select>
+    </div>
+    <div class="col-sm-3">
+        <select ng-model="selectedTrim" ng-options="trim for trim in trims" ng-change="getCars()" ng-disabled="selectedModel==''" class="form-control"></select>
     </div>
 </div>
+
+
+

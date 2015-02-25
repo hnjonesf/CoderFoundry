@@ -9,7 +9,7 @@ namespace CarFinder.Controllers
 {
     public class CarsController : ApiController
     {
-        //Project is to write five procedures here for Year, Make, Model, Trim, and Car:
+        //Project is to write five procedures here for Year, Make, Model, Trim, and Car (at bottom):
 
         // GET: api/Years
         public IEnumerable<string> Get()
@@ -34,6 +34,13 @@ namespace CarFinder.Controllers
 
         // GET: api/Trim
         public IEnumerable<string> Get(string year, string make, string model)
+        {
+
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET: api/Cars
+        public IEnumerable<string> Get(string year, string make, string model, string trim)
         {
 
             return new string[] { "value1", "value2" };

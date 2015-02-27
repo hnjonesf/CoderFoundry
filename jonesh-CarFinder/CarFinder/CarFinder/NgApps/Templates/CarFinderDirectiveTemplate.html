@@ -1,15 +1,78 @@
 ﻿<div class="row">
     <div class="col-sm-3">
+        Year:
         <select ng-model="selectedYear" ng-options="year for year in years" ng-change="getMakes()" class="form-control"></select>
     </div>
     <div class="col-sm-3">
+        Make:
         <select ng-model="selectedMake" ng-options="make for make in makes" ng-change="getModels()" ng-disabled="selectedYear==''" class="form-control"></select>
     </div>
     <div class="col-sm-3">
+        Model:
         <select ng-model="selectedModel" ng-options="model for model in models" ng-change="getTrims()" ng-disabled="selectedMake==''" class="form-control"></select>
     </div>
     <div class="col-sm-3">
+        Trim:
         <select ng-model="selectedTrim" ng-options="trim for trim in trims" ng-change="getCars()" ng-disabled="selectedModel==''" class="form-control"></select>
+    </div>
+</div>
+
+<div class="container" ng-repeat="car in cars" ng-disabled="selectedTrim==''">
+    <div class="row clearfix">
+        <br />
+        <div class="col-md-12 column">
+            <div class="jumbotron">
+                <h2>
+                    Vehicle:  {{car.Year}} {{car.MakeDisplay | uppercase}} {{car.Model | uppercase}} {{car.Trim | uppercase}}
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 column">
+                <h2>
+                    Features:  comfort and size.
+                </h2>
+                <p>
+                    Seating: {{car.Seats}}
+                    <br />
+                    Doors:  {{car.Doors}}
+                    <br />
+                    Body Style:  {{car.Style}}
+                    <br />
+                    Weight KG: {{car.WeightKg}}
+                    <br />
+                    Wheel Base:  {{car.Wheelbase}}
+                    <br />
+                    Transmission:  {{car.Transmission}}
+                </p>
+
+            </div>
+            <div class="col-md-4 column">
+                <h2>
+                    Performance:   powertrain and fuel.
+                </h2>
+                <p>
+                    Engine CC: {{car.EngineCC}}
+                    <br />
+                    Engine Positon:  {{car.Doors}}
+                    <br />
+                    Top Speed KPH:  {{car.TopSpeed}}
+                    <br />
+                    Fuel Capacity: {{car.FuelCapacity}}
+                    <br />
+                    Highway MPG:  {{car.LknHwy}}
+                    <br />
+                    Range:  {{car.FuelCapacity * car.LknHwy | number}}
+                </p>
+            </div>
+            <div class="col-md-4 column">
+                <img alt="No Image Available" 
+                     ng-src="http://media.ed.edmunds-media.com/{{car.photoUrl}}" class="text-center" height="300" width="350" />
+            </div>
+        </div>
     </div>
 </div>
 

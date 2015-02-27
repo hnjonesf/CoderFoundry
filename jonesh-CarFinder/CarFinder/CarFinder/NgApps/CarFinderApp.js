@@ -57,6 +57,30 @@ angular.module('CarFinderApp')
             });
         };
 
+        factory.getCarPhotoUrl = function (styleid) {
+            var options = { params: { styleid: styleid } };
+            return $http.get('https://api.edmunds.com/v1/api/vehiclephoto/service/findphotosbystyleid?styleId={styleid}&fmt=json&api_key=3v7dznfksaxqff35aw64sp9y', options)
+            .then(function (response) {
+                return response.data;
+            });
+        };
+
+        factory.getCarPhotos = function (styleid) {
+            var options = { params: { styleid: styleid } };
+            return $http.get('https://api.edmunds.com/v1/api/vehiclephoto/service/findphotosbystyleid?styleId={styleid}&fmt=json&api_key=3v7dznfksaxqff35aw64sp9y', options)
+            .then(function (response) {
+                return response.data;
+            });
+        };
+
+        factory.getCarPhotosId = function ( make, model, year) {
+            var options = { params: { make: make, model: model, year: year } };
+            return $http.get('https://api.edmunds.com/api/vehicle/v2/{make}/{model}/{year}/styles?fmt=json&api_key=3v7dznfksaxqff35aw64sp9y', options)
+            .then(function (response) {
+                return response.data;
+            });
+        };
+
         return factory;
     }]);
 
@@ -114,10 +138,30 @@ angular.module('CarFinderApp')
                 scope.getCars = function () {
                     carSvc.getCars(scope.selectedYear, scope.selectedMake, scope.selectedModel, scope.selectedTrim).then(function (data) {
                         console.log(data);
-                        scope.car = data;
+                        scope.cars = data;
                     });
                 }
 
+                scope.getCarPhotoUrl = function () {
+                    carSvc.getCarPhotoUrl(scope.carPhotoId).then(function (data) {
+                        console.log(data);
+                        scope.carPhotoUrl = data;
+                    });
+                }
+
+                scope.getCarPhotos = function () {
+                    carSvc.getCarPhotos(scope.styleId).then(function (data) {
+                        console.log(data);
+                        scope.carPhotoId = data;
+                    });
+                }
+
+                scope.getCarPhotosId = function () {
+                    carSvc.getCarPhotosId(scope.selectedMake, scope.selectedModel, scope.selectedYear).then(function (data) {
+                        console.log(data);
+                        scope.styleId = data.styles[0].id;
+                    });
+                }
 
                 //get going
                 scope.getYears()

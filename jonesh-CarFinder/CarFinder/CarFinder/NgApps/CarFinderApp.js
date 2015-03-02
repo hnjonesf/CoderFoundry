@@ -71,6 +71,14 @@ angular.module('CarFinderApp')
             });
         };
 
+        factory.getCarReviews = function (make, model, year) {
+            return $http.get(//'https://api.edmunds.com/api/vehiclereviews/v2/' + 'audi/a4/2013?fmt=json&api_key=3v7dznfksaxqff35aw64sp9y')
+                'https://api.edmunds.com/api/vehiclereviews/v2/' + make + '/' + model + '/' + year + '?fmt=json&api_key=3v7dznfksaxqff35aw64sp9y')
+                .then(function (response) {
+                    return response.data;
+            });
+        };
+
         return factory;
     }]);
 
@@ -85,7 +93,7 @@ angular.module('CarFinderApp')
                 selectedYear: '=year',
                 selectedMake: '=make',
                 selectedModel: '=model',
-                selectedTrim: '=trim'
+                selectedTrim: '=trim',
             },
             //define template
             templateUrl: '/NgApps/Templates/CarFinderDirectiveTemplate.html',
@@ -95,13 +103,11 @@ angular.module('CarFinderApp')
                 scope.makes = [];
                 scope.models = [];
                 scope.trims = [];
+                scope.cars = [];
                 scope.selectedYear = "";
                 scope.selectedMake = "";
                 scope.selectedModel = "";
                 scope.selectedTrim = "";
-                scope.photoStyleUrls = [];
-                scope.currentPhotoIndex = 0;
-
 
                 scope.getYears = function () {
                     carSvc.getYears().then(function (data) {
@@ -135,11 +141,18 @@ angular.module('CarFinderApp')
                     .then(function (data) {
                         scope.cars = data;
                     });
+                    
+                    scope.photoStyleId = "";
+                    scope.photoStyleUrls = [];
+                    scope.currentPhotoIndex = 0;
+                    scope.reviews = [];
+
                     carSvc.getCarPhotosId(scope.selectedMake, scope.selectedModel, scope.selectedYear)
                         .then(function (data) {
                             scope.photoStyleId = data.styles[0].id;
-                            carSvc.getCarPhotosUrl(scope.photoStyleId)
-                                            .then(function (data) {
+
+                        carSvc.getCarPhotosUrl(scope.photoStyleId)
+                        .then(function (data) {
                                                 for (var i = 0; i < data.length; i++)
                                                     switch (data[i].shotTypeAbbreviation) {
                                                         case "FQ":
@@ -150,11 +163,14 @@ angular.module('CarFinderApp')
                                                             break;
                                                         default: break;
                                                     }
+                            carSvc.getCarReviews(scope.selectedMake.toLowerCase(), scope.selectedModel.toLowerCase(), scope.selectedYear)
+                                .then(function (data) {
+                                    scope.reviews = data;
+                                                            });
                                             });
-                            
                         });
-
-                }
+                            
+                    }
     
                 scope.nextPhoto = function () {
                     if (scope.currentPhotoIndex < scope.photoStyleUrls.length)
@@ -169,6 +185,21 @@ angular.module('CarFinderApp')
                     else
                         scope.currentPhotoIndex = scope.photoStyleUrls.length - 1;
                 }
+
+                scope.photosToShow = function () {
+                    if (scope.photoStyleUrls.length > 0)
+                        return true;
+                    else
+                        return false;
+                }
+
+                scope.reviewsToShow = function () {
+                    if (scope.reviews != null)
+                        return true;
+                    else
+                        return false;
+                }
+
 
                 //get going
                 scope.getYears()

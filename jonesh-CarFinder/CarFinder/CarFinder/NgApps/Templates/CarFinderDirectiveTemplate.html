@@ -17,24 +17,21 @@
     </div>
 </div>
 
-<div class="container" ng-repeat="car in cars" ng-disabled="selectedTrim==''">
+<div class="container" ng-repeat="car in cars">
     <div class="row clearfix">
         <br />
         <div class="col-md-12 column">
-            <div class="jumbotron">
-                <h2>
-                    Vehicle:  {{car.Year}} {{car.MakeDisplay | uppercase}} {{car.Model | uppercase}} {{car.Trim | uppercase}}
-                </h2>
-            </div>
+            <h2>
+                Vehicle:  {{car.Year}} {{car.MakeDisplay | uppercase}} {{car.Model | uppercase}} {{car.Trim | uppercase}}
+            </h2>
         </div>
     </div>
-
     <div class="container">
         <div class="row">
             <div class="col-md-4 column">
-                <h2>
+                <h4>
                     Features:  comfort and size.
-                </h2>
+                </h4>
                 <p>
                     Seating: {{car.Seats}}
                     <br />
@@ -51,9 +48,9 @@
 
             </div>
             <div class="col-md-4 column">
-                <h2>
+                <h4>
                     Performance:   powertrain and fuel.
-                </h2>
+                </h4>
                 <p>
                     Engine CC: {{car.EngineCC}}
                     <br />
@@ -69,8 +66,12 @@
                 </p>
             </div>
             <div class="col-md-4 column">
-                <img alt="No Image Available" 
-                     ng-src="http://media.ed.edmunds-media.com/{{car.photoUrl}}" class="text-center" height="300" width="350" />
+                <div class="row">
+                    <img ng-src="http://media.ed.edmunds-media.com{{photoStyleUrls[currentPhotoIndex]}}" alt="Car Photo" class="img-responsive"/>
+                    <br />
+                    <button class="btn btn-default" ng-click="previousPhoto()">Previous</button>
+                    <button class="btn btn-default" ng-click="nextPhoto()">Next</button>
+                </div>
             </div>
         </div>
     </div>

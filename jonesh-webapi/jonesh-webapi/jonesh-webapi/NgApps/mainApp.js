@@ -38,6 +38,20 @@ mainApp.factory('EventService', ['$http', function ($http) {
         });
     };
 
+    factory.factorial = function (btnFactorial) {
+        return $http.post('/api/values/factorial', btnFactorial)
+            .then(function (response) {
+            return response.data;
+        });
+    };
+
+    factory.palindrome = function () {
+        return $http.post('/api/values/palindrome', btnPalindrome)
+            .then(function (response) {
+                return response.data;
+            });
+    };
+
     return factory;
 
 
@@ -59,10 +73,7 @@ mainApp.controller('SumController', ['$scope', 'EventService', function ($scope,
 }]);
 
 mainApp.controller('MultiplyController', ['$scope', 'EventService', function ($scope, EventService) {
-    $scope.numList = {
-        num1: 1,
-        num2: 2
-    };
+    $scope.numList = { num1: 1, num2: 2};
     $scope.Multiply = function() {
         EventService.multiply($scope.numList).then(function (data) {
             $scope.multiply3answer = data;
@@ -70,174 +81,22 @@ mainApp.controller('MultiplyController', ['$scope', 'EventService', function ($s
     }
 }]);
 
+mainApp.controller('FactorialController', ['$scope', 'EventService', function ($scope, EventService) {
+        $scope.factorial = function () {
+            EventService.factorial($scope.btnFactorial).then(function (data) {
+                console.log($scope.btnFactorial);
+            $scope.factorialAnswer = data;
+        });
+    }
+}]);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//var mod = angular.module("mainApp", []);
-
-//////controller declaration (DisplayController) for module. We set the initial state of the object
-//mod.controller('EventController', ['$scope', '$http', 'eventModule', function ($scope, $http, EventModule)
-//{
-//    $scope.maxn1 = "",
-//    $scope.maxn2 = "",
-//    $scope.maxn3 = "",
-//    $scope.max3answer = "";
-
-//    $scope.MaxOfThree = function ()
-//    {
-//        EventModule.max($scope.maxn1, $scope.maxn2, $scope.maxn3).then(function (data)
-//            {
-//                $scope.max3answer = data;
-//            });
-        
-//    }
-//}]);
-
-
-////// factory declaration for module--this provides the connectivity to the web API controllers and actons
-//mod.factory('EventModule', ['$http', function ($http)
-//{
-//    var factory = {};
-
-//    factory.max = function (maxn1, maxn2, maxn3)
-//    {
-//        var options = { parms: { first: maxn1, second: maxn2, third: maxn3 } };
-//        return $http.post('/api/values/max', options).then(function (response)
-//        {
-//            return response.data;
-//        });
-//    };
-//    return factory;
-//}]);
-
-//    factory.sum = function (numbers) {
-            
-//        return $http.get('/api/values/sum', options)
-//            .then(function (response) {
-//                return resonse.data;
-//            });
-//    };
-
-//    factory.multiply = function (numbers) {
-//        var options = { parms: { model_year: year, make: make } };
-//        return $http.get('/api/values/multiply', options)
-//            .then(function (response) {
-//                return resonse.data;
-//            });
-//    };
-
-//    factory.facNum = function (numberToFactor) {
-//        var options = { parms: { model_year: year, make: make, model: model } };
-//        return $http.get('/api/values/factorial', options)
-//            .then(function (response) {
-//                return resonse.data;
-//            });
-//    };
-
-//    factory.isPalindrome = function (value) {
-//        var options = { parms: { model_year: year, make: make, model: model } };
-//        return $http.get('/api/values/isPalindrome', options)
-//            .then(function (response) {
-//                return resonse.data;
-//            });
-//    };
-
-//},
-
-
-////// factory declaration for module--this provides the connectivity to the web API controllers and actons
-//mod.factory('eventModule', ['$http', function ($http) {
-//        var factory = {};
-
-//        factory.max1 = function (data) {
-//            var options = { parms: { values: data } };
-//            return $http.get('/api/values/max').then(function (response) {
-//                return response.data;
-//            });
-//        };
-
-//        factory.sum = function (numbers) {
-            
-//            return $http.get('/api/values/sum', options)
-//                .then(function (response) {
-//                    return resonse.data;
-//                });
-//        };
-
-//        factory.multiply = function (numbers) {
-//            var options = { parms: { model_year: year, make: make } };
-//            return $http.get('/api/values/multiply', options)
-//                .then(function (response) {
-//                    return resonse.data;
-//                });
-//        };
-
-//        factory.facNum = function (numberToFactor) {
-//            var options = { parms: { model_year: year, make: make, model: model } };
-//            return $http.get('/api/values/factorial', options)
-//                .then(function (response) {
-//                    return resonse.data;
-//                });
-//        };
-
-//        factory.isPalindrome = function (value) {
-//            var options = { parms: { model_year: year, make: make, model: model } };
-//            return $http.get('/api/values/isPalindrome', options)
-//                .then(function (response) {
-//                    return resonse.data;
-//                });
-//        };
-
-//    },
-
-//]);
-
-////directive declarations for module
-//mod.directive('max1', ['eventModule', function (eventModule) {
-//        return {
-//            //define usage restrictions
-//            restrict: 'AEC',
-//            //bind scope variable and attributes
-//            scope: {
-//                inputMax: '=maxInput'
-//            },
-//            //define template
-//            templateUrl: '/NgApps/Templates/Max.html',
-//            //define all functional behavior for this directive
-//            //calculate the max number in an array
-//            link: function (scope, elem, attrs) {
-//                scope.max1 = function () {
-//                    eventModule.max1(scope.inputMax).then(function (data) {
-//                        scope.maxOutput = data;
-//                    });
-//                }
-
-//            }
-//        }
-//}]);
-
-
-
-
-
-
-
-
+mainApp.controller('PalindromeController', ['$scope', 'EventService', function ($scope, EventService) {
+    $scope.palindrome = function () {
+        EventService.palindrome($scope.btnPalindrome).then(function (data) {
+            $scope.answerPalindrome = data;
+        });
+    }
+}]);
 
 
 

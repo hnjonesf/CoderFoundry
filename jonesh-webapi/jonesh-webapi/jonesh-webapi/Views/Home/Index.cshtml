@@ -35,10 +35,23 @@
         <button ng-click="Multiply()" class="btn btn-primary">Calculate</button>
         <br />
         <h3><span><a class="text-capitalize">And the answer is:  {{multiply3answer}}</a></span></h3>
+        </div>
+
+    <div ng-controller="FactorialController">
+        <h2>Time for Some Fact(orial)s</h2>
+        <input ng-model="btnFactorial" />
+        <button ng-click="factorial()" class="btn btn-primary">Factor</button>
+        <br />
+        <h3><span><a class="text-capitalize">And the answer is:  {{factorialAnswer}}</a></span></h3>
     </div>
-</div>
-
-
+    <div ng-controller="PalindromeController">
+        <h2>Is it a Palindrome?</h2>
+        <input ng-model="btnPalindrome" />
+        <button ng-click="palindrome()" class="btn btn-primary">A Palindrome?</button>
+        <br />
+        <h3><span><a class="text-capitalize">And the answer is:  {{palindromeAnswer}}</a></span></h3>
+    </div>
+    </div>
 
 
 

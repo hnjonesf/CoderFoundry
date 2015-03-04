@@ -1,7 +1,7 @@
 ﻿'use strict';
 app.factory('authService', ['$http', '$q', 'localStorageService', function ($http, $q, localStorageService) {
 
-    var serviceBase = 'http://localhost:50418/';
+    var serviceBase = '/';
     var authServiceFactory = {};
 
     var _authentication = {
@@ -16,7 +16,7 @@ app.factory('authService', ['$http', '$q', 'localStorageService', function ($htt
 
         _logOut();
 
-        return $http.post(serviceBase + 'webapi/register', registration).then(function (response) {
+        return $http.post(serviceBase + 'api/Account/Register', registration).then(function (response) {
             return response;
         });
 
@@ -42,12 +42,13 @@ app.factory('authService', ['$http', '$q', 'localStorageService', function ($htt
 
         $http.post(serviceBase + 'token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
 
-            var claims = _deserializeClaims(response.claims);
+            //var claims = _deserializeClaims(response.claims);
 
             _authentication.isAuth = true;
-            _authentication.username = claims['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'][0];
-            _authentication.name = claims['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'][0];
-            _authentication.claims = claims;
+            //_authentication.username = claims['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'][0];
+            //_authentication.name = claims['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'][0];
+            //_authentication.claims = claims;
+            _authentication.name = response.userName;
             _authentication.token = response.access_token;
             
             localStorageService.set('authorizationData', _authentication);
@@ -80,9 +81,10 @@ app.factory('authService', ['$http', '$q', 'localStorageService', function ($htt
         var authData = localStorageService.get('authorizationData');
         if (authData) {
             _authentication.isAuth = true;
-            _authentication.username = authData.claims['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'][0];
-            _authentication.name = authData.claims['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'][0];
-            _authentication.claims = authData.claims;
+            //_authentication.username = authData.claims['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'][0];
+            //_authentication.name = authData.claims['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'][0];
+            //_authentication.claims = authData.claims;
+            _authentication.name = authData.name;
             _authentication.token = authData.token;
         }
 

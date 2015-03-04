@@ -1,17 +1,16 @@
-﻿<div id="login" class="panel panel-default" ng-controller="LoginController">
-    <div class="panel-heading"><h2>Log In</h2></div>
-    <div class="panel-body">
+﻿<div class="single-widget-container" ng-controller="LoginController">
+    <section class="widget login-widget">
         <header class="text-align-center">
             <div ng-hide="message == ''" ng-class="(isError) ? 'alert alert-danger' : ''" style="padding:5px; margin-bottom:-15px;">
-                <h4>{{message}}</h4>
+                <h2>{{message}}</h2>
+                <br />
             </div>
         </header>
-        <div>
+        <div class="body">
             <form class="form-login no-margin" role="form">
                 <fieldset>
                     <div class="form-group no-margin">
-                        <label for="username">Email</label>
-
+                        <label for="username">Username</label>
                         <div class="input-group input-group-lg">
                             <span class="input-group-addon">
                                 <i class="fa fa-user"></i>
@@ -19,12 +18,9 @@
                             <input id="username" type="text" data-ng-model="loginData.userName" class="form-control input-lg"
                                    placeholder="Username">
                         </div>
-
                     </div>
-
                     <div class="form-group">
                         <label for="password">Password</label>
-
                         <div class="input-group input-group-lg">
                             <span class="input-group-addon">
                                 <i class="fa fa-lock"></i>
@@ -32,7 +28,6 @@
                             <input id="password" type="password" data-ng-model="loginData.password" class="form-control input-lg"
                                    placeholder="Password">
                         </div>
-
                     </div>
                 </fieldset>
                 <div class="form-actions">
@@ -45,5 +40,10 @@
                 </div>
             </form>
         </div>
-    </div>
+        <footer>
+            <!--<div class="facebook-login">
+                <a href="index.html"><span><i class="fa fa-facebook-square fa-lg"></i> LogIn with Facebook</span></a>
+            </div>-->
+        </footer>
+    </section>
 </div>

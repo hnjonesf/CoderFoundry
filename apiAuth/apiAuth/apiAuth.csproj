@@ -225,15 +225,21 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Index.html" />
+    <Content Include="NgApps\Contollers\LoginController.js" />
+    <Content Include="NgApps\Contollers\RegisterController.js" />
+    <Content Include="NgApps\Contollers\rootController.js" />
     <Content Include="NgApps\Directives\templates\passwordVerifyTemplate.html" />
     <Content Include="NgApps\Services\authInterceptorService.js" />
     <Content Include="NgApps\CarFinderApp.js" />
     <Content Include="NgApps\Services\authService.js" />
     <Content Include="NgApps\Templates\carfinder.html" />
     <Content Include="NgApps\Templates\CarFinderDirectiveTemplate.html" />
+    <Content Include="NgApps\Templates\Login - Copy.html" />
     <Content Include="NgApps\Templates\Login.html" />
+    <Content Include="NgApps\Templates\PasswordVerifyTemplate.html" />
     <Content Include="NgApps\Templates\profile.html" />
-    <Content Include="NgApps\Templates\register.html" />
+    <Content Include="NgApps\Templates\register - Copy.html" />
+    <Content Include="NgApps\Templates\Register.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -243,7 +249,7 @@
     <Content Include="Scripts\angular-csp.css" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
-    <Content Include="Scripts\angular-local-storage.js" />
+    <Content Include="Scripts\angular-localStorage.min.js" />
     <Content Include="Scripts\angular-messages.js" />
     <Content Include="Scripts\angular-messages.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -1063,7 +1069,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="NgApps\Contollers\" />
     <Folder Include="NgApps\Routes\" />
   </ItemGroup>
   <ItemGroup>

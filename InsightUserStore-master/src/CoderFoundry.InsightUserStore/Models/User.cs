@@ -20,6 +20,7 @@ namespace CoderFoundry.InsightUserStore.Models
         public int AccessFailedCount { get; set; }
         public bool LockoutEnabled { get; set; }
         public string PhoneNumber { get; set; }
+        public bool PhoneNumberConfirmed { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User,int> manager)
         {

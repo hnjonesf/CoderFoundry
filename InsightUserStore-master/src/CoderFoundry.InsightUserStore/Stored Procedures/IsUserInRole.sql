@@ -11,4 +11,4 @@ SELECT cast(
 			WHERE (ur.[UserId] = @userId AND (r.[Name] = @role)
 			) THEN 1
 		ELSE 0
-	END) as BIT)
+	END) as bit)

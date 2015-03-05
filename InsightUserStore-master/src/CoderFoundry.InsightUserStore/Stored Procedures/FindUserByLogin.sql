@@ -1,13 +1,8 @@
 ﻿CREATE PROCEDURE [Security].[FindUserByLogin]
-@userId int, @role nvarchar(50)
-AS
-
-INSERT INTO [Security].[UserRoles] (UserId, RoleId)
-SELECT @userId, r.Id
-FROM [Security].[Roles] r
-WHERE r.Name = @role
-/* comment format*/
-SELECT convert (BIT, CASE @@ROWCOUNT
-				WHEN 0 THEN 0
-				ELSE 1
-				END)
+@loginProvider nvarchar(128), @providerKey nvarchar(128)
+as
+SELECT u.*
+FROM [Security].[Users] AS u
+INNER JOIN Security.UserLogins AS 1 ON u.Id = 1.UserId
+WHERE (1.LoginProvider = @LoginProvider)
+	AND (1.ProviderKey = @providerKey)

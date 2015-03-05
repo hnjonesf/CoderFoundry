@@ -33,27 +33,30 @@ namespace CoderFoundry.InsightUserStore.Infrastructure
 
         public Task CreateAsync(User user)
         {
-            throw new NotImplementedException();
+            return _userData.InsertUserAsync(user.Id);
+            //help
+
         }
 
         public Task UpdateAsync(User user)
         {
-            throw new NotImplementedException();
+            return _userData.DeleteUserAsync(user.Id);
+            //nope
         }
 
         public Task DeleteAsync(User user)
         {
-            throw new NotImplementedException();
+            return _userData.DeleteUserAsync(user.Id);
         }
 
         public Task<User> FindByIdAsync(int userId)
         {
-            throw new NotImplementedException();
+            return _userData.SelectUserAsync(userId);
         }
 
         public Task<User> FindByNameAsync(string userName)
         {
-            throw new NotImplementedException();
+            return _userData.FindUserByUserNameAsync(userName);
         }
 
         public Task SetPhoneNumberAsync(User user, string phoneNumber)
@@ -63,17 +66,17 @@ namespace CoderFoundry.InsightUserStore.Infrastructure
 
         public Task<string> GetPhoneNumberAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.PhoneNumber);
         }
 
         public Task<bool> GetPhoneNumberConfirmedAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.PhoneNumberConfirmed);
         }
 
         public Task SetPhoneNumberConfirmedAsync(User user, bool confirmed)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.PhoneNumberConfirmed = confirmed);
         }
 
         public Task SetPasswordHashAsync(User user, string passwordHash)
@@ -83,57 +86,91 @@ namespace CoderFoundry.InsightUserStore.Infrastructure
 
         public Task<string> GetPasswordHashAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.PasswordHash);
         }
 
         public Task<bool> HasPasswordAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(!string.IsNullOrWhiteSpace(user.PasswordHash));
         }
 
         public Task AddLoginAsync(User user, UserLoginInfo login)
         {
-            throw new NotImplementedException();
+            var userLogin = new UserLogin
+            {
+                UserId = user.Id,
+                LoginProvider = login.LoginProvider,
+                ProviderKey = login.ProviderKey
+            };
+
+            return _userData.InsertUserLoginAsync(userLogin);
         }
 
         public Task RemoveLoginAsync(User user, UserLoginInfo login)
         {
-            throw new NotImplementedException();
+            var userLogin = new UserLogin
+            {
+                UserId = user.Id,
+                LoginProvider = login.LoginProvider,
+                ProviderKey = login.ProviderKey
+            };
+
+            return _userData.DeleteUserLoginAsync(userLogin);
         }
 
-        public Task<IList<UserLoginInfo>> GetLoginsAsync(User user)
+        public async Task<IList<UserLoginInfo>> GetLoginsAsync(User user)
         {
-            throw new NotImplementedException();
+            var logins = await _userData.GetLoginsForUserAsync(user.Id);
+            var loginList = new List<UserLoginInfo>(user.Id);
+            foreach (var item in logins)
+            {
+                loginList.Add(new UserLoginInfo(item.LoginProvider, item.ProviderKey));
+            }
+            return loginList; 
         }
 
         public Task<User> FindAsync(UserLoginInfo login)
         {
-            throw new NotImplementedException();
+            return _userData.FindUserByLoginAsync(login.LoginProvider, login.ProviderKey);
         }
 
         public Task AddToRoleAsync(User user, string roleName)
         {
-            throw new NotImplementedException();
+            return _userData.AddUserToRoleAsync(user.Id, roleName);
         }
 
         public Task RemoveFromRoleAsync(User user, string roleName)
         {
-            throw new NotImplementedException();
+            return _userData.RemoveUserFromRoleAsync(user.Id, roleName);
         }
 
         public Task<IList<string>> GetRolesAsync(User user)
         {
-            throw new NotImplementedException();
+            return _userData.GetRolesForUserAsync(user.Id);
         }
 
         public Task<bool> IsInRoleAsync(User user, string roleName)
         {
-            throw new NotImplementedException();
+            return _userData.IsUserInRoleAsync(user.Id, roleName);
         }
 
-        public Task<IList<Claim>> GetClaimsAsync(User user)
+        public async Task<IList<Claim>> GetClaimsAsync(User user)
         {
-            throw new NotImplementedException();
+            //build a list of claims
+            var userClaims = await _userData.GetUserClaimsAsync(user.Id);
+            var claims = new List<Claim>();
+            foreach (var item in userClaims)
+            {
+                claims.Add(new Claim(item.ClaimType, item.ClaimValue));
+            }
+
+            //add any app-specific claims
+            if (user.Name != null) 
+            {
+                claims.Add(new Claim(ClaimTypes.GivenName, user.Name));
+            } 
+            
+            return claims; 
         }
 
         public Task AddClaimAsync(User user, Claim claim)

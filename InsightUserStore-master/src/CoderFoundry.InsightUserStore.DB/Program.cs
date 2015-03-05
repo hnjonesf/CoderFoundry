@@ -15,10 +15,8 @@ namespace CoderFoundry.InsightUserStore.DB
             schema.Load(Assembly.GetExecutingAssembly());
 
             // automatically create the database
-            var connectionString = GetConnectionString();
+            var connectionString = @"Data Source=.\SQLEXPRESS;Database=cf_jonesh_userstore_db;integrated security=True;";
             SchemaInstaller.CreateDatabase(connectionString);
-
-            //            using (conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString))
 
             // automatically install it, or upgrade it
             using (var connection = new SqlConnection(connectionString))

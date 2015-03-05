@@ -1,11 +1,9 @@
 ﻿CREATE PROCEDURE [Security].[FindUserByEmail]
-@userId int, @role nvarchar(50)
+@email nvarchar(128)
 AS
-
-INSERT INTO [Security].[UserRoles] (UserId, RoleId)
-SELECT @userId, r.Id
-FROM [Security].[Roles] r
-WHERE r.Name = @role
+SELECT @email, r.Email
+FROM Users r
+WHERE r.Email = @email
 /* comment format*/
 SELECT convert (BIT, CASE @@ROWCOUNT
 				WHEN 0 THEN 0

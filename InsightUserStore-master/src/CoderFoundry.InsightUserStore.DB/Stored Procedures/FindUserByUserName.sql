@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [Security].[FindUserByUserName]
-@username(128)
+@username nvarchar(128)
 as
 SELECT u.*
 FROM [Security].[Users] AS u
-WHERE (u.LoginUser = @username)
+WHERE (u.UserName = @username)

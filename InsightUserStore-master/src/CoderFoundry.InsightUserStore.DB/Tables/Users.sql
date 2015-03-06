@@ -13,7 +13,11 @@
 	[LockoutEndDate] datetimeoffset(7) NULL,
 	[AccessFailedCount] int default 0 NOT NULL,
 	[EmailConfirmed] bit default 0 NOT NULL,
-	[LockoutEnabled] bit default 1 NOT NULL)
+	[LockoutEnabled] bit default 1 NOT NULL,
+	[TwoFactorEnabled] bit default 0 NOT NULL,
+	[PhoneNumberConfirmed] bit default 0 NOT NULL,
+	[PhoneNumber] nvarchar(MAX)
+	)
 GO
 
 ALTER TABLE [Security].[Users]

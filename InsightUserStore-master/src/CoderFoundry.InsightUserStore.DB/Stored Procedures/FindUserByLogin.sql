@@ -3,6 +3,6 @@
 as
 SELECT u.*
 FROM [Security].[Users] AS u
-INNER JOIN Security.UserLogins AS 1 ON u.Id = 1.UserId
-WHERE (1.LoginProvider = @LoginProvider)
-	AND (1.ProviderKey = @providerKey)
+INNER JOIN Security.UserLogins AS l ON u.Id = l.UserId
+WHERE (l.LoginProvider = @LoginProvider)
+	AND (l.ProviderKey = @providerKey)

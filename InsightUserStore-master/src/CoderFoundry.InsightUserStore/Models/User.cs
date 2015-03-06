@@ -21,6 +21,7 @@ namespace CoderFoundry.InsightUserStore.Models
         public bool LockoutEnabled { get; set; }
         public string PhoneNumber { get; set; }
         public bool PhoneNumberConfirmed { get; set; }
+        public bool TwoFactorEnabled { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User,int> manager)
         {
@@ -29,5 +30,6 @@ namespace CoderFoundry.InsightUserStore.Models
             // Add custom user claims here
             return userIdentity;
         }
+
     }
 }

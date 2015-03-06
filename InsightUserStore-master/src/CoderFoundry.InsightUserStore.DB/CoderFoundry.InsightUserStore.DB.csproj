@@ -53,6 +53,54 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Stored Procedures\AddUserToRole.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Stored Procedures\FindUserByEmail.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Stored Procedures\FindUserByLogin.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Stored Procedures\FindUserByUserName.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Stored Procedures\GetLoginsForUser.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Stored Procedures\GetRolesForUser.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Stored Procedures\GetUserClaims.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Stored Procedures\IsUserInRole.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Stored Procedures\RemoveUserClaim.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Stored Procedures\RemoveUserFromRole.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tables\Roles.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tables\UserClaims.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tables\UserLogins.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tables\UserRoles.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tables\Users.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Schemas\SecuritySchema.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

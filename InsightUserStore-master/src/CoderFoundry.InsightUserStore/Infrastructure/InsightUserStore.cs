@@ -28,8 +28,7 @@ namespace CoderFoundry.InsightUserStore.Infrastructure
 
         public void Dispose()
         {
-            throw new NotImplementedException();
-            //help
+           
         }
 
         public Task CreateAsync(User user)
@@ -59,7 +58,7 @@ namespace CoderFoundry.InsightUserStore.Infrastructure
 
         public Task SetPhoneNumberAsync(User user, string phoneNumber)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.PhoneNumber = phoneNumber);
         }
 
         public Task<string> GetPhoneNumberAsync(User user)
@@ -79,8 +78,7 @@ namespace CoderFoundry.InsightUserStore.Infrastructure
 
         public Task SetPasswordHashAsync(User user, string passwordHash)
         {
-            //nope
-            return haha;
+            return Task.FromResult(user.PasswordHash = passwordHash);
         }
 
         public Task<string> GetPasswordHashAsync(User user)
@@ -174,92 +172,93 @@ namespace CoderFoundry.InsightUserStore.Infrastructure
 
         public Task AddClaimAsync(User user, Claim claim)
         {
-            throw new NotImplementedException();
+            return _userData.InsertUserClaimAsync(new UserClaim { UserId = user.Id, ClaimType = claim.Type, ClaimValue = claim.Value });
         }
 
         public Task RemoveClaimAsync(User user, Claim claim)
         {
-            throw new NotImplementedException();
+            return _userData.RemoveUserClaimAsync(user.Id, claim.Type);
         }
 
         public Task SetEmailAsync(User user, string email)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.Email = email);
         }
 
         public Task<string> GetEmailAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.Email);
         }
 
         public Task<bool> GetEmailConfirmedAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.EmailConfirmed);
         }
 
         public Task SetEmailConfirmedAsync(User user, bool confirmed)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.EmailConfirmed = confirmed);
         }
 
         public Task<User> FindByEmailAsync(string email)
         {
-            throw new NotImplementedException();
+            return _userData.FindUserByEmailAsync(email);
         }
 
         public Task<DateTimeOffset> GetLockoutEndDateAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.LockoutEndDate);
         }
 
         public Task SetLockoutEndDateAsync(User user, DateTimeOffset lockoutEnd)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.LockoutEndDate = lockoutEnd);
         }
 
         public Task<int> IncrementAccessFailedCountAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.AccessFailedCount++);
         }
 
         public Task ResetAccessFailedCountAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.AccessFailedCount = 0);
         }
 
         public Task<int> GetAccessFailedCountAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.AccessFailedCount);
         }
 
         public Task<bool> GetLockoutEnabledAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.LockoutEnabled);
         }
 
         public Task SetLockoutEnabledAsync(User user, bool enabled)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.IsLockedOut = enabled);
         }
 
         public Task SetSecurityStampAsync(User user, string stamp)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.SecurityStamp = stamp);
         }
 
         public Task<string> GetSecurityStampAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.SecurityStamp);
         }
 
         public Task SetTwoFactorEnabledAsync(User user, bool enabled)
         {
-            throw new NotImplementedException();
+            //help me
+            return Task.FromResult(user.TwoFactorEnabled = enabled);
         }
 
         public Task<bool> GetTwoFactorEnabledAsync(User user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.TwoFactorEnabled);
         }
     }
 }

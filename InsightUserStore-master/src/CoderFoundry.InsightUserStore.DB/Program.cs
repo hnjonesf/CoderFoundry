@@ -24,7 +24,7 @@ namespace CoderFoundry.InsightUserStore.DB
                 connection.Open();
                 var installer = new SchemaInstaller(connection);
                 new SchemaEventConsoleLogger().Attach(installer);
-                installer.Install("BeerGarten", schema);
+                installer.Install("cf_jonesh_userstore_db", schema);
             }
         }
 

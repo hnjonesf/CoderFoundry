@@ -24,7 +24,7 @@ namespace CarFinder.Controllers
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("GetAllMatchingYearMakeModelTrim", conn);
+                SqlCommand cmd = new SqlCommand("GetCarsByYearMakeModelAndTrim", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@year", year));
                 cmd.Parameters.Add(new SqlParameter("@make", make));
@@ -34,7 +34,8 @@ namespace CarFinder.Controllers
                 rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    retval.Add(new Car {
+                    retval.Add(new Car
+                    {
                         Make = rdr["make"].ToString(),
                         Model = rdr["model_name"].ToString(),
                         Trim = rdr["model_trim"].ToString(),

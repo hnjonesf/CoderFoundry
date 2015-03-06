@@ -29,19 +29,17 @@ namespace CoderFoundry.InsightUserStore.Infrastructure
         public void Dispose()
         {
             throw new NotImplementedException();
+            //help
         }
 
         public Task CreateAsync(User user)
         {
-            return _userData.InsertUserAsync(user.Id);
-            //help
-
+            return _userData.InsertUserAsync(user);
         }
 
         public Task UpdateAsync(User user)
         {
             return _userData.DeleteUserAsync(user.Id);
-            //nope
         }
 
         public Task DeleteAsync(User user)
@@ -81,7 +79,8 @@ namespace CoderFoundry.InsightUserStore.Infrastructure
 
         public Task SetPasswordHashAsync(User user, string passwordHash)
         {
-            throw new NotImplementedException();
+            //nope
+            return haha;
         }
 
         public Task<string> GetPasswordHashAsync(User user)

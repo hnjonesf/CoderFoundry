@@ -23,7 +23,7 @@ namespace CarFinder.Controllers
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("GetTrimsByYearAndMakeAndModel", conn);
+                SqlCommand cmd = new SqlCommand("GetTrimsByYearMakeAndModel", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add((new SqlParameter("@year", year)));
                 cmd.Parameters.Add((new SqlParameter("@make", make)));

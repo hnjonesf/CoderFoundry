@@ -232,6 +232,7 @@
     <Content Include="NgApps\Services\authInterceptorService.js" />
     <Content Include="NgApps\CarFinderApp.js" />
     <Content Include="NgApps\Services\authService.js" />
+    <Content Include="NgApps\Templates\about.html" />
     <Content Include="NgApps\Templates\carfinder.html" />
     <Content Include="NgApps\Templates\CarFinderDirectiveTemplate.html" />
     <Content Include="NgApps\Templates\Login - Copy.html" />

@@ -20,6 +20,10 @@ app.config(function ($routeProvider) {
         templateUrl: "/NgApps/Templates/profile.html"
     });
 
+    $routeProvider.when("/about", {
+        templateUrl: "/NgApps/Templates/about.html"
+    });
+
     $routeProvider.otherwise({ redirectTo: "/" });
 });
 
@@ -234,5 +238,4 @@ angular.module('CarFinderApp').directive('carFinder', ['carSvc', function (carSv
 
             }
         }
-    }]);
-
+}]);

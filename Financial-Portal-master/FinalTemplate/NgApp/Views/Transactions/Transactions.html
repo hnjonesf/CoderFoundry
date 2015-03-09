@@ -1,0 +1,53 @@
+﻿<button class="btn btn-primary" ng-click="createTransaction()">
+    Create a new transaction
+</button>
+
+<div>
+    <br />
+    <br />
+    <div>
+        Search transactions
+        <input type="text" ng-model="search.text"/>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>            
+            <tr>
+                <th><a href="" ng-click="sortBy = 'date'; sortDir=!sortDir">Date</a></th>
+                <th><a href="" ng-click="sortBy = 'categoryId'; sortDir=!sortDir">Category</a></th>
+                <th><a href="" ng-click="sortBy = 'description'; sortDir=!sortDir">Description</a></th>
+                <th><a href="" ng-click="sortBy = 'amount'; sortDir=!sortDir">Amount</a></th>
+                <th><a href="" ng-click="sortBy = 'reconciled'; sortDir=!sortDir">Reconciled</a></th>
+                <th><a href="" ng-click="sortBy = 'updated'; sortDir=!sortDir">Last Updated on</a></th>
+                <!--<th><a href="" ng-click="sortBy = 'updatedByUserId'; sortDir=!sortDir">Last Updated By</a></th>-->
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="Transaction in filteredTransactions = (Transactions | orderBy:sortBy:sortDir | filter:{description: search.text} | kuPagination: paginationSettings.currentPage: paginationSettings.itemsPerPage)">
+                <td>{{Transaction.date | date:'short'}}</td>
+                <td>{{Transaction.category}}</td>
+                <td>{{Transaction.description}}</td>
+                <td>{{Transaction.amount | currency:'$'}}</td>
+                <td>{{Transaction.reconciled}}</td>
+                <td>{{Transaction.updated | date:'short'}}</td>
+                <!--<td>{{Transaction.updatedByUserId}}</td>-->
+
+                <td>
+                    <button class="btn btn-primary" type="button" ng-click="editTransaction(Transaction)">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit transaction</span>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" type="button" ng-click="deleteTransaction(Transaction)">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true">Delete transaction</span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <pagination total-items="paginationSettings.totalItems" ng-model="paginationSettings.currentPage" max-size="paginationSettings.maxPages"
+                class="pagination-sm" boundary-links="true" items-per-page="paginationSettings.itemsPerPage"></pagination>
+</div>
+

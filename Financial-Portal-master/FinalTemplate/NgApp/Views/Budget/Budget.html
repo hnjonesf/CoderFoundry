@@ -1,0 +1,141 @@
+﻿<button class="btn btn-primary" ng-click="editBudget()">
+    Edit budget
+</button>
+
+<div>
+    <br />
+    <br />
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th colspan="5"><h3>Assets</h3></th>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <th>Budget</th>
+                <th>Actual</th>
+                <th>Amount Left</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> Income</td>
+                <td>{{Budget.income | currency:'$'}}</td>
+                <td>{{Budget.incomeT | currency:'$'}}</td>
+                <td>{{Budget.income - Budget.incomeT | currency:'$'}}</td>
+
+                <td>
+                    <span ng-if="(Budget.income - Budget.incomeT) > 0">You need to get paid!</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td> Investments</td>
+                <td>{{Budget.investments | currency:'$'}}</td>
+                <td>{{Budget.investmentsT | currency:'$'}}</td>
+                <td>{{Budget.investments - Budget.investmentsT | currency:'$'}}</td>
+                <td>
+                    <span ng-if="(Budget.investments - Budget.investmentsT) > 0">You must be buying high and selling low!</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div>
+    <br />
+    <br />
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th colspan="5"><h3>Expenses</h3></th>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <th>Budget</th>
+                <th>Actual</th>
+                <th>Amount Left</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> Apparel</td>
+                <td>{{Budget.apparel | currency:'$'}}</td>
+                <td>{{Budget.apparelT | currency:'$'}}</td>
+                <td>{{Budget.apparel + Budget.apparelT | currency:'$'}}</td>
+                <td>
+                    <span ng-if="(Budget.apparel + Budget.apparelT) < 0">You should consider buying knockoffs!</span>
+                </td>
+            </tr>
+            <tr>
+                <td> Food</td>
+                <td>{{Budget.food | currency:'$'}}</td>
+                <td>{{Budget.foodT | currency:'$'}}</td>
+                <td>{{Budget.food + Budget.foodT| currency:'$'}}</td>
+
+                <td>
+                    <span ng-if="(Budget.food + Budget.foodT) < 0">Less  steak and lobster.  More ramen noodles!</span>
+                </td>
+            </tr>
+            <tr>
+                <td> HealthCare</td>
+                <td>{{Budget.healthCare | currency:'$'}}</td>
+                <td>{{Budget.healthCareT | currency:'$'}}</td>
+                <td>{{Budget.healthCare + Budget.healthCareT  | currency:'$'}}</td>
+
+                <td>
+                    <span ng-if="(Budget.healthCare + Budget.healthCareT) < 0">Don't worry.  Obama will help you!</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td> Housing</td>
+                <td>{{Budget.housing | currency:'$'}}</td>
+                <td>{{Budget.housingT | currency:'$'}}</td>
+                <td>{{Budget.housing + Budget.housingT | currency:'$'}}</td>
+
+                <td>
+                    <span ng-if="(Budget.housing + Budget.housingT) < 0">The rent is too high!</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td> Other</td>
+                <td>{{Budget.other | currency:'$'}}</td>
+                <td>{{Budget.otherT | currency:'$'}}</td>
+                <td>{{Budget.other + Budget.otherT  | currency:'$'}}</td>
+
+                <td>
+                    <span ng-if="(Budget.other + Budget.otherT) < 0">Do you even know what you're spending your money on!</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td> Transportation</td>
+                <td>{{Budget.transportation | currency:'$'}}</td>
+                <td>{{Budget.transportationT | currency:'$'}}</td>
+                <td>{{Budget.transportation + Budget.transportationT | currency:'$'}}</td>
+
+                <td>
+                    <span ng-if="(Budget.transportation + Budget.transportationT) < 0">You should walk more often!</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td> Utilities</td>
+                <td>{{Budget.utilities | currency:'$'}}</td>
+                <td>{{Budget.utilitiesT | currency:'$'}}</td>
+                <td>{{Budget.utilities + Budget.utilitiesT| currency:'$'}}</td>
+
+                <td>
+                    <span ng-if="(Budget.utilities + Budget.utilitiesT) < 0">Don't forget to turn off the lights when you leave!</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+

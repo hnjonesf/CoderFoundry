@@ -28,15 +28,26 @@
                     <br /><br />
                     After registration, the Administrator can assign each user into one of four roles: <br />
                     <ol>
-                        <li>Administrator:  This role holds all the power over users, projects, tickets, and related attachments.</li>
-                        <li>Project Manager:  The Project Manager can assign Submitters and Developers to projects.  They have full access to the site, like Administrators, except they may not maniuplate users.</li>
-                        <li>Developer:  Designed to be the coder that fixes the bugs, this role may be assigned to projects, which have tickets under them.  They may only view and edit tickets assigned to them. They may complete a ticket.</li>
-                        <li>Submitter:  A Submitter, like a Developer, may only work on projects and tickets to which they are assigned.   They generate new tickets.</li>
+                        <li>
+                            Administrator:  This role holds all the power over users, projects, tickets,
+                            and related attachments. As the Administrator, you have full access to the site.
+                        </li>
+                        <li>
+                            Project Manager:  The Project Manager can assign Submitters and Developers to projects.
+                            They have full access to the site, like Administrators, except they may not maniuplate users.
+                        </li>
+                        <li>
+                            Developer:  Designed to be the coder that fixes the bugs, this role may be assigned to projects,
+                            which have tickets under them.  They may only view and edit tickets assigned to them. They may complete a ticket.
+                        </li>
+                        <li>
+                            Submitter:  A Submitter, like a Developer, may only work on projects
+                            and tickets to which they are assigned.   They generate new tickets.
+                        </li>
                     </ol>
-                    <div class="row"><br /><br />Use the following tabs to log yourself into this system and test each of these roles.  </div>
+                    @*<div class="row"><br /><br />Use the following tabs to log yourself into this system and test each of these roles.  </div>*@
                 </div>
-                <br />
-                <br />
+
             </div>
         </div>
     </div>
@@ -44,7 +55,7 @@
     <!-- / .row -->
     <!-- Main Features -->
 
-    <div class="row">
+    @*<div class="row">
         <div class="col-md-3">
             <form action="@Url.Action("AdminLogin", "Account", new { autoLogin = "Administrator" })" method="post">
                 @Html.AntiForgeryToken()
@@ -73,7 +84,7 @@
                 <br /><br />Submitter:  has access to create tickets for Projects to which they are assigned.
             </form>
         </div>
-    </div>
+    </div>*@
     <br />
     <br />
     <div class="text-primary">BugTracker, once purchased, is installed on your local intranet.  From there you set the Administrator and other roles in a secure environment.</div>

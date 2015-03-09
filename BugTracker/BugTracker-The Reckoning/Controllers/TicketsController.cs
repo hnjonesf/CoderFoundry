@@ -256,7 +256,8 @@ namespace BugTracker_The_Reckoning.Controllers
                 db.TicketNotifications.Add(tn);
                 db.SaveChanges();
 
-                helper.Notify(tn, "Manage Ticket");
+                //stop sending tickets as cannot figure out which user is called.  hugh
+                //helper.Notify(tn, "Manage Ticket");
                 return RedirectToAction("Index");
             }
 

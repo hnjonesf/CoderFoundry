@@ -10,16 +10,16 @@
 </div>
 <container><div class="row">
     <section class="col-md-6 text-info">
-        Existing users login now.  <br /><br />If you are new to our site, we are glad you are here.
-        We want to give you a tour of our BugTracker, and then provide you with the freedom to explore.
+        Existing users login now.  <hr />If you are new to our site, we are glad you are here.
+        Explore the "About" page.  
         And remember, we are always available through the Contact page to purchase, and for questions.
-        <br /><br />
+        <hr />
     </section>
-    <div>
+    @*<div>
         <form action="@Url.Action("AdminLogin", "Account", new { autoLogin = "Administrator" })" method="post">
             @Html.AntiForgeryToken()
             <button class="btn btn-default btn-primary btn-large" type="submit">BEGIN TOUR HERE</button>
             <br /><br />
         </form>
-    </div>
+    </div>*@
 </div></container>

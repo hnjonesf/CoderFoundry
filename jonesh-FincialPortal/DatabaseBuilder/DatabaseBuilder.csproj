@@ -33,14 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Insight.Database">
-      <HintPath>..\packages\Insight.Database.Core.5.2.2\lib\NET45\Insight.Database.dll</HintPath>
+    <Reference Include="Insight.Database, Version=5.2.3.0, Culture=neutral, PublicKeyToken=f35c6ef87e515afc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Insight.Database.Core.5.2.3\lib\NET45\Insight.Database.dll</HintPath>
     </Reference>
-    <Reference Include="Insight.Database.Configuration">
-      <HintPath>..\packages\Insight.Database.5.2.2\lib\NET45\Insight.Database.Configuration.dll</HintPath>
+    <Reference Include="Insight.Database.Configuration, Version=5.2.3.0, Culture=neutral, PublicKeyToken=f35c6ef87e515afc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Insight.Database.5.2.3\lib\NET45\Insight.Database.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Insight.Database.Providers.Default">
-      <HintPath>..\packages\Insight.Database.5.2.2\lib\NET45\Insight.Database.Providers.Default.dll</HintPath>
+    <Reference Include="Insight.Database.Providers.Default, Version=5.2.3.0, Culture=neutral, PublicKeyToken=f35c6ef87e515afc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Insight.Database.5.2.3\lib\NET45\Insight.Database.Providers.Default.dll</HintPath>
     </Reference>
     <Reference Include="Insight.Database.Schema">
       <HintPath>..\packages\Insight.Database.Schema.2.2.10\lib\NET45\Insight.Database.Schema.dll</HintPath>
@@ -72,6 +75,23 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SQL\DBO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL\Security\Stored Procedures\AddUserToRole.sql" />
+    <Content Include="SQL\Security\Stored Procedures\FindUserByEmail.sql" />
+    <Content Include="SQL\Security\Stored Procedures\FindUserByLogin.sql" />
+    <Content Include="SQL\Security\Stored Procedures\FindUserByUserName.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetLoginsForUser.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetRolesForUser.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetUserClaims.sql" />
+    <Content Include="SQL\Security\Stored Procedures\IsUserInRole.sql" />
+    <Content Include="SQL\Security\Stored Procedures\RemoveUserClaim.sql" />
+    <Content Include="SQL\Security\Stored Procedures\RemoveUserFromRole.sql" />
+    <EmbeddedResource Include="SQL\Security\Tables\Accounts.sql" />
+    <EmbeddedResource Include="SQL\Security\Tables\BudgetItems.sql" />
+    <EmbeddedResource Include="SQL\Security\Tables\Categories.sql" />
+    <EmbeddedResource Include="SQL\Security\Tables\Invitations.sql" />
+    <EmbeddedResource Include="SQL\Security\Tables\Transactions.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

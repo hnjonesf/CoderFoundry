@@ -67,6 +67,7 @@ angular.module("ngAutocomplete", [])
 
                     //options for autocomplete
                     var opts;
+                    //opts.country = 'us'
 
                     //convert options provided to opts
                     var initOpts = function () {
@@ -74,7 +75,7 @@ angular.module("ngAutocomplete", [])
                         if (angular.isDefined($attrs.options)) {
                             var options = getOptions($scope);
                             if (options.types) {
-                                opts.types = [];
+                                opts.types = ['(cities)'];
                                 opts.types.push(options.types);
                             }
                             if (options.bounds) {
@@ -82,7 +83,7 @@ angular.module("ngAutocomplete", [])
                             }
                             if (options.country) {
                                 opts.componentRestrictions = {
-                                    country: options.country
+                                    country: 'us' //options.country
                                 };
                             }
                         }

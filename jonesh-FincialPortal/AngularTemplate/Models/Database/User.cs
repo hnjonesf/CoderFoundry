@@ -20,6 +20,8 @@ namespace AngularTemplate.Models.Database
         public int AccessFailedCount { get; set; }
         public bool LockoutEnabled { get; set; }
         public string PhoneNumber { get; set; }
+        public bool PhoneNumberConfirmed { get; set; }
+        public bool TwoFactorEnabled { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser, int> manager, string authType = DefaultAuthenticationTypes.ApplicationCookie)
         {

@@ -28,7 +28,7 @@ namespace CoderFoundry.InsightUserStore.Infrastructure
 
         public void Dispose()
         {
-           
+            throw new NotImplementedException();
         }
 
         public Task CreateAsync(User user)

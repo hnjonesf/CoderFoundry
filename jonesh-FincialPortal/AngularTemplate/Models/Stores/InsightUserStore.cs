@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AngularTemplate.Models.Database;
 using Microsoft.AspNet.Identity;
 
+
 namespace AngularTemplate.Models.Stores
 {
     public class InsightUserStore :
@@ -16,7 +17,7 @@ namespace AngularTemplate.Models.Stores
         IUserEmailStore<ApplicationUser, int>,
         IUserLockoutStore<ApplicationUser,int>,
         IUserSecurityStampStore<ApplicationUser,int>,
-        IUserTwoFactorStore<ApplicationUser,int>
+        IUserTwoFactorStore<ApplicationUser, int>
     {
         private readonly IUserDataAccess _userData;
 
@@ -32,197 +33,231 @@ namespace AngularTemplate.Models.Stores
 
         public Task CreateAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return _userData.InsertUserAsync(user);
         }
 
         public Task UpdateAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return _userData.DeleteUserAsync(user.Id);
         }
 
         public Task DeleteAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return _userData.DeleteUserAsync(user.Id);
         }
 
         public Task<ApplicationUser> FindByIdAsync(int userId)
         {
-            throw new NotImplementedException();
+            return _userData.SelectUserAsync(userId);
         }
 
         public Task<ApplicationUser> FindByNameAsync(string userName)
         {
-            throw new NotImplementedException();
+            return _userData.FindUserByUserNameAsync(userName);
         }
 
         public Task SetPhoneNumberAsync(ApplicationUser user, string phoneNumber)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.PhoneNumber = phoneNumber);
         }
 
         public Task<string> GetPhoneNumberAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.PhoneNumber);
         }
 
         public Task<bool> GetPhoneNumberConfirmedAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.PhoneNumberConfirmed);
         }
 
         public Task SetPhoneNumberConfirmedAsync(ApplicationUser user, bool confirmed)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.PhoneNumberConfirmed = confirmed);
         }
 
         public Task SetPasswordHashAsync(ApplicationUser user, string passwordHash)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.PasswordHash = passwordHash);
         }
 
         public Task<string> GetPasswordHashAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.PasswordHash);
         }
 
         public Task<bool> HasPasswordAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(!string.IsNullOrWhiteSpace(user.PasswordHash));
         }
 
         public Task AddLoginAsync(ApplicationUser user, UserLoginInfo login)
         {
-            throw new NotImplementedException();
+            var userLogin = new UserLogin
+            {
+                UserId = user.Id,
+                LoginProvider = login.LoginProvider,
+                ProviderKey = login.ProviderKey
+            };
+
+            return _userData.InsertUserLoginAsync(userLogin);
         }
 
         public Task RemoveLoginAsync(ApplicationUser user, UserLoginInfo login)
         {
-            throw new NotImplementedException();
+            var userLogin = new UserLogin
+            {
+                UserId = user.Id,
+                LoginProvider = login.LoginProvider,
+                ProviderKey = login.ProviderKey
+            };
+
+            return _userData.DeleteUserLoginAsync(userLogin);
         }
 
-        public Task<IList<UserLoginInfo>> GetLoginsAsync(ApplicationUser user)
+        public async Task<IList<UserLoginInfo>> GetLoginsAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            var logins = await _userData.GetLoginsForUserAsync(user.Id);
+            var loginList = new List<UserLoginInfo>(user.Id);
+            foreach (var item in logins)
+            {
+                loginList.Add(new UserLoginInfo(item.LoginProvider, item.ProviderKey));
+            }
+            return loginList; 
         }
 
         public Task<ApplicationUser> FindAsync(UserLoginInfo login)
         {
-            throw new NotImplementedException();
+            return _userData.FindUserByLoginAsync(login.LoginProvider, login.ProviderKey);
         }
 
         public Task AddToRoleAsync(ApplicationUser user, string roleName)
         {
-            throw new NotImplementedException();
+            return _userData.AddUserToRoleAsync(user.Id, roleName);
         }
 
         public Task RemoveFromRoleAsync(ApplicationUser user, string roleName)
         {
-            throw new NotImplementedException();
+            return _userData.RemoveUserFromRoleAsync(user.Id, roleName);
         }
 
         public Task<IList<string>> GetRolesAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return _userData.GetRolesForUserAsync(user.Id);
         }
 
         public Task<bool> IsInRoleAsync(ApplicationUser user, string roleName)
         {
-            throw new NotImplementedException();
+            return _userData.IsUserInRoleAsync(user.Id, roleName);
         }
 
-        public Task<IList<Claim>> GetClaimsAsync(ApplicationUser user)
+        public async Task<IList<Claim>> GetClaimsAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            //build a list of claims
+            var userClaims = await _userData.GetUserClaimsAsync(user.Id);
+            var claims = new List<Claim>();
+            foreach (var item in userClaims)
+            {
+                claims.Add(new Claim(item.ClaimType, item.ClaimValue));
+            }
+
+            //add any app-specific claims
+            if (user.Name != null) 
+            {
+                claims.Add(new Claim(ClaimTypes.GivenName, user.Name));
+            } 
+            
+            return claims; 
         }
 
         public Task AddClaimAsync(ApplicationUser user, Claim claim)
         {
-            throw new NotImplementedException();
+            return _userData.InsertUserClaimAsync(new UserClaim { UserId = user.Id, ClaimType = claim.Type, ClaimValue = claim.Value });
         }
 
         public Task RemoveClaimAsync(ApplicationUser user, Claim claim)
         {
-            throw new NotImplementedException();
+            return _userData.RemoveUserClaimAsync(user.Id, claim.Type);
         }
 
         public Task SetEmailAsync(ApplicationUser user, string email)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.Email = email);
         }
 
         public Task<string> GetEmailAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.Email);
         }
 
         public Task<bool> GetEmailConfirmedAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.EmailConfirmed);
         }
 
         public Task SetEmailConfirmedAsync(ApplicationUser user, bool confirmed)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.EmailConfirmed = confirmed);
         }
 
         public Task<ApplicationUser> FindByEmailAsync(string email)
         {
-            throw new NotImplementedException();
+            return _userData.FindUserByEmailAsync(email);
         }
 
         public Task<DateTimeOffset> GetLockoutEndDateAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.LockoutEndDate);
         }
 
         public Task SetLockoutEndDateAsync(ApplicationUser user, DateTimeOffset lockoutEnd)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.LockoutEndDate = lockoutEnd);
         }
 
         public Task<int> IncrementAccessFailedCountAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.AccessFailedCount++);
         }
 
         public Task ResetAccessFailedCountAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.AccessFailedCount = 0);
         }
 
         public Task<int> GetAccessFailedCountAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.AccessFailedCount);
         }
 
         public Task<bool> GetLockoutEnabledAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.LockoutEnabled);
         }
 
         public Task SetLockoutEnabledAsync(ApplicationUser user, bool enabled)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.IsLockedOut = enabled);
         }
 
         public Task SetSecurityStampAsync(ApplicationUser user, string stamp)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.SecurityStamp = stamp);
         }
 
         public Task<string> GetSecurityStampAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.SecurityStamp);
         }
 
         public Task SetTwoFactorEnabledAsync(ApplicationUser user, bool enabled)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.TwoFactorEnabled = enabled);
         }
 
         public Task<bool> GetTwoFactorEnabledAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.TwoFactorEnabled);
         }
     }
 }

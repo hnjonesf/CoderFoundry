@@ -17,7 +17,7 @@ namespace CoderFoundry.InsightUserStore.DB
 
             // automatically create the database
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-            var databaseName = "test-db";
+            var databaseName = "jonesh-financialportal-db";
             SchemaInstaller.CreateDatabase(connectionString);
 
             // automatically install it, or upgrade it

@@ -1,0 +1,77 @@
+﻿<div class="row">
+    <div class="col-md-5">
+        <br />
+        <button class="btn btn-primary" ng-click="createHousehold()">
+            Create a new household
+        </button>
+
+        <div>
+            <br />
+            <br />
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th colspan="5"><h3>Users in the Household</h3></th>
+                    </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th>UserName</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in Household.Users">
+                        <td>{{user.name}}</td>
+                        <td>{{user.userName}}</td>
+                        <td>{{user.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+
+    <div class="col-md-5">
+        <br />
+        <button class="btn btn-primary" ng-click="inviteUser()">
+            Invite a person to your household
+        </button>
+        <br />
+        <br />
+        <div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th colspan="5"><h3>Invitations</h3></th>
+                    </tr>
+                    <tr></tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="invitation in Household.Invitations">
+                        <td>{{invitation.fromEmail}} has invited you to join their household</td>
+                        <td>
+                            <button class="btn btn-primary" type="button" ng-click="editHousehold(invitation, true)">
+                                Accept
+                            </button>
+
+                        </td>
+
+                        <td>
+                            <button class="btn btn-primary" type="button" ng-click="editHousehold(invitation, false)">
+                                Reject
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        
+    </div>
+</div>
+
+
+
+

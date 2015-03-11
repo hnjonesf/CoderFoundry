@@ -28,7 +28,7 @@ namespace AngularTemplate.Models.Stores
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+
         }
 
         public Task CreateAsync(ApplicationUser user)

@@ -233,6 +233,12 @@
     <Compile Include="Models\Database\User.cs" />
     <Compile Include="Models\Database\UserClaim.cs" />
     <Compile Include="Models\Database\UserLogin.cs" />
+    <Compile Include="Models\DataModels\Account.cs" />
+    <Compile Include="Models\DataModels\Budget.cs" />
+    <Compile Include="Models\DataModels\Category.cs" />
+    <Compile Include="Models\DataModels\Household.cs" />
+    <Compile Include="Models\DataModels\Invitation.cs" />
+    <Compile Include="Models\DataModels\Transaction.cs" />
     <Compile Include="Models\Interfaces\IUserDataAccess.cs" />
     <Compile Include="Models\Stores\InsightUserStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -241,16 +247,28 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Angular\accounts\services\accountService.js" />
+    <Content Include="Angular\about\controllers\aboutController.js" />
+    <Content Include="Angular\about\views\about.html" />
+    <Content Include="Angular\accounts\controllers\accountsController.js" />
+    <Content Include="Angular\accounts\views\accounts.overview.html" />
+    <Content Include="Angular\accounts\views\accounts..html" />
+    <Content Include="Angular\budgets\controllers\budgetsController.js" />
+    <Content Include="Angular\budgets\views\budgets.html" />
     <Content Include="Angular\app.js" />
     <Content Include="Angular\dashboard\controllers\dashboardController.js" />
     <Content Include="Angular\dashboard\views\dashboard.html" />
     <Content Include="Angular\global\services\authService.js" />
+    <Content Include="Angular\households\controllers\householdsController.js" />
+    <Content Include="Angular\households\views\households.html" />
+    <Content Include="Angular\users\controllers\usersController.js" />
+    <Content Include="Angular\users\views\users.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Media\dollar.jpg" />
+    <Content Include="Content\Media\financial_portal.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -285,6 +303,8 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\AngularUI\ui-router.js" />
+    <Content Include="Scripts\AngularUI\ui-router.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\errors.json" />
@@ -1097,10 +1117,7 @@
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Angular\accounts\directives\" />
-    <Folder Include="Angular\accounts\views\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Media\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

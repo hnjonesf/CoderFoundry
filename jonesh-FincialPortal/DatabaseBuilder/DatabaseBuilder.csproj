@@ -84,7 +84,6 @@
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetLoginsForUser.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetRolesForUser.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetUserClaims.sql" />
-    <EmbeddedResource Include="SQL\Security\Stored Procedures\IsUserInRole.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\RemoveUserClaim.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\RemoveUserFromRole.sql" />
     <EmbeddedResource Include="SQL\Security\Tables\Accounts.sql" />
@@ -92,6 +91,13 @@
     <EmbeddedResource Include="SQL\Security\Tables\Categories.sql" />
     <EmbeddedResource Include="SQL\Security\Tables\Invitations.sql" />
     <EmbeddedResource Include="SQL\Security\Tables\Transactions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\GetUserClaimsByUserId.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL\Security\Stored Procedures\GetUserLoginsByUserId.sql" />
+    <Content Include="SQL\Security\Stored Procedures\IsUserInRole.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

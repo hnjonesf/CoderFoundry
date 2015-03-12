@@ -1,0 +1,11 @@
+﻿(function () {
+    angular.module('app')
+        // Path: /
+        .controller('MenuController', ['$scope', '$state', '$stateParams', 'authService', function ($scope, $state, $stateParams, authSvc) {
+            $scope.authentication = authSvc.authentication;
+            $scope.logout = function () {
+                authSvc.logout();
+                $state.go('login');
+            }
+        }])
+})();

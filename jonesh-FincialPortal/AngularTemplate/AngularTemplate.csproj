@@ -249,6 +249,7 @@
   <ItemGroup>
     <Content Include="Angular\about\controllers\AboutController.js" />
     <Content Include="Angular\about\views\about.html" />
+    <Content Include="Angular\about\views\about.overview.html" />
     <Content Include="Angular\accounts\controllers\accountsController.js" />
     <Content Include="Angular\accounts\views\accounts.overview.html" />
     <Content Include="Angular\accounts\views\accounts..html" />
@@ -261,8 +262,8 @@
     <Content Include="Angular\households\controllers\HouseholdsController.js" />
     <Content Include="Angular\households\views\households.html" />
     <Content Include="Angular\users\controllers\LoginController.js" />
+    <Content Include="Angular\users\controllers\MenuController.js" />
     <Content Include="Angular\users\controllers\RegisterController.js" />
-    <Content Include="Angular\users\controllers\RootController.js" />
     <Content Include="Angular\users\controllers\UsersController.js" />
     <Content Include="Angular\users\views\login.html" />
     <Content Include="Angular\users\views\register.html" />
@@ -1124,6 +1125,7 @@
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Angular\global\directives\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

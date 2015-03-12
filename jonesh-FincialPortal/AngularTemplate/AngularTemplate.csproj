@@ -260,7 +260,12 @@
     <Content Include="Angular\global\services\authService.js" />
     <Content Include="Angular\households\controllers\householdsController.js" />
     <Content Include="Angular\households\views\households.html" />
-    <Content Include="Angular\users\controllers\usersController.js" />
+    <Content Include="Angular\users\controllers\LoginController.js" />
+    <Content Include="Angular\users\controllers\RegisterController.js" />
+    <Content Include="Angular\users\controllers\RootController.js" />
+    <Content Include="Angular\users\controllers\UsersController.js" />
+    <Content Include="Angular\users\views\login.html" />
+    <Content Include="Angular\users\views\register.html" />
     <Content Include="Angular\users\views\users.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />

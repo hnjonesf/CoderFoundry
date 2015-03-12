@@ -1,6 +1,7 @@
-﻿(function () {
-    angular.module('app', ['ui.router', 'ui.bootstrap', 'LocalStorageModule'])
-        .config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
+﻿var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'LocalStorageModule']);
+
+
+    app.config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
             // UI States, URL Routing & Mapping. For more info see: https://github.com/angular-ui/ui-router
             // ------------------------------------------------------------------------------------------------------------
             //  Configured, AS NEEDED, inside of their Angular directory:
@@ -63,17 +64,16 @@
 
             })
 
-            .state('users', {
-                url: '/users',
-                templateUrl: '/Angular/users/views/users.html',
+            .state('login', {
+                url: '/login',
+                templateUrl: '/Angular/users/views/login.html',
 
             })
 
-            //not properly configured, according to Thomas
-            //$locationProvider.html5Mode({
-            //    enabled: true,
-            //    requireBase: false
-            //});
+            $locationProvider.html5Mode({
+                enabled: false,
+                requireBase: false
+            });
 
 
         }])
@@ -86,4 +86,3 @@
         $rootScope.$stateParams = $stateParams;
 
     }]);
-})();

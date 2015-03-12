@@ -1,30 +1,81 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>Financial Portal</title>
 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--CSS-->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <!--JavaScript-->
     <script src="Scripts/jquery-2.1.3.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
     <script src="Scripts/angular-ui-router.min.js"></script>
     <script src="Scripts/angular-local-storage.min.js"></script>
-
+    <!--AngularJS-->
     <script src="Angular/app.js"></script>
     <script src="Angular/global/services/authIntercetper.js"></script>
     <script src="Angular/global/services/authService.js"></script>
 
-    <!--Areas-->
-        <!--Dashboard-->
-            <script src="Angular/dashboard/controllers/dashboardController.js"></script>
-        <!--Accounts-->
-            <script src="Angular/accounts/services/accountService.js"></script>
-</head>
-<body>
-    <div ng-app="app">
-        <div ui-view>
+    <!--Copyright LibreWorx 2015 All rights reserved
+    LibreWorx WebDev
+    2715 Pinedale Rd
+    Greensboro, NC   27408 USA
+    www.LibreWorx.com-->
 
+    <!--Dashboard-->
+    <script src="Angular/dashboard/controllers/dashboardController.js"></script>
+    <!--Accounts-->
+    <script src="Angular/accounts/controllers/accountsController.js"></script>
+    <!--About-->
+    <script src="Angular/about/controllers/aboutController.js"></script>
+    <!--Budgets-->
+    <script src="Angular/budgets/controllers/budgetsController.js"></script>
+    <!--Households-->
+    <script src="Angular/households/controllers/householdsController.js"></script>
+    <!--Users-->
+    <!--(users of site, not of accouts, etc)-->
+    <script src="Angular/users/controllers/usersController.js"></script>
+    <script src="Angular/users/controllers/LoginController.js"></script>
+    <script src="Angular/users/controllers/RegisterController.js"></script>
+    <script src="Angular/users/controllers/rootController.js"></script>
+</head>
+<body ng-app ="app">
+    <!--Menu-->
+    <div class="navbar navbar-inverse navbar-fixed-top" ng-controller="rootController">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/">Home</a></li>
+                    <li ng-if="isAuth()"><a href="/Help">API</a></li>
+                    <li><a href="#/about">About</a></li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li ng-if="!isAuth()">
+                        <a href="#/login" class="nav navbar-nav">Login</a>
+                    </li>
+                    <li ng-if="isAuth()">
+                        <a ng-click="logout()" href="#/" class="nav navbar-nav">Logoff</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+        <div ui-view></div>
+    <footer class="footer navbar navbar-inverse navbar-fixed-bottom">
+        <p>&copy; 2015 - LibreWorx</p>
+    </footer>
 </body>
 </html>

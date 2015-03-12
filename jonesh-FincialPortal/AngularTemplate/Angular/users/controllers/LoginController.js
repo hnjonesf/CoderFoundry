@@ -1,41 +1,29 @@
-﻿'use strict';
-app.controller('LoginController', ['$scope', '$location', 'authService', '$timeout', function ($scope, $location, authService, $timeout) {
+﻿(function () {
+    angular.module('app').controller('LoginController', ['authService', '$scope', '$timeout', '$state', function (authService, $scope, $timeout, $state) {
 
-    $scope.loginData = {
-        userName: "",
-        password: ""
-    };
+        this.model = {
+            userName: '',
+            password: ''
+        }
 
-    $scope.message = "Login to your account";
-    $scope.isError = false;
+        this.message = "Login to your account";
+        this.isError = false;
+        this.alter = '';
 
-    $scope.login = function () {
+        this.login = function () {
+            var scope = this;
 
-        authService.login($scope.loginData).then(function (response) {
-
-            $location.path('/');
-
-        },
-         function (err) {
-             $scope.message = err.error_description;
-             $scope.isError = true;
-             messageDelay(1, loginErrorCallback);
-         });
-    };
-
-    //Turn this into a directive
-
-    var messageDelay = function (interval, callBack) {
-        var timer = $timeout(function () {
-            $timeout.cancel(timer);
-            //Anything I need to do
-            callBack();
-        }, 2000 * interval);
-    }
-
-    var loginErrorCallback = function () {
-        $scope.message = 'Login to your account';
-        $scope.isError = false;
-    }
-
-}]);
+            authService.login(this.model).then(function (response) {
+                $state.go('Dashboard');
+            },
+             function (err) {
+                 scope.message = err.error_description;
+                 var timer = $timeout(function () {
+                     $timeout.cancel(timer);
+                     //Anything I need to do
+                     scope.message = "Login to your account"
+                 }, 1000 * 2);
+             });
+        };
+    }]);
+})();

@@ -60,7 +60,6 @@ app.controller('RegisterController', ['$scope', '$location', '$timeout', 'authSe
         require: '?ngModel', // get a hold of NgModelController
         link: function (scope, elem, attrs, ngModel) {
             if (!ngModel) return; // do nothing if no ng-model
-            console.log(attrs);
             // watch own value and re-validate on change
             scope.$watch('registerData.Password', function () {
                 validate();

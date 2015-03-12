@@ -7,7 +7,7 @@
 
         var _authentication = {
             isAuth: false,
-            username: "",
+            userName: "",
             token: "",
         };
 
@@ -51,7 +51,7 @@
             localStorageService.remove('authorizationData');
 
             _authentication.isAuth = false;
-            _authentication.userName = "";
+            _authentication.username = "";
             _authentication.name = "";
             _authentication.claims = null;
             _authentication.token = "";

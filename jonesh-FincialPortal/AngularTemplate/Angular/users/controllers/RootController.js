@@ -1,4 +1,4 @@
-﻿app.controller('rootController', ['$scope', '$location', 'authService', function ($scope, $location, authService) {
+﻿app.controller('RootController', ['$scope', '$location', 'authService', function ($scope, $location, authService) {
     $scope.logout = function () {
         authService.logOut();
         $location.path('/login');

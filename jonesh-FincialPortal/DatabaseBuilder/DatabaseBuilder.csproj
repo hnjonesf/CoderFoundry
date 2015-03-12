@@ -77,16 +77,16 @@
     <Folder Include="SQL\DBO\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SQL\Security\Stored Procedures\AddUserToRole.sql" />
-    <Content Include="SQL\Security\Stored Procedures\FindUserByEmail.sql" />
-    <Content Include="SQL\Security\Stored Procedures\FindUserByLogin.sql" />
-    <Content Include="SQL\Security\Stored Procedures\FindUserByUserName.sql" />
-    <Content Include="SQL\Security\Stored Procedures\GetLoginsForUser.sql" />
-    <Content Include="SQL\Security\Stored Procedures\GetRolesForUser.sql" />
-    <Content Include="SQL\Security\Stored Procedures\GetUserClaims.sql" />
-    <Content Include="SQL\Security\Stored Procedures\IsUserInRole.sql" />
-    <Content Include="SQL\Security\Stored Procedures\RemoveUserClaim.sql" />
-    <Content Include="SQL\Security\Stored Procedures\RemoveUserFromRole.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\AddUserToRole.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindUserByEmail.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindUserByLogin.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindUserByUserName.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\GetLoginsForUser.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\GetRolesForUser.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\GetUserClaims.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\IsUserInRole.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\RemoveUserClaim.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\RemoveUserFromRole.sql" />
     <EmbeddedResource Include="SQL\Security\Tables\Accounts.sql" />
     <EmbeddedResource Include="SQL\Security\Tables\BudgetItems.sql" />
     <EmbeddedResource Include="SQL\Security\Tables\Categories.sql" />

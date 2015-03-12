@@ -30,7 +30,7 @@ app.controller('LoginController', ['$scope', '$location', 'authService', '$timeo
             $timeout.cancel(timer);
             //Anything I need to do
             callBack();
-        }, 1000 * interval);
+        }, 2000 * interval);
     }
 
     var loginErrorCallback = function () {

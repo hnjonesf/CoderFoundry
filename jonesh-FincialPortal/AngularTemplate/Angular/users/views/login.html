@@ -1,4 +1,4 @@
-﻿<div ng-controller="loginController as login" class="container">
+﻿<div ng-controller="LoginController as login" class="container">
     <div class="col-sm-6 col-sm-offset-3">
         <h2 class="form-signin-heading">{{login.message}}</h2>
         <form class="form-signin" ng-submit="login.login()">
@@ -6,8 +6,11 @@
             <input type="text" ng-model="login.model.Username" class="form-control" placeholder="Username or Email" required autofocus>
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" ng-model="login.model.Password" class="form-control" placeholder="Password" required>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <br/>
+            <button class="btn btn-lg btn-default" type="submit">Sign in</button>
         </form>
+        <div class="forgot"><a class="forgot" href="#/">Forgot Username or Password?</a></div>
+        <div class="forgot"><a class="forgot" href="#/register">Register a new account</a></div>
     </div>
 </div>
 

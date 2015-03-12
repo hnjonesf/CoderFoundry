@@ -5,25 +5,26 @@ app.controller('RegisterController', ['$scope', '$location', '$timeout', 'authSe
     $scope.message = "Register a new account";
     $scope.isError = false;
 
-    $scope.registerData = {
+    $scope.model = {
         Email: "",
+        Name: "",
+        Username: "",
         Password: "",
         ConfirmPassword: ""
     };
 
     $scope.register = function () {
-
-        authService.register($scope.registerData).then(function (response) {
+        authService.register($scope.model).then(function (response) {
 
             $scope.savedSuccessfully = true;
-            $scope.message = "User has been registered successfully, you will be redicted to login page in 2 seconds.";
-            messageDelay(2, redirectCallback);
+            $scope.message = "User has been registered successfully, you will be redicted to login page in 4 seconds.";
+            messageDelay(4, redirectCallback);
         },
          function (response) {
              var errors = [];
-             for (var key in response.data.modelState) {
-                 for (var i = 0; i < response.data.modelState[key].length; i++) {
-                     errors.push(response.data.modelState[key][i]);
+             for (var key in response.data.ModelState) {
+                 for (var i = 0; i < response.data.ModelState[key].length; i++) {
+                     errors.push(response.data.ModelState[key][i]);
                  }
              }
              $scope.message = "Failed to register user due to:" + errors.join(' ');
@@ -39,7 +40,7 @@ app.controller('RegisterController', ['$scope', '$location', '$timeout', 'authSe
             $timeout.cancel(timer);
             //Anything I need to do
             callBack();
-        }, 1000 * interval);
+        }, 2000 * interval);
     }
 
     var registerErrorCallback = function () {
@@ -50,7 +51,7 @@ app.controller('RegisterController', ['$scope', '$location', '$timeout', 'authSe
     var redirectCallback = function () {
         $scope.message = "Register a new account";
         $scope.isError = false;
-        $location.path('/login');
+        $location.path('#/login');
     }
 }]).directive('passwordVerify', function () {
     return {

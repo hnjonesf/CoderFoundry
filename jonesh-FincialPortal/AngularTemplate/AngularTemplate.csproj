@@ -247,18 +247,18 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Angular\about\controllers\aboutController.js" />
+    <Content Include="Angular\about\controllers\AboutController.js" />
     <Content Include="Angular\about\views\about.html" />
     <Content Include="Angular\accounts\controllers\accountsController.js" />
     <Content Include="Angular\accounts\views\accounts.overview.html" />
     <Content Include="Angular\accounts\views\accounts..html" />
-    <Content Include="Angular\budgets\controllers\budgetsController.js" />
+    <Content Include="Angular\budgets\controllers\BudgetsController.js" />
     <Content Include="Angular\budgets\views\budgets.html" />
     <Content Include="Angular\app.js" />
-    <Content Include="Angular\dashboard\controllers\dashboardController.js" />
+    <Content Include="Angular\dashboard\controllers\DashboardController.js" />
     <Content Include="Angular\dashboard\views\dashboard.html" />
     <Content Include="Angular\global\services\authService.js" />
-    <Content Include="Angular\households\controllers\householdsController.js" />
+    <Content Include="Angular\households\controllers\HouseholdsController.js" />
     <Content Include="Angular\households\views\households.html" />
     <Content Include="Angular\users\controllers\LoginController.js" />
     <Content Include="Angular\users\controllers\RegisterController.js" />
@@ -266,6 +266,8 @@
     <Content Include="Angular\users\controllers\UsersController.js" />
     <Content Include="Angular\users\views\login.html" />
     <Content Include="Angular\users\views\register.html" />
+    <Content Include="Angular\users\views\PasswordVerifyTemplate.html" />
+    <Content Include="Angular\users\views\profile.html" />
     <Content Include="Angular\users\views\users.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />

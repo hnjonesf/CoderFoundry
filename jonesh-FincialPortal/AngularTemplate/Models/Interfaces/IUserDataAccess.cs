@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using AngularTemplate.Models;
+using AngularTemplate.Models.Database;
 using Insight.Database;
+using FinalTemplate.Models.DataModels;
 
-namespace AngularTemplate.Models.Database
+namespace AngularTemplate.Models.Interfaces
 {
     [Sql(Schema = "Security")]
     public interface IUserDataAccess
@@ -27,6 +28,5 @@ namespace AngularTemplate.Models.Database
         Task InsertUserLoginAsync(UserLogin userLogin);
         Task DeleteUserLoginAsync(UserLogin login);
         Task InsertUserClaimAsync(UserClaim claim);
-
     }
 }

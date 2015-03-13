@@ -4,7 +4,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AngularTemplate.Models.Database;
 using Microsoft.AspNet.Identity;
-
+using AngularTemplate.Models.Interfaces;
+using System.Linq;
 
 namespace AngularTemplate.Models.Stores
 {

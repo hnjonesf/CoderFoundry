@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using AngularTemplate.Models;
 using AngularTemplate.Models.Database;
+using AngularTemplate.Models.Interfaces;
 using System.Data.SqlClient;
 using Insight.Database;
 using AngularTemplate.Models.Stores;
@@ -24,7 +25,7 @@ namespace AngularTemplate
         {
             var connection = context.Get<SqlConnection>().As<IUserDataAccess>();
             IUserDataAccess userDataAccess = connection;
-            var manager = new ApplicationUserManager(new InsightUserStore(userDataAccess));
+            var manager = new ApplicationUserManager(new AngularTemplate.Models.Stores.InsightUserStore(userDataAccess));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser,int>(manager)
             {

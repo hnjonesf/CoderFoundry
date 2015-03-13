@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Financial Portal</title>
+    <link href="NgApp/static/bootstrap.css" rel="stylesheet" />
+    <link href="NgApp/static/font-awesome.css" rel="stylesheet" />
+    <link href="NgApp/static/select.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+</head>
+<body ng-app="app" style="background-image: url('img/Budget.jpg');background-repeat: no-repeat; background-size: 100%;">
+ 
+
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="container" style="padding:5px;" ng-controller="authController">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Financial Portal</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" ng-show="auth.isAuth">
+                        <li class="active"><a ui-sref="Home">Home</a></li>
+                        <li><a ui-sref="Accounts">Accounts</a></li>
+                        <li><a ui-sref="Budget">Budget</a></li>
+                        <li><a ui-sref="User">User</a></li>
+                        <li><a ui-sref="Household">Household</a></li>
+                    </ul>
+                    
+
+                                      
+                    <form class="navbar-form navbar-right" role="form" ng-show="auth.isAuth">
+                        <button class="btn btn-primary" type="submit" data-ng-click="logout()">Logout</button>
+                    </form>
+                    <div data-ng-hide="message == ''" class="navbar-form navbar-right">{{message}}</div>
+
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal4Signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h2 class="modal-title" id="myModalLabel">Registration Form</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form" ng-hide="auth.isAuth">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="UserName">UserName:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="Username" data-ng-model="registration.UserName" required autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="name">Name:</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="Name" data-ng-model="registration.Name" required autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="pwd">Password:</label>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control" placeholder="Password" data-ng-model="registration.Password" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="pwd">Confirm Password:</label>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control" placeholder="Confirm Password" data-ng-model="registration.ConfirmedPassword" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="Email">Email</label>
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control" placeholder="Email" data-ng-model="registration.Email" required autofocus>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-ng-click="signUp()">Save changes</button>
+                            </div>
+                        </form>
+                        <div data-ng-hide="message2 == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                            {{message2}}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div ui-view ng-show="auth.isAuth" style="background-color:white; padding:25px;"></div>
+
+        <div class="row" ng-hide="auth.isAuth">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <form class="form-login" role="form" novalidate>
+                    <h1 class="form-login-heading">Login</h1>
+                    <input type="text" class="form-control" placeholder="Username" data-ng-model="loginData.username" required autofocus>
+                    <input type="password" class="form-control" placeholder="Password" data-ng-model="loginData.password" required>
+                    <button class="btn btn-lg btn-info btn-block" type="submit" data-ng-click="login()">Login</button>
+                    <button class="btn btn-lg btn-info btn-block" type="submit" data-toggle="modal" data-target="#myModal4Signup">
+                        Register
+                    </button>
+                </form>
+            </div>
+
+            </div>
+        </div>
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+            function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+    </script>
+    <!-- third party scripts scripts -->
+        <script src="NgApp/static/jquery-1.11.1.min.js"></script>
+        <script src="NgApp/static/bootstrap.js"></script>
+        <script src="NgApp/Core/angular.min.js"></script>
+        <script src="NgApp/Core/angular-sanitize.min.js"></script>
+        <script src="NgApp/Core/angular-ui-router.min.js"></script>
+        <script src="NgApp/Core/angular-local-storage.min.js"></script>
+        <script src="NgApp/Core/angular-route.min.js"></script>
+        <script src="NgApp/static/ui-bootstrap.js"></script>
+        <script src="NgApp/static/ui-bootstrap-tpls.js"></script>
+        <script src="NgApp/static/select.js"></script>
+        
+        <!-- application scripts -->
+        <script src="NgApp/app.js"></script>
+        <script src="NgApp/Services/authServices.js"></script>
+        <script src="NgApp/Services/authInterceptorSvc.js"></script>
+        <script src="NgApp/Services/homeServices.js"></script>
+        <script src="NgApp/Services/accountServices.js"></script>
+        <script src="NgApp/Services/transactionServices.js"></script>
+        <script src="NgApp/Services/budgetServices.js"></script>
+        <script src="NgApp/Services/householdServices.js"></script>
+        <script src="NgApp/Controllers/homeController.js"></script>
+        <script src="NgApp/Controllers/authController.js"></script>
+        <script src="NgApp/Controllers/Accounts/AccountsCtrl.js"></script>
+        <script src="NgApp/Controllers/Accounts/EditAccountModalCtrl.js"></script>
+        <script src="NgApp/Controllers/Accounts/CreateAccountModalCtrl.js"></script>
+        <script src="NgApp/Controllers/Transactions/TransactionsCtrl.js"></script>
+        <script src="NgApp/Controllers/Transactions/CreateTransactionModalCtrl.js"></script>
+        <script src="NgApp/Controllers/Transactions/EditTransactionModalCtrl.js"></script>
+        <script src="NgApp/Controllers/Budget/BudgetCtrl.js"></script>
+        <script src="NgApp/Controllers/Budget/EditBudgetModalCtrl.js"></script>
+        <script src="NgApp/Controllers/User/EditUserModalCtrl.js"></script>
+        <script src="NgApp/Controllers/User/UserCtrl.js"></script>
+        <script src="NgApp/Controllers/Household/HouseholdCtrl.js"></script>
+        <script src="NgApp/Controllers/Household/CreateInvitationModalCtrl.js"></script>
+        <script src="NgApp/Filters/Pagination.js"></script>
+    
+</body>
+</html>

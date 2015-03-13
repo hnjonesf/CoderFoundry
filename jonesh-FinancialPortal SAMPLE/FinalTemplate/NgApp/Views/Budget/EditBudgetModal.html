@@ -1,0 +1,75 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Edit Budget</h3>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" role="form">
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="Income">Income</label>
+            <div class="col-sm-6">
+                <input type="number" min="0" class="form-control" data-ng-model="editBudget.income" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="Investments">Investments</label>
+            <div class="col-sm-6">
+                <input type="number" min ="0" class="form-control" data-ng-model="editBudget.investments" required>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="Apparel">Apparel</label>
+            <div class="col-sm-6">
+                <input type="number" min="0" class="form-control" data-ng-model="editBudget.apparel" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="Food">Food</label>
+            <div class="col-sm-6">
+                <input type="number" min="0" class="form-control" data-ng-model="editBudget.food" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="HealthCare">HealthCare</label>
+            <div class="col-sm-6">
+                <input type="number" min="0" class="form-control" data-ng-model="editBudget.healthCare" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="Housing">Housing</label>
+            <div class="col-sm-6">
+                <input type="number" min="0" class="form-control" data-ng-model="editBudget.housing" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="Other">Other</label>
+            <div class="col-sm-6">
+                <input type="number" min="0" class="form-control" data-ng-model="editBudget.other" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="Transportation">Transportation</label>
+            <div class="col-sm-6">
+                <input type="number" min="0" class="form-control" data-ng-model="editBudget.transportation" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="Utilities">Utilities</label>
+            <div class="col-sm-6">
+                <input type="number" min="0" class="form-control" data-ng-model="editBudget.utilities" required>
+            </div>
+        </div>
+
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="$dismiss()">Close</button>
+    <button type="button" class="btn btn-primary" data-ng-click="updateBudget(editBudget)">Save changes</button>
+</div>

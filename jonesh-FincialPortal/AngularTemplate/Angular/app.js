@@ -27,8 +27,8 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
     })
 
     .state('About', {
-        url: '/about',
-        templateUrl: '/Angular/about/views/about.html',
+        url: '/About',
+        templateUrl: '/Angular/about/views/about.overview.html',
         data: {
             Authorize: "Anonymous"
         }
@@ -36,12 +36,12 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
     })
 
     .state('Accounts', {
-        url: '/accounts',
+        url: '/Accounts',
         templateUrl: '/Angular/accounts/views/accounts.html',
         abstract: true
     })
 
-    .state('Accounts.overview', {
+    .state('Accounts.Overview', {
         url: '/',
         templateUrl: '/Angular/accounts/views/accounts.overview.html',
         data: {

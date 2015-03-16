@@ -18,7 +18,6 @@ namespace FinalTemplate.Models.DataModels
         public decimal Other { get; set; }
         public decimal Transportation { get; set; }
         public decimal Utilities { get; set; }
-
         public decimal ApparelT { get; set; }
         public decimal FoodT { get; set; }
         public decimal HealthCareT { get; set; }

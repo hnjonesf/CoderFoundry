@@ -237,7 +237,6 @@
     <Compile Include="Models\DataModels\Account.cs" />
     <Compile Include="Models\DataModels\Budget.cs" />
     <Compile Include="Models\DataModels\Category.cs" />
-    <Compile Include="Models\DataModels\Household.cs" />
     <Compile Include="Models\DataModels\Invitation.cs" />
     <Compile Include="Models\DataModels\Transaction.cs" />
     <Compile Include="Models\Interfaces\IAccountDataAccess .cs" />
@@ -251,9 +250,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Angular\about\controllers\AboutController.js" />
-    <Content Include="Angular\about\views\about.html" />
     <Content Include="Angular\about\views\about.overview.html" />
-    <Content Include="Angular\accounts\controllers\AccountsController.js" />
+    <Content Include="Angular\accounts\controllers\AccountsOverviewController.js" />
     <Content Include="Angular\accounts\views\Accounts.html" />
     <Content Include="Angular\accounts\views\accounts.overview.html" />
     <Content Include="Angular\accounts\views\CreateAccountModal.html" />
@@ -266,7 +264,6 @@
     <Content Include="Angular\dashboard\views\dashboard.html" />
     <Content Include="Angular\global\services\accountServices.js" />
     <Content Include="Angular\global\services\authService.js" />
-    <Content Include="Angular\households\controllers\HouseholdsController.js" />
     <Content Include="Angular\households\views\households.html" />
     <Content Include="Angular\users\controllers\LoginController.js" />
     <Content Include="Angular\users\controllers\MenuController.js" />
@@ -282,7 +279,32 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Media\dollar.jpg" />
+    <Content Include="Content\Media\favicon.ico\android-icon-144x144.png" />
+    <Content Include="Content\Media\favicon.ico\android-icon-192x192.png" />
+    <Content Include="Content\Media\favicon.ico\android-icon-36x36.png" />
+    <Content Include="Content\Media\favicon.ico\android-icon-48x48.png" />
+    <Content Include="Content\Media\favicon.ico\android-icon-72x72.png" />
+    <Content Include="Content\Media\favicon.ico\android-icon-96x96.png" />
+    <Content Include="Content\Media\favicon.ico\apple-icon-114x114.png" />
+    <Content Include="Content\Media\favicon.ico\apple-icon-120x120.png" />
+    <Content Include="Content\Media\favicon.ico\apple-icon-144x144.png" />
+    <Content Include="Content\Media\favicon.ico\apple-icon-152x152.png" />
+    <Content Include="Content\Media\favicon.ico\apple-icon-180x180.png" />
+    <Content Include="Content\Media\favicon.ico\apple-icon-57x57.png" />
+    <Content Include="Content\Media\favicon.ico\apple-icon-60x60.png" />
+    <Content Include="Content\Media\favicon.ico\apple-icon-72x72.png" />
+    <Content Include="Content\Media\favicon.ico\apple-icon-76x76.png" />
+    <Content Include="Content\Media\favicon.ico\apple-icon-precomposed.png" />
+    <Content Include="Content\Media\favicon.ico\apple-icon.png" />
+    <Content Include="Content\Media\favicon.ico\browserconfig.xml" />
+    <Content Include="Content\Media\favicon.ico\favicon-16x16.png" />
+    <Content Include="Content\Media\favicon.ico\favicon-32x32.png" />
+    <Content Include="Content\Media\favicon.ico\favicon-96x96.png" />
+    <Content Include="Content\Media\favicon.ico\favicon.ico" />
+    <Content Include="Content\Media\favicon.ico\ms-icon-144x144.png" />
+    <Content Include="Content\Media\favicon.ico\ms-icon-150x150.png" />
+    <Content Include="Content\Media\favicon.ico\ms-icon-310x310.png" />
+    <Content Include="Content\Media\favicon.ico\ms-icon-70x70.png" />
     <Content Include="Content\Media\financial_portal.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -358,6 +380,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\Media\favicon.ico\manifest.json" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -1133,6 +1156,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Angular\global\directives\" />
+    <Folder Include="Angular\households\controllers\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

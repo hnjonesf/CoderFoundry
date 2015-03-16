@@ -5,6 +5,9 @@ using System.Web;
 
 namespace FinalTemplate.Models.DataModels
 {
+    /// <summary>
+    /// Invitations sent and accepted to join Household
+    /// </summary>
     public class Invitation
     {
         public int Id { get; set; }

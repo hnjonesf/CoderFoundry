@@ -5,6 +5,9 @@ using System.Web;
 
 namespace FinalTemplate.Models.DataModels
 {
+    /// <summary>
+    /// Financial Transactions 
+    /// </summary>
     public class Transaction
     {
         public int Id { get; set; }

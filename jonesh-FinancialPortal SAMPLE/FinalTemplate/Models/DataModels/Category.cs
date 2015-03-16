@@ -5,6 +5,9 @@ using System.Web;
 
 namespace FinalTemplate.Models.DataModels
 {
+    /// <summary>
+    /// Budget and Expense Category
+    /// </summary>
     public class Category
     {
         public int Id { get; set; }

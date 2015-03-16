@@ -96,14 +96,13 @@
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetUserClaimsByUserId.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SQL\Security\Stored Procedures\AddTransaction.sql" />
     <Content Include="SQL\Security\Stored Procedures\AddUserToHousehold.sql" />
     <Content Include="SQL\Security\Stored Procedures\CreateAccount.sql" />
     <Content Include="SQL\Security\Stored Procedures\DeleteAccount.sql" />
     <Content Include="SQL\Security\Stored Procedures\DeleteTransaction.sql" />
     <Content Include="SQL\Security\Stored Procedures\FindCategoriesByHousehold.sql" />
-    <Content Include="SQL\Security\Stored Procedures\FindTransactions.sql" />
-    <Content Include="SQL\Security\Stored Procedures\ListCategoriesByHousehold.sql" />
+    <Content Include="SQL\Security\Stored Procedures\FindTransactionsByUserId.sql" />
+    <Content Include="SQL\Security\Stored Procedures\FindTransactionsByHousehold.sql" />
     <Content Include="SQL\Security\Stored Procedures\RemoveUserFromHousehold.sql" />
     <Content Include="SQL\Security\Stored Procedures\SearchAccount.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\FindUserByHousehold.sql" />

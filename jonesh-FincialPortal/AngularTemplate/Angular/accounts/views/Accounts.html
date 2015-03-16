@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Account Name</th>
+                <th>Household</th>
                 <th>Balance</th>
                 <th>Reconciled Balance</th>
                 <th></th>
@@ -19,6 +20,7 @@
         <tbody>
             <tr ng-repeat="Account in Accounts">
                 <td>{{Account.name}}</td>
+                <td>{{Account.household}}</td>
                 <td>{{Account.balance| currency:'$'}}</td>
                 <td>{{Account.reconciledBalance| currency:'$'}}</td>
                 <td>

@@ -1,19 +1,20 @@
 ﻿<div class="row">
     <div class="col-md-12">
-        <!--<div class="col-md-6 col-md-offset-3">-->
-        <h4>Forecast by City</h4>
+        <div class="col-md-6 col-md-offset-3">
+            <h4>Forecast by City</h4>
 
-        <form name="formAddress" novalidate>
-            <input ng-model="details.formattedAddress" required
-                   ng-autocomplete details="details"
-                   placeholder="Start typing your address" id="address" name="address" type="text" validate-fn="customValidate()" />
+            <form name="formAddress" novalidate>
+                <input ng-model="details.formattedAddress" required
+                       ng-autocomplete details="details"
+                       placeholder="Start typing your address" id="address" name="address" type="text" validate-fn="customValidate()" />
 
-            <div ng-messages for="formAddress['address'].$error" class="help-block error">
-                <div ng-message when="required">Please provide your address</div>
-                <div ng-message when="parse">Select one of the suggested options</div>
-            </div>
-            <a href="#/forecast" class="btn btn-primary">Get Forecast</a>
-        </form>
+                <div ng-messages for="formAddress['address'].$error" class="help-block error">
+                    <div ng-message when="required">Please provide your address</div>
+                    <div ng-message when="parse">Select one of the suggested options</div>
+                </div>
+                <a href="#/forecast" class="btn btn-primary">Get Forecast</a>
+            </form>
+        </div>
     </div>
 </div>
 

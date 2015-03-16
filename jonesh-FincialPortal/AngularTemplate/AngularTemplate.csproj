@@ -225,7 +225,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BudgetController.cs" />
+    <Compile Include="Controllers\ApiAccountsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -252,11 +252,14 @@
     <Content Include="Angular\about\controllers\AboutController.js" />
     <Content Include="Angular\about\views\about.overview.html" />
     <Content Include="Angular\accounts\controllers\AccountsOverviewController.js" />
+    <Content Include="Angular\accounts\controllers\CreateAccountModalController.js" />
     <Content Include="Angular\accounts\views\Accounts.html" />
     <Content Include="Angular\accounts\views\accounts.overview.html" />
     <Content Include="Angular\accounts\views\CreateAccountModal.html" />
     <Content Include="Angular\accounts\views\DeleteAccountModal.html" />
     <Content Include="Angular\accounts\views\EditAccountModal.html" />
+    <Content Include="Angular\categories\controllers\CategoriesController.js" />
+    <Content Include="Angular\categories\views\categories.html" />
     <Content Include="Angular\budgets\controllers\BudgetsController.js" />
     <Content Include="Angular\budgets\views\budgets.html" />
     <Content Include="Angular\app.js" />
@@ -264,6 +267,8 @@
     <Content Include="Angular\dashboard\views\dashboard.html" />
     <Content Include="Angular\global\services\accountServices.js" />
     <Content Include="Angular\global\services\authService.js" />
+    <Content Include="Angular\households\controllers\CreateInvitationModalCtrl.js" />
+    <Content Include="Angular\households\controllers\HouseholdsController.js" />
     <Content Include="Angular\households\views\households.html" />
     <Content Include="Angular\users\controllers\LoginController.js" />
     <Content Include="Angular\users\controllers\MenuController.js" />
@@ -1156,7 +1161,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Angular\global\directives\" />
-    <Folder Include="Angular\households\controllers\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

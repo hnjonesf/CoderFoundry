@@ -17,14 +17,9 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
     //  views
     // ------------------------------------------------------------------------------------------------------------
 
+
     $stateProvider
-    .state('Dashboard', {
-        url: '/',
-        templateUrl: '/Angular/dashboard/views/dashboard.html',
-        data: {
-            Authorize: "All"
-        }
-    })
+
 
     .state('About', {
         url: '/About',
@@ -49,7 +44,6 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         }
     })
 
-
     .state('Accounts.Edit', {
         url: '/edit',
         templateUrl: '/Angular/accounts/views/accounts.edit.html',
@@ -73,6 +67,23 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
             Authorize: "All"
         }
 
+    })
+
+    .state('Categories', {
+        url: '/categories',
+        templateUrl: '/Angular/categories/views/categories.html',
+        data: {
+            Authorize: "All"
+        }
+
+    })
+
+    .state('Dashboard', {
+        url: '/',
+        templateUrl: '/Angular/dashboard/views/dashboard.html',
+        data: {
+            Authorize: "All"
+        }
     })
 
     .state('Households', {

@@ -4,7 +4,7 @@
     angular.module('app')
         .controller('CreateAccountModalController', CreateAccountModalController);
 
-    CreateAccountModalController.$inject = ['$scope','$modalInstance', 'accountServices'];
+    CreateAccountModalController.$inject = ['$scope', '$modalInstance', 'accountServices'];
 
     function CreateAccountModalController($scope, $modalInstance, accountServices) {
 

@@ -7,7 +7,10 @@
 
     accountServices.$inject = ['$http'];
 
-    function accountServices($http){
+    function accountServices($http) {
+
+
+
         return {
             getAccounts: getAccounts,
             createAccount: createAccount,
@@ -30,6 +33,9 @@
         function deleteAccount(id) {
             return $http.delete('api/accounts/DeleteAccount', { params: { "Id": id } });
         }
+
+
+
     }
 }());
 

@@ -226,6 +226,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApiAccountsController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -241,6 +242,7 @@
     <Compile Include="Models\DataModels\Transaction.cs" />
     <Compile Include="Models\Interfaces\IAccountDataAccess .cs" />
     <Compile Include="Models\Interfaces\IBudgetDataAccess.cs" />
+    <Compile Include="Models\Interfaces\ICategoryDataAccess.cs" />
     <Compile Include="Models\Interfaces\IUserDataAccess.cs" />
     <Compile Include="Models\Stores\InsightUserStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -252,7 +254,6 @@
     <Content Include="Angular\about\controllers\AboutController.js" />
     <Content Include="Angular\about\views\about.overview.html" />
     <Content Include="Angular\accounts\controllers\AccountsOverviewController.js" />
-    <Content Include="Angular\accounts\controllers\CreateAccountModalController.js" />
     <Content Include="Angular\accounts\views\Accounts.html" />
     <Content Include="Angular\accounts\views\accounts.overview.html" />
     <Content Include="Angular\accounts\views\CreateAccountModal.html" />
@@ -265,9 +266,8 @@
     <Content Include="Angular\app.js" />
     <Content Include="Angular\dashboard\controllers\DashboardController.js" />
     <Content Include="Angular\dashboard\views\dashboard.html" />
-    <Content Include="Angular\global\services\accountServices.js" />
+    <Content Include="Angular\global\services\accountsService.js" />
     <Content Include="Angular\global\services\authService.js" />
-    <Content Include="Angular\households\controllers\CreateInvitationModalCtrl.js" />
     <Content Include="Angular\households\controllers\HouseholdsController.js" />
     <Content Include="Angular\households\views\households.html" />
     <Content Include="Angular\users\controllers\LoginController.js" />
@@ -1158,6 +1158,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Angular\global\directives\" />

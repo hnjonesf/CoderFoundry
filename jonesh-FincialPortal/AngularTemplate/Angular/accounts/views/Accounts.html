@@ -1,7 +1,7 @@
-﻿<button class="btn btn-primary" ng-click="createAccount()">
+﻿<div ui-view class="moveDown"></div>
+<!--<button class="btn btn-primary" ng-click="createAccount()">
     Create a new account
-</button>
-
+</button>-->
 <div>
     <br />
     <br />
@@ -9,7 +9,6 @@
         <thead>
             <tr>
                 <th>Account Name</th>
-                <th>Household</th>
                 <th>Balance</th>
                 <th>Reconciled Balance</th>
 
@@ -18,7 +17,6 @@
         <tbody>
             <tr ng-repeat="Account in Accounts">
                 <td>{{Account.name}}</td>
-                <td>{{Account.household}}</td>
                 <td>{{Account.balance| currency:'$'}}</td>
                 <td>{{Account.reconciledBalance| currency:'$'}}</td>
                 <td>
@@ -40,3 +38,4 @@
         </tbody>
     </table>
 </div>
+

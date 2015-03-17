@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
+﻿using AngularTemplate.InsightUserStore.DataAccess;
+using AngularTemplate.Models.Interfaces;
+using FinalTemplate.Models.DataModels;
+using Insight.Database;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
@@ -13,10 +17,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
-using Insight.Database;
-using AngularTemplate.InsightUserStore.DataAccess;
-using AngularTemplate.Models.Interfaces;
-using FinalTemplate.Models.DataModels;
 
 namespace AngularTemplate.Controllers
 {
@@ -37,11 +37,11 @@ namespace AngularTemplate.Controllers
         [Authorize]
         [HttpGet]
         [Route("GetAccounts")]
-        public async Task<IHttpActionResult> GetAccounts()
+        public async Task<IList<Account>> GetAccounts()
         {
             var user = await um.FindByIdAsync(HttpContext.Current.User.Identity.GetUserId<int>());
-            var Accounts = await db.GetAccountsForHouseHold(user.Household);
-            return Ok(Accounts);
+            var Accounts = await db.GetAccountsForHouseHold(user.HouseHold);
+            return (Accounts);
         }
 
         // POST: api/Accounts
@@ -54,7 +54,7 @@ namespace AngularTemplate.Controllers
 
             var newAccount = new Account()
             {
-                HouseHold = user.Household,
+                HouseHold = user.HouseHold,
                 Name = account.Name,
                 Balance = 0,
                 ReconciledBalance = 0
@@ -80,8 +80,7 @@ namespace AngularTemplate.Controllers
         {
             var user = await um.FindByIdAsync(HttpContext.Current.User.Identity.GetUserId<int>());
             await db.DeleteAccountAsync(Id);
-            await db.SumTransactionsByAccount(Id, user.Household);
+ //           await db.SumTransactionsByAccount(Id, user.Household);
         }
-
     }
 }

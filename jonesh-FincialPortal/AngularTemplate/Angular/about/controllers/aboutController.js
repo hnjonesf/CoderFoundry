@@ -1,6 +1,4 @@
-﻿(function () {
-    angular.module('app')
-        // Path: /
-        .controller('AboutController', ['$scope', '$state', '$stateParams' , function ($scope, $state, $stateParams) {
-        }])
-})();
+﻿angular.module('app')
+        .controller('AboutController', ['$scope', '$state', '$stateParams', function ($scope, $state, $stateParams) {
+
+        }]);

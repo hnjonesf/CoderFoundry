@@ -1,14 +1,13 @@
-﻿(function () {
-    angular.module('app')
-        .controller('AccountsOverviewController', ['$scope', '$state', '$stateParams', 'accountServices', function ($scope, $state, $stateParams, accountServices) {
-            function getAccounts() {
-                console.log("HELP!!! AccountsOverviewController");
-                accountServices.getAccounts().then(function (res) {
-                    $scope.Accounts = res.data;
-                    console.info('GetAccount succeeded');
-                }, function (res) {
-                    console.info('GetAccount failed');
-                });
-            }
-        }])
-})();
+﻿angular.module('app')
+.controller('AccountsOverviewController', ['$scope', '$state', '$stateParams',
+    function ($scope, $state, $stateParams) {
+        $scope.Account = {
+            name: "Checking",
+            balance: 333.32,
+            reconciledBalance: 333.31
+        };
+
+        return ($scope.Account);
+
+
+}]);     

@@ -9,7 +9,7 @@ namespace FinalTemplate.Models.DataModels
     {
         public int Id { get; set; }
         public int AccountId { get; set; }
-        public int Household {get; set;}
+        public int HouseHold {get; set;}
         public decimal Amount { get; set; }
         public bool Reconciled {get; set;}
         public DateTimeOffset Date { get; set; }

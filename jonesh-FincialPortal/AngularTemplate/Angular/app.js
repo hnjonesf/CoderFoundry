@@ -32,7 +32,7 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
 
     .state('Accounts', {
         url: '/Accounts',
-        templateUrl: '/Angular/accounts/views/accounts.html',
+        templateUrl: '/Angular/accounts/views/Accounts.html',
         abstract: true
     })
 

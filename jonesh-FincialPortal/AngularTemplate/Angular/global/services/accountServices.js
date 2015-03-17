@@ -1,9 +1,9 @@
-﻿'use strict';
-
-(function () {
+﻿(function () {
     angular.module('app')
         .factory('accountServices', ['$scope', '$http', 'accountServices',
             function ($scope, $http, accountServices) {
+
+                console.log("HELP !!! accountServices.js");
 
                 return {
                     getAccounts: getAccounts,

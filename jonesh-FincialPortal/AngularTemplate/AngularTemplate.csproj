@@ -255,7 +255,6 @@
     <Content Include="Angular\about\views\about.overview.html" />
     <Content Include="Angular\accounts\controllers\AccountsOverviewController.js" />
     <Content Include="Angular\accounts\views\Accounts.html" />
-    <Content Include="Angular\accounts\views\accounts.overview.html" />
     <Content Include="Angular\accounts\views\CreateAccountModal.html" />
     <Content Include="Angular\accounts\views\DeleteAccountModal.html" />
     <Content Include="Angular\accounts\views\EditAccountModal.html" />

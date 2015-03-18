@@ -3,10 +3,9 @@ angular.module( 'app' )
     .factory('accountsService', ['$http', function ($http) {
 
         var factory = {};
-
-        factory.getAccounts = function (household) {
-            var options = { params: { HouseHold: household } };
-            return $http.get('/api/accounts/GetAccounts').then(function (response) {
+        factory.getAccounts = function (houseHold) {
+            var options = { params: { houseHold: houseHold } };
+            return $http.get('/api/accounts/GetAccounts',options).then(function (response) {
                 return response.data;
             });
         };
@@ -15,17 +14,20 @@ angular.module( 'app' )
 
 }]);
 
-
-//factory.getAccounts = function () {
-//    return $http.get('api/accounts/GetAccount')
-//    .then(function (response) {
-//        return response.data;
-//    });
+//from cars...
+//factory.getMakes = function (year) {
+//    var options = { params: { year: year } };
+//    return $http.get('/api/makes', options)
+//        .then(function (response) {
+//            return response.data;
+//        });
 //};
-
-
-//function getAccounts() {
-//    return $http.get('api/accounts/GetAccounts');
+//from cars...
+//scope.getMakes = function () {
+//carSvc.getMakes(scope.selectedYear)
+//.then(function (data) {
+//    scope.makes = data;
+//});
 //}
 
 //function createAccount(account) {

@@ -2,7 +2,8 @@
 
     'use strict';
 
-    angular.module('app').controller('AccountsCtrl', AccountsCtrl);
+    angular.module('app')
+        .controller('AccountsCtrl', AccountsCtrl);
 
     AccountsCtrl.$inject = ['$scope', 'accountServices', '$modal', '$templateCache', '$state'];
 

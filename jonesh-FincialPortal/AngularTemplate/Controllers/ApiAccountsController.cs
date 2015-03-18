@@ -34,18 +34,17 @@ namespace AngularTemplate.Controllers
         }
 
         // GET: api/Accounts
-        [Authorize]
         [HttpGet]
         [Route("GetAccounts")]
-        public async Task<IList<Account>> GetAccounts()
+        public async Task<IList<Account>> GetAccounts(int HouseHold)
         {
             var user = await um.FindByIdAsync(HttpContext.Current.User.Identity.GetUserId<int>());
-            var Accounts = await db.GetAccountsForHouseHold(user.HouseHold);
-            return (Accounts);
+            var Accounts = await db.FindAccountsByHouseHold(HouseHold);
+
+            return Ok(Accounts);
         }
 
         // POST: api/Accounts
-        [Authorize]
         [HttpPost]
         [Route("CreateAccount")]
         public async Task<int> CreateAccount(Account account)

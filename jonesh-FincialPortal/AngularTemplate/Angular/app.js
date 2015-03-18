@@ -33,16 +33,19 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
     .state('Accounts', {
         url: '/Accounts',
         templateUrl: '/Angular/accounts/views/Accounts.html',
-        abstract: true
-    })
-
-    .state('Accounts.Overview', {
-        url: '/',
-        templateUrl: '/Angular/accounts/views/accounts.overview.html',
         data: {
             Authorize: "All"
         }
+        //abstract: true
     })
+
+    //.state('Accounts.Overview', {
+    //    url: '/',
+    //    templateUrl: '/Angular/accounts/views/accounts.overview.html',
+    //    data: {
+    //        Authorize: "All"
+    //    }
+    //})
 
     .state('Accounts.Edit', {
         url: '/edit',

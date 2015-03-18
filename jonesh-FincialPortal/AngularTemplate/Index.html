@@ -42,12 +42,14 @@
     <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
 
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/angular-local-storage.min.js"></script>
+
     <!--AngularJS-->
     <script src="Angular/app.js"></script>
     <script src="Angular/global/services/authIntercetper.js"></script>
     <script src="Angular/global/services/authService.js"></script>
-    <script src="Scripts/angular-ui-router.min.js"></script>
-    <script src="Scripts/angular-local-storage.min.js"></script>
+    <script src="Angular/global/services/accountsService.js"></script>
 
     <!--Copyright LibreWorx 2015 All rights reserved
     LibreWorx WebDev
@@ -94,7 +96,7 @@
                             Accounts <i class="caret"></i>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a ui-sref="Accounts.Overview">Accounts</a></li>
+                            <li><a ui-sref="Accounts">Accounts</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -124,7 +126,7 @@
 
                 <ul class="nav navbar-nav">
                     <li>
-                           <a ui-sref="About">About</a>
+                        <a ui-sref="About">About</a>
                 </ul><!--About Item-->
 
 

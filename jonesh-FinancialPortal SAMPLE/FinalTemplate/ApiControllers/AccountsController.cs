@@ -39,10 +39,11 @@ namespace FinalTemplate.ApiControllers
         [Authorize]
         [HttpGet]
         [Route("GetAccounts")]
-        public async Task<IHttpActionResult> GetAccounts()
+        public async Task<IList<Account>> GetAccounts()
         {
             var user = await um.FindByIdAsync(HttpContext.Current.User.Identity.GetUserId<int>());
             var Accounts = await db.GetAccountsForHouseHold(user.HouseHold);
+
             return Ok(Accounts);
         }
 

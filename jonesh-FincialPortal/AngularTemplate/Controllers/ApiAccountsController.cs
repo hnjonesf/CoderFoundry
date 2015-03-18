@@ -36,7 +36,7 @@ namespace AngularTemplate.Controllers
         // GET: api/Accounts
         [HttpGet]
         [Route("GetAccounts")]
-        public async Task<IList<Account>> GetAccounts(int HouseHold)
+        public  async Task<IList<Account>> GetAccounts(int HouseHold)
         {
             var user = await um.FindByIdAsync(HttpContext.Current.User.Identity.GetUserId<int>());
             var Accounts = await db.FindAccountsByHouseHold(HouseHold);

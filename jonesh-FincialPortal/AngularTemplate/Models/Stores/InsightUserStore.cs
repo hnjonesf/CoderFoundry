@@ -34,6 +34,7 @@ namespace AngularTemplate.Models.Stores
 
         public Task CreateAsync(ApplicationUser user)
         {
+            user.HouseHold = new Guid().ToString();
             return _userData.InsertUserAsync(user);
         }
 

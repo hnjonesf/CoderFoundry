@@ -1,9 +1,9 @@
 ﻿<div ng-controller="AccountsOverviewController">
     <h1>Accounts Summary</h1>
 </div>
-<!--<button class="btn btn-primary" ng-click="createAccount()">
+<button class="btn btn-primary" ng-click="createAccount()">
     Create a new account
-</button>-->
+</button>
 <div>
     <br />
     <br />
@@ -16,11 +16,11 @@
 
             </tr>
         </thead>
-        <tbody ng-controller="AccountsOverviewController">
+        <tbody>
             <tr ng-repeat="Account in Accounts">
-                <td>{{Account.name}}</td>
-                <td>{{Account.balance| currency:'$'}}</td>
-                <td>{{Account.reconciledBalance| currency:'$'}}</td>
+                <td>{{Account.Name}}</td>
+                <td>{{Accounts.Balance| currency:'$'}}</td>
+                <td>{{Accounts.reconciledBalance| currency:'$'}}</td>
                 <td>
                     <button class="btn btn-primary" type="button" ng-click="goToTransactions(Account)">
                         <span class="glyphicon glyphicon-list" aria-hidden="true">Transactions</span>

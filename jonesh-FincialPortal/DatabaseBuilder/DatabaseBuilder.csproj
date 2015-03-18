@@ -96,20 +96,19 @@
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetUserClaimsByUserId.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SQL\Security\Stored Procedures\AddUserToHousehold.sql" />
-    <Content Include="SQL\Security\Stored Procedures\CreateAccount.sql" />
-    <Content Include="SQL\Security\Stored Procedures\DeleteAccount.sql" />
-    <Content Include="SQL\Security\Stored Procedures\DeleteTransaction.sql" />
-    <Content Include="SQL\Security\Stored Procedures\FindCategoriesByHousehold.sql" />
-    <Content Include="SQL\Security\Stored Procedures\FindTransactionsByUserId.sql" />
-    <Content Include="SQL\Security\Stored Procedures\FindTransactionsByHousehold.sql" />
-    <Content Include="SQL\Security\Stored Procedures\RemoveUserFromHousehold.sql" />
-    <Content Include="SQL\Security\Stored Procedures\SearchAccount.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\CreateAccount.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\DeleteAccount.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\DeleteTransaction.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindCategoriesByHousehold.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindTransactionsByUserId.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindTransactionsByHousehold.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\RemoveUserFromHousehold.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\SearchAccount.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\FindUserByHousehold.sql" />
-    <Content Include="SQL\Security\Stored Procedures\FindAccountsByHouseHold.sql" />
-    <Content Include="SQL\Security\Stored Procedures\FindAccountsByName.sql" />
-    <Content Include="SQL\Security\Stored Procedures\GetUserLoginsByUserId.sql" />
-    <Content Include="SQL\Security\Stored Procedures\IsValidHousehold.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindAccountsByHouseHold.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindAccountsByName.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\GetUserLoginsByUserId.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\IsValidHousehold.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

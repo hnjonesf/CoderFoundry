@@ -14,7 +14,7 @@ namespace AngularTemplate.InsightUserStore.DataAccess
         Task UpdateAccountAsync(Account account);
         Task SelectAccountAsync(int Id);
         Task DeleteAccountAsync(int Id);
-        Task<IList<Account>> FindAccountsByHouseHold(int HouseHold);
-        Task SumTransactionsByAccount(int AccountId, int HouseHold);
+        Task<IList<Account>> FindAccountsByHouseHold(string HouseHold);
+        Task SumTransactionsByAccount(int AccountId, string HouseHold);
     }
 }

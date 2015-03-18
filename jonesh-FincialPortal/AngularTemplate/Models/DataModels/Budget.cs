@@ -8,7 +8,7 @@ namespace FinalTemplate.Models.DataModels
     public class Budget
     {
         public int Id { get; set; }
-        public int HouseHold { get; set; }
+        public string HouseHold { get; set; }
         public int CategoryId { get; set; }
         public string Amount { get; set; }
     }

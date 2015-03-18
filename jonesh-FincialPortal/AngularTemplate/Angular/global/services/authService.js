@@ -65,8 +65,9 @@
         var authData = localStorageService.get('authorizationData');
         if (authData) {
             _authentication.isAuth = true;
-            _authentication.username = authData.userName;
+            _authentication.username = authData.username;
             _authentication.token = authData.token;
+            _authentication.houseHold = authData.houseHold;
         }
 
     }

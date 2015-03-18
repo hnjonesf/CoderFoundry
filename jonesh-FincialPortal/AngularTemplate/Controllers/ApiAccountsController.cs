@@ -36,9 +36,9 @@ namespace AngularTemplate.Controllers
         // GET: api/Accounts
         [HttpGet]
         [Route("GetAccounts")]
-        public Task<IList<Account>> GetAccounts(int HouseHold)
+        public Task<IList<Account>> GetAccounts(string houseHold)
         {
-            return db.FindAccountsByHouseHold(HouseHold);
+            return db.FindAccountsByHouseHold(houseHold);
         }
 
         // POST: api/Accounts

@@ -15,6 +15,6 @@ namespace AngularTemplate.InsightUserStore.DataAccess
         Task UpdateBudgetAsync(Budget budget);
         Task SelectBudgetAsync(int Id);
         Task DeleteBudgetAsync(int Id);
-        Task<Budget> GetBudgetForHouseHold(int HouseHold);
+        Task<Budget> GetBudgetForHouseHold(string HouseHold);
     }
 }

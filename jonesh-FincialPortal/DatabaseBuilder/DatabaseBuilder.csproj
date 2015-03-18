@@ -106,7 +106,7 @@
     <Content Include="SQL\Security\Stored Procedures\RemoveUserFromHousehold.sql" />
     <Content Include="SQL\Security\Stored Procedures\SearchAccount.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\FindUserByHousehold.sql" />
-    <Content Include="SQL\Security\Stored Procedures\FindAccountsByHousehold.sql" />
+    <Content Include="SQL\Security\Stored Procedures\FindAccountsByHouseHold.sql" />
     <Content Include="SQL\Security\Stored Procedures\FindAccountsByName.sql" />
     <Content Include="SQL\Security\Stored Procedures\GetUserLoginsByUserId.sql" />
     <Content Include="SQL\Security\Stored Procedures\IsValidHousehold.sql" />

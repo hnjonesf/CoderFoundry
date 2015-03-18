@@ -1,13 +1,17 @@
 ﻿angular.module('app')
-.controller('AccountsOverviewController', ['$scope', '$state', '$stateParams',
-    function ($scope, $state, $stateParams) {
-        $scope.Account = {
-            name: "Checking",
-            balance: 333.32,
-            reconciledBalance: 333.31
-        };
+.controller('AccountsOverviewController', ['$scope', '$state', '$stateParams', 'accountsService', 'authService',
+    function ($scope, $state, $stateParams, accountsService, authService) {
+        $scope.houseHold = authService.authentication.houseHold;
+        function getAccounts() {
+            accountsService.getAccounts($scope.houseHold).then(function (res) {
+                $scope.Accounts = res.data;
+                console.info('GetAccount succeeded');
+            }, function (res) {
+                console.info('GetAccount failed');
+            });
+        }
 
-        return ($scope.Account);
+        getAccounts();
 
+    }]);
 
-}]);     

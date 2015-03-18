@@ -1,4 +1,5 @@
-﻿angular.module('app').factory('authService', ['$http', '$q', 'localStorageService', function ($http, $q, localStorageService) {
+﻿angular.module('app')
+    .factory('authService', ['$http', '$q', 'localStorageService', function ($http, $q, localStorageService) {
 
     var serviceBase = '/';
     var authServiceFactory = {};
@@ -7,6 +8,7 @@
         isAuth: false,
         userName: "",
         token: "",
+        houseHold: ""
     };
 
     var _register = function (registration) {
@@ -30,6 +32,7 @@
             _authentication.isAuth = true;
             _authentication.username = response.userName;
             _authentication.token = response.access_token;
+            _authentication.houseHold = response.houseHold;
 
             localStorageService.set('authorizationData', _authentication);
 
@@ -53,6 +56,7 @@
         _authentication.name = "";
         _authentication.claims = null;
         _authentication.token = "";
+        _authentication.houseHold = "";
 
     };
 

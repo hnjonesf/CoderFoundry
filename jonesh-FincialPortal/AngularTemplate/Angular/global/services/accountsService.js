@@ -1,13 +1,17 @@
 ﻿  'use strict';
-angular.module('app')
+angular.module( 'app' )
     .factory('accountsService', ['$http', function ($http) {
 
-        var factory = {}; 
-        factory.getAccounts = function () {
-            return $http.get('/api/accounts').then(function (response) {
+        var factory = {};
+
+        factory.getAccounts = function (household) {
+            var options = { params: { HouseHold: household } };
+            return $http.get('/api/accounts/GetAccounts').then(function (response) {
                 return response.data;
             });
         };
+
+        return factory;
 
 }]);
 

@@ -64,8 +64,6 @@
     <script src="Angular/about/controllers/AboutController.js"></script>
     <!--Budgets-->
     <script src="Angular/budgets/controllers/BudgetsController.js"></script>
-    <!--Households-->
-    <script src="Angular/households/controllers/HouseholdsController.js"></script>
     <!--Categories-->
     <script src="Angular/categories/controllers/CategoriesController.js"></script>
     <!--Users-->
@@ -89,71 +87,52 @@
                 <a class="navbar-brand" ui-sref="Dashboard">Financial Portal</a>
             </div>
 
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li dropdown>
-                        <a class="dropdown-toggle" dropdown-toggle>
-                            Accounts <i class="caret"></i>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a ui-sref="Accounts">Accounts</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a ui-sref="Accounts">Accounts</a>
+            </ul><!--Accounts Item-->
 
-                <ul class="nav navbar-nav">
-                    <li dropdown>
-                        <a class="dropdown-toggle" dropdown-toggle>
-                            Setup <i class="caret"></i>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a ui-sref="Budgets">Budgets</a></li>
-                            <li><a ui-sref="Categories">Categories</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a ui-sref="Budgets">Budgets</a>
+            </ul><!--Budgets Item-->
 
-                <ul class="nav navbar-nav">
-                    <li dropdown>
-                        <a class="dropdown-toggle" dropdown-toggle>
-                            Households <i class="caret"></i>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a ui-sref="Households">Households</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a ui-sref="Categories">Categories</a>
+            </ul><!--Categories Item-->
 
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a ui-sref="About">About</a>
-                </ul><!--About Item-->
+            <ul class="nav navbar-nav">
+                <li>
+                    <a ui-sref="About">About</a>
+            </ul><!--About Item-->
 
 
 
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li ng-if="authentication.isAuth" dropdown>
-                        <a class="dropdown-toggle" dropdown-toggle>
-                            Hello {{authentication.username}}
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a ng-click="logout()">Log Out</a></li>
-                        </ul>
-                    </li>
-                    <li ng-if="!authentication.isAuth" dropdown>
-                        <a class="dropdown-toggle" dropdown-toggle>
-                            Login/Register<i class="caret"></i>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a ui-sref="Login">Login</a></li>
-                            <li><a ui-sref="Register">Register</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-if="authentication.isAuth" dropdown>
+                    <a class="dropdown-toggle" dropdown-toggle>
+                        Hello {{authentication.username}}
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a ng-click="logout()">Log Out</a></li>
+                    </ul>
+                </li>
+                <li ng-if="!authentication.isAuth" dropdown>
+                    <a class="dropdown-toggle" dropdown-toggle>
+                        Login/Register<i class="caret"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a ui-sref="Login">Login</a></li>
+                        <li><a ui-sref="Register">Register</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </nav><!--/.nav-collapse -->
+
+
     <div class="container">
         <div ui-view class="moveDown">
         </div>

@@ -1,12 +1,14 @@
-﻿<div class="modal-header">
-    <h3 class="modal-title">Edit Account</h3>
+﻿<div>
+    <h3>Edit Account</h3>
 </div>
-<div class="modal-body">
+<div>
     <form class="form-horizontal" role="form">
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">Name:</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" placeholder="Name" data-ng-model="editAccount.name" required autofocus>
+                <input type="text" class="form-control" placeholder="Name" data-ng-model="newAccount.Name" required autofocus />
+                <input type="text" class="form-control" data-ng-model="newAccount.Balance" />
+                <input type="text" class="form-control" data-ng-model="newAccount.ReconciledBalance" />
             </div>
         </div>
     </form>

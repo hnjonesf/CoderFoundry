@@ -18,8 +18,8 @@ namespace AngularTemplate.Models.Interfaces
         Task UpdateCategoryAsync(Category category);
         Task SelectCategoryAsync(int Id);
         Task DeleteCategoryAsync(int Id);
-        Task<IList<Account>> GetCategoriesForHouseHold(int HouseHold);
-        Task SumTransactionsByCategory(int AccountId, int HouseHold);
-        Task GetCategoriesForHousehold(int Household);
+        Task<IList<Account>> GetCategoriesForHouseHold(string HouseHold);
+        Task SumTransactionsByCategory(int AccountId, string HouseHold);
+        Task GetCategoriesForHousehold(string Household);
     }
 }

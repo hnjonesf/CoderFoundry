@@ -101,7 +101,7 @@
     <EmbeddedResource Include="SQL\Security\Stored Procedures\DeleteTransaction.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetCategoriesByHousehold.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\FindTransactionsByUserId.sql" />
-    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindTransactionsByHousehold.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindTransactionsByAccount.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\RemoveUserFromHousehold.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\SearchAccount.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\FindUserByHousehold.sql" />

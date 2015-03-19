@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[FindTransactionsByAccount] 
-	@account int
+	@accountid int
 AS
 SELECT * From [dbo].[Transactions]
-WHERE AccountId = @account
+WHERE AccountId = @accountid

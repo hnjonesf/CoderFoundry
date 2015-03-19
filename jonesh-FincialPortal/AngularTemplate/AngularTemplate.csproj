@@ -228,6 +228,7 @@
     <Compile Include="Controllers\ApiAccountsController.cs" />
     <Compile Include="Controllers\BudgetsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\TransactionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -244,6 +245,7 @@
     <Compile Include="Models\Interfaces\IAccountDataAccess .cs" />
     <Compile Include="Models\Interfaces\IBudgetDataAccess.cs" />
     <Compile Include="Models\Interfaces\ICategoryDataAccess.cs" />
+    <Compile Include="Models\Interfaces\ITransactonDataAccess.cs" />
     <Compile Include="Models\Interfaces\IUserDataAccess.cs" />
     <Compile Include="Models\Stores\InsightUserStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

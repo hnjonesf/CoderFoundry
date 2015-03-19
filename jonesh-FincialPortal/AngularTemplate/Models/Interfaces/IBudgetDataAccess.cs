@@ -10,10 +10,13 @@ namespace AngularTemplate.InsightUserStore.DataAccess
     [Sql(Schema = "dbo")]
     public interface IBudgetDataAccess
     {
+
+        Task<IList<Budget>> GetBudgetsForHouseHold(string HouseHold);
+
         // auto procs
         Task<int> InsertBudgetAsync(Budget budget);
         Task UpdateBudgetAsync(Budget budget);
-        Task SelectBudgetAsync(int Id);
+        Task<Budget> SelectBudgetAsync(int Id);
         Task DeleteBudgetAsync(int Id);
         Task<Budget> GetBudgetForHouseHold(string HouseHold);
     }

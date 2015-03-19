@@ -1,4 +1,4 @@
-﻿<div ng-controller="AccountsOverviewController">
+﻿<div ng-controller="AccountsController">
     <h1>Accounts Summary</h1>
 
     <button class="btn btn-primary" ui-sref="CreateAccount">
@@ -25,14 +25,14 @@
                 </td>
                 <td>
                     <a class="btn btn-primary"  ui-sref="EditAccount({id: account.Id})">
-                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit Account</span>
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit or Delete Account</span>
                     </a>
                 </td>
-                <td>
+                <!--<td>
                     <a class="btn btn-primary" ui-sref="DeleteAccount({id: account.Id})">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true">Delete Account</span>
                     </a>
-                </td>
+                </td>-->
             </tr>
         </table>
     </div>

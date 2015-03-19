@@ -26,7 +26,6 @@ angular.module( 'app' )
         factory.deleteAccount = function (id) {
             var options = { params: { id: id } };
             return $http.delete('/api/accounts/DeleteAccount', options).then(function (response) {
-                console.log(response.data);
                 return response.data;
             });
         };

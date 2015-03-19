@@ -1,7 +1,7 @@
 ﻿<div ng-controller="CategoriesController">
     <h1>Categories Summary</h1>
 
-    <button class="btn btn-primary" ng-click="createCategory()">
+    <button class="btn btn-primary" ui-sref="CreateCategory">
         Create A New Category
     </button>
     <div>
@@ -12,22 +12,12 @@
             <tr>
                 <th>Category Name</th>
             </tr>
-            <tr ng-repeat="category in categories">
+            <tr ng-repeat="account in accounts">
                 <td>{{category.Name}}</td>
-                <!--<td>
-                    <button class="btn btn-primary" type="button" ng-click="goToTransactions(Account)">
-                        <span class="glyphicon glyphicon-list" aria-hidden="true">Transactions</span>
-                    </button>
-                </td>-->
                 <td>
-                    <button class="btn btn-primary" type="button" ng-click="editCategory(Category)">
-                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit Category</span>
-                    </button>
-                </td>
-                <td>
-                    <button class="btn btn-primary" type="button" ng-click="deleteCategory(Category)">
-                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Delete Category</span>
-                    </button>
+                    <a class="btn btn-primary" ui-sref="EditCategory({id: account.Id})">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit or Delete Category</span>
+                    </a>
                 </td>
             </tr>
         </table>

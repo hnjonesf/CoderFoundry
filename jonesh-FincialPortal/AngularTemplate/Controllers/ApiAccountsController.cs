@@ -41,8 +41,14 @@ namespace AngularTemplate.Controllers
             return db.FindAccountsByHouseHold(houseHold);
         }
 
+        [HttpGet]
+        [Route("GetAccount")]
+        public async Task<Account> GetAccount(int id)
+        {
+            return await db.SelectAccountAsync(id);
+        }
 
-        // POST: api/Accounts
+        // POST: api/Accounts/Create
         [HttpPost]
         [Route("CreateAccount")]
         public async Task<int> CreateAccount(Account account)
@@ -52,7 +58,7 @@ namespace AngularTemplate.Controllers
             return await db.InsertAccountAsync(account);
         }
 
-
+        // PUT: api/Accounts/Edit
         [HttpPut]
         [Route("EditAccount")]
         public async Task EditAccount(Account account)
@@ -65,9 +71,7 @@ namespace AngularTemplate.Controllers
         [Route("DeleteAccount")]
         public async Task DeleteAccount([FromUri] int Id)
         {
-            var user = await um.FindByIdAsync(HttpContext.Current.User.Identity.GetUserId<int>());
             await db.DeleteAccountAsync(Id);
- //           await db.SumTransactionsByAccount(Id, user.Household);
         }
     }
 }

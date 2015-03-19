@@ -1,19 +1,27 @@
 ﻿<div ng-controller="AccountsOverviewController">
     <h3>Create Account</h3>
-    <form class="form-horizontal" role="form">
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="name">Name:</label>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" placeholder="Name" data-ng-model="Name" required autofocus />
-                <input type="text" class="form-control" placeholder="Balance" data-ng-model="Balance" />
-                <input type="text" class="form-control" placeholder="ReconciledBalance" data-ng-model="ReconciledBalance" />
-            </div><!--end of col-->
-        </div><!--end of group-->
-    </form>
+    <div class="row clearfix">
+        <br />
 
-
-    <div>
-        <input type="button" class="btn btn-primary" value="Create Account" ng-click="createAccount()" ui-sref="Accounts">
-        <input type="button" class="btn" value="Cancel" ui-sref="Accounts">
+        <form class="form-horizontal col-md-12" role="form">
+            <div class="form-group">
+                <label class="control-label col-md-3" for="Name">Name:</label>
+                <input type="text" class="form-control col-md-9" placeholder="Name" data-ng-model="Name" required autofocus />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3" for="Balance">Balance:</label>
+                <input type="text" class="form-control col-md-9" placeholder="Balance" data-ng-model="Balance" />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3" for="Reconciledbalance">Reconciled Balance:</label>
+                <input type="text" class="form-control col-md-9" placeholder="Reconciledbalance" data-ng-model="Reconciledbalance" />
+            </div>
+        </form>
+        <br />
+        <br />
+        <div>
+            <input type="button" class="btn btn-primary" value="Create Account" ng-click="createAccount()" ui-sref="Accounts">
+            <input type="button" class="btn" value="Cancel" ui-sref="Accounts">
+        </div>
     </div>
 </div>

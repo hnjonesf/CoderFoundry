@@ -12,9 +12,9 @@ namespace AngularTemplate.InsightUserStore.DataAccess
         // auto procs
         Task<int> InsertAccountAsync(Account account);
         Task UpdateAccountAsync(Account account);
-        Task SelectAccountAsync(int Id);
+        Task<Account> SelectAccountAsync(int Id);
         Task DeleteAccountAsync(int Id);
         Task<IList<Account>> FindAccountsByHouseHold(string HouseHold);
-        Task SumTransactionsByAccount(int AccountId, string HouseHold);
+        Task<decimal> SumTransactionsByAccount(int AccountId, string HouseHold);
     }
 }

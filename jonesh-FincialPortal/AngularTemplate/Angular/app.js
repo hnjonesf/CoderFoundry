@@ -48,21 +48,38 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         //abstract: true
     })
 
-    //.state('Accounts.Overview', {
-    //    url: '/',
-    //    templateUrl: '/Angular/accounts/views/accounts.overview.html',
-    //    data: {
-    //        Authorize: "All"
-    //    }
-    //})
+            .state('EditAccount', {
+                url: '/EditAccount/:id',
+                templateUrl: '/Angular/accounts/views/EditAccount.html',
+                data: {
+                    Authorize: "All"
+                },
+                controller: 'EditAccountController',
+                resolve: {
+                    account: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
+                        return accountsService.getAccount($stateParams.id)
+                               .then(function (data) { return data; });
+                    }]
+                }
+                //abstract: true
+            })
 
-    //.state('Accounts.Edit', {
-    //    url: '/edit',
-    //    templateUrl: '/Angular/accounts/views/accounts.edit.html',
-    //    data: {
-    //        Authorize: "All"
-    //    }
-    //})
+                    .state('DeleteAccount', {
+                        url: '/DeleteAccount/:id',
+                        templateUrl: '/Angular/accounts/views/DeleteAccount.html',
+                        data: {
+                            Authorize: "All"
+                        },
+                        controller: 'DeleteAccountController',
+                        resolve: {
+                            account: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
+                                return accountsService.deleteAccount($stateParams.id)
+                                       .then(function (data) { return data; });
+                            }]
+                        }
+                        //abstract: true
+                    })
+
 
     .state('Account.Transactions', {
         url: 'accounts/:accountId/transactions',

@@ -1,17 +1,26 @@
-﻿
-<div>
+﻿<div>
     <h3>Delete Account</h3>
-</div>
-<div>
-    <form class="form-horizontal" role="form">
-        <div class="form-group">
-            <div class="col-sm-6">
-                <span>Are you sure you want to delete {{Account.name}}?</span>
+    <div class="row clearfix">
+        <br />
+        <form class="form-horizontal col-md-12" role="form">
+            <div class="form-group">
+                <label class="control-label col-md-3" for="Name">Name:</label>
+                <input type="text" class="form-control col-md-9" ng-model="account.Name" required autofocus />
             </div>
+            <div class="form-group">
+                <label class="control-label col-md-3" for="Balance">Balance:</label>
+                <input type="text" class="form-control col-md-9" ng-model="account.Balance" />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3" for="Reconciledbalance">Reconciled Balance:</label>
+                <input type="text" class="form-control col-md-9" ng-model="account.ReconciledBalance" />
+            </div>
+        </form>
+        <br />
+        <br />
+        <div>
+            <input type="button" class="btn btn-primary" value="Delete Account" ng-click="deleteAccount()">
+            <input type="button" class="btn" value="Cancel" ui-sref="Accounts">
         </div>
-    </form>
-</div>
-<div>
-    <button type="button" class="btn btn-primary" ng-click="$close()">Yes</button>
-    <button type="button" class="btn btn-default" ng-click="$dismiss()">No</button>
+    </div>
 </div>

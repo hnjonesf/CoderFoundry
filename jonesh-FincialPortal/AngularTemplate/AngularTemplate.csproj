@@ -254,6 +254,8 @@
     <Content Include="Angular\about\controllers\AboutController.js" />
     <Content Include="Angular\about\views\about.overview.html" />
     <Content Include="Angular\accounts\controllers\AccountsOverviewController.js" />
+    <Content Include="Angular\accounts\controllers\DeleteAccountController.js" />
+    <Content Include="Angular\accounts\controllers\EditAccountController.js" />
     <Content Include="Angular\accounts\views\Accounts.html" />
     <Content Include="Angular\accounts\views\CreateAccount.html" />
     <Content Include="Angular\accounts\views\DeleteAccount.html" />

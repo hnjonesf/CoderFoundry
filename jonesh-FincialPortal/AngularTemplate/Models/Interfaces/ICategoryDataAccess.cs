@@ -1,4 +1,5 @@
 ﻿using AngularTemplate.InsightUserStore;
+using AngularTemplate.Models.Database;
 using AngularTemplate.Models.Interfaces;
 using FinalTemplate.Models.DataModels;
 using Insight.Database;
@@ -13,13 +14,14 @@ namespace AngularTemplate.Models.Interfaces
     [Sql(Schema = "dbo")]
     public interface ICategoryDataAccess
     {
+        Task<IList<Category>> GetCategoriesForHouseHold(string HouseHold);
+        Task<decimal> SumTransactionsByCategory(int AccountId, string HouseHold);
+        
         // auto procs
-        Task<int> InsertCategoryAsync(Category category);
+        Task<ApplicationUser> SelectUserAsync(int id);
+        Task InsertCategoryAsync(Category category);
         Task UpdateCategoryAsync(Category category);
-        Task SelectCategoryAsync(int Id);
+        Task<Category> SelectCategoryAsync(int Id);
         Task DeleteCategoryAsync(int Id);
-        Task<IList<Account>> GetCategoriesForHouseHold(string HouseHold);
-        Task SumTransactionsByCategory(int AccountId, string HouseHold);
-        Task FindCategoriesForHousehold(string Household);
     }
 }

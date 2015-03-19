@@ -1,3 +1,29 @@
 ﻿<div ng-controller="BudgetsController">
-Budgets
+    <h1>Budgets Summary</h1>
+
+    <button class="btn btn-primary" ui-sref="CreateBudget">
+        Create A New Budget
+    </button>
+    <div>
+        <br />
+        <br />
+
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Budget Name</th>
+                <th>Category Id</th>
+                <th>Amount</th>
+            </tr>
+            <tr ng-repeat="account in accounts">
+                <td>{{budget.Name}}</td>
+                <td>{{budget.CategoryId}}</td>
+                <td>{{budget.Amount| currency:'$'}}</td>
+                <td>
+                    <a class="btn btn-primary" ui-sref="EditBudget({id: account.Id})">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit or Delete Budget</span>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>

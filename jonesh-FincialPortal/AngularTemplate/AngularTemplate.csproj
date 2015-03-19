@@ -226,7 +226,8 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApiAccountsController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\BudgetsController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -253,23 +254,34 @@
   <ItemGroup>
     <Content Include="Angular\about\controllers\AboutController.js" />
     <Content Include="Angular\about\views\about.overview.html" />
-    <Content Include="Angular\accounts\controllers\AccountsOverviewController.js" />
-    <Content Include="Angular\accounts\controllers\DeleteAccountController.js" />
+    <Content Include="Angular\accounts\controllers\AccountsController.js" />
     <Content Include="Angular\accounts\controllers\EditAccountController.js" />
     <Content Include="Angular\accounts\views\Accounts.html" />
     <Content Include="Angular\accounts\views\CreateAccount.html" />
-    <Content Include="Angular\accounts\views\DeleteAccount.html" />
     <Content Include="Angular\accounts\views\EditAccount.html" />
+    <Content Include="Angular\budgets\controllers\EditBudgetsController.js" />
+    <Content Include="Angular\budgets\views\CreateBudget.html" />
+    <Content Include="Angular\budgets\views\EditBudget.html" />
     <Content Include="Angular\categories\controllers\CategoriesController.js" />
-    <Content Include="Angular\categories\views\categories.html" />
+    <Content Include="Angular\categories\controllers\EditCategoryController.js" />
+    <Content Include="Angular\categories\views\Categories.html" />
     <Content Include="Angular\budgets\controllers\BudgetsController.js" />
-    <Content Include="Angular\budgets\views\budgets.html" />
+    <Content Include="Angular\budgets\views\Budgets.html" />
     <Content Include="Angular\app.js" />
+    <Content Include="Angular\categories\views\CreateCategory.html" />
+    <Content Include="Angular\categories\views\EditCategory.html" />
     <Content Include="Angular\dashboard\controllers\DashboardController.js" />
     <Content Include="Angular\dashboard\views\dashboard.html" />
+    <Content Include="Angular\global\services\budgetsService.js" />
     <Content Include="Angular\global\services\categoriesService.js" />
     <Content Include="Angular\global\services\accountsService.js" />
     <Content Include="Angular\global\services\authService.js" />
+    <Content Include="Angular\global\services\transactionsService.js" />
+    <Content Include="Angular\transactions\controllers\EditTransactionController.js" />
+    <Content Include="Angular\transactions\controllers\TransactionsController.js" />
+    <Content Include="Angular\transactions\views\Transactions.html" />
+    <Content Include="Angular\transactions\views\CreateTransaction.html" />
+    <Content Include="Angular\transactions\views\EditTransaction.html" />
     <Content Include="Angular\users\controllers\LoginController.js" />
     <Content Include="Angular\users\controllers\MenuController.js" />
     <Content Include="Angular\users\controllers\RegisterController.js" />

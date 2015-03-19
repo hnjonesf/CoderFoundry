@@ -11,8 +11,7 @@ angular.module( 'app' )
         };
 
         factory.createAccount = function (account) {
-            var options = { params: { account: account } };
-            return $http.post('/api/accounts/CreateAccount', options).then(function (response) {
+            return $http.post('/api/accounts/CreateAccount', account).then(function (response) {
                 return response.data;
             });
         };

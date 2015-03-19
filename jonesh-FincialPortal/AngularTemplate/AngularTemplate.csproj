@@ -253,9 +253,6 @@
   <ItemGroup>
     <Content Include="Angular\about\controllers\AboutController.js" />
     <Content Include="Angular\about\views\about.overview.html" />
-    <Content Include="Angular\accounts\controllers\AccountDeleteController.js" />
-    <Content Include="Angular\accounts\controllers\AccountEditController.js" />
-    <Content Include="Angular\accounts\controllers\AccountCreateController.js" />
     <Content Include="Angular\accounts\controllers\AccountsOverviewController.js" />
     <Content Include="Angular\accounts\views\Accounts.html" />
     <Content Include="Angular\accounts\views\CreateAccount.html" />
@@ -268,6 +265,7 @@
     <Content Include="Angular\app.js" />
     <Content Include="Angular\dashboard\controllers\DashboardController.js" />
     <Content Include="Angular\dashboard\views\dashboard.html" />
+    <Content Include="Angular\global\services\categoriesService.js" />
     <Content Include="Angular\global\services\accountsService.js" />
     <Content Include="Angular\global\services\authService.js" />
     <Content Include="Angular\users\controllers\LoginController.js" />

@@ -39,6 +39,15 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         //abstract: true
     })
 
+    .state('CreateAccount', {
+        url: '/CreateAccount',
+        templateUrl: '/Angular/accounts/views/CreateAccount.html',
+        data: {
+            Authorize: "All"
+        }
+        //abstract: true
+    })
+
     //.state('Accounts.Overview', {
     //    url: '/',
     //    templateUrl: '/Angular/accounts/views/accounts.overview.html',
@@ -47,13 +56,13 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
     //    }
     //})
 
-    .state('Accounts.Edit', {
-        url: '/edit',
-        templateUrl: '/Angular/accounts/views/accounts.edit.html',
-        data: {
-            Authorize: "All"
-        }
-    })
+    //.state('Accounts.Edit', {
+    //    url: '/edit',
+    //    templateUrl: '/Angular/accounts/views/accounts.edit.html',
+    //    data: {
+    //        Authorize: "All"
+    //    }
+    //})
 
     .state('Account.Transactions', {
         url: 'accounts/:accountId/transactions',

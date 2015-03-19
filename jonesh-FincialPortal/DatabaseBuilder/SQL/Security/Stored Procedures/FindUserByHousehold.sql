@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [Security].[FindUserByHousehold] 
-	@household nvarchar(128)
+	@household uniqueidentifier
 AS
 SELECT * From [Security].[Users]
-WHERE Household = @household
+WHERE HouseHold = @household

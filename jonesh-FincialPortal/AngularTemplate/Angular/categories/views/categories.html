@@ -1,3 +1,35 @@
 ﻿<div ng-controller="CategoriesController">
-Categories
+    <h1>Categories Summary</h1>
+
+    <button class="btn btn-primary" ng-click="createCategory()">
+        Create A New Category
+    </button>
+    <div>
+        <br />
+        <br />
+
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Category Name</th>
+            </tr>
+            <tr ng-repeat="category in categories">
+                <td>{{category.Name}}</td>
+                <!--<td>
+                    <button class="btn btn-primary" type="button" ng-click="goToTransactions(Account)">
+                        <span class="glyphicon glyphicon-list" aria-hidden="true">Transactions</span>
+                    </button>
+                </td>-->
+                <td>
+                    <button class="btn btn-primary" type="button" ng-click="editCategory(Category)">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit Category</span>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" type="button" ng-click="deleteCategory(Category)">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Delete Category</span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>

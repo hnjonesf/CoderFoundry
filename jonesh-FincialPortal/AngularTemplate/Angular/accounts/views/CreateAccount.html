@@ -1,19 +1,19 @@
-﻿<div>
+﻿<div ng-controller="AccountsOverviewController">
     <h3>Create Account</h3>
     <form class="form-horizontal" role="form">
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">Name:</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" placeholder="Name" data-ng-model="newAccount.Name" required autofocus />
-                <input type="text" class="form-control" data-ng-model="newAccount.Balance" />
-                <input type="text" class="form-control" data-ng-model="newAccount.ReconciledBalance" />
+                <input type="text" class="form-control" placeholder="Name" data-ng-model="Name" required autofocus />
+                <input type="text" class="form-control" placeholder="Balance" data-ng-model="Balance" />
+                <input type="text" class="form-control" placeholder="ReconciledBalance" data-ng-model="ReconciledBalance" />
             </div><!--end of col-->
         </div><!--end of group-->
     </form>
 
 
     <div>
-        <input type="button" class="btn btn-primary" value="Create Account" ng-click="createAccount()">
-        <input type="button" class="btn" value="Cancel" ng-click="$dismiss()">
+        <input type="button" class="btn btn-primary" value="Create Account" ng-click="createAccount()" ui-sref="Accounts">
+        <input type="button" class="btn" value="Cancel" ui-sref="Accounts">
     </div>
 </div>

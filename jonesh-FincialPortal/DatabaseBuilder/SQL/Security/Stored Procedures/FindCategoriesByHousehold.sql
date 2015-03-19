@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[FindCategoriesByHousehold] 
-	@category nvarchar(50)
+@household uniqueidentifier
 AS
 SELECT * From [dbo].[Categories]
-WHERE Name = @category
+WHERE HouseHold = @household

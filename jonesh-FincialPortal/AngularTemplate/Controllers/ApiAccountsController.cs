@@ -41,6 +41,7 @@ namespace AngularTemplate.Controllers
             return db.FindAccountsByHouseHold(houseHold);
         }
 
+
         // POST: api/Accounts
         [HttpPost]
         [Route("CreateAccount")]
@@ -48,28 +49,18 @@ namespace AngularTemplate.Controllers
         {
             var user = await um.FindByIdAsync(HttpContext.Current.User.Identity.GetUserId<int>());
 
-            var newAccount = new Account()
-            {
-                HouseHold = user.HouseHold,
-                Name = account.Name,
-                Balance = 0,
-                ReconciledBalance = 0
-            };
-
-            return await db.InsertAccountAsync(newAccount);
+            return await db.InsertAccountAsync(account);
         }
 
 
-        [Authorize]
         [HttpPut]
         [Route("EditAccount")]
         public async Task EditAccount(Account account)
         {
-
             await db.UpdateAccountAsync(account);
         }
 
-        [Authorize]
+ 
         [HttpDelete]
         [Route("DeleteAccount")]
         public async Task DeleteAccount([FromUri] int Id)

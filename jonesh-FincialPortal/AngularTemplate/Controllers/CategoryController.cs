@@ -34,19 +34,16 @@ namespace AngularTemplate.Controllers
             um = HttpContext.Current.GetOwinContext().Get<ApplicationUserManager>();
         }
 
-        //// GET: api/Category
-        //[Authorize]
-        //[HttpGet]
-        //[Route("GetCategories")]
-        //public async Task<IList<Category>> GetCategories()
-        //{
-        //    //var user = await um.FindByIdAsync(HttpContext.Current.User.Identity.GetUserId<int>());
-        //    //var Categories = await db.GetCategoriesForHousehold(user.Household);
-        //    //return Ok(Categories);
-        //}
+        // GET: api/Category
+        [HttpGet]
+        [Route("GetCategories")]
+        public void GetCategories(string houseHold)
+        {
+                    //await db.FindCategoriesForHousehold(houseHold);
+        }
+
 
         // GET: api/Category/5
-        [Authorize]
         [HttpPost]
         [Route("CreateCategory")]
         public async Task<int> CreateCategory(Category category, string name)

@@ -15,7 +15,7 @@
         }
 
 
-        //create categories
+        //create category
         $scope.createCategory = function createCategory() {
             $scope.category = {
                 HouseHold: $scope.houseHold,

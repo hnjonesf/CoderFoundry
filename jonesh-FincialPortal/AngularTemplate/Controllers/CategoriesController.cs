@@ -32,7 +32,7 @@ namespace AngularTemplate.Controllers
                 ().As<ICategoryDataAccess>();
         }
 
-        // GET: api/Categories
+        // GET: api/Category
         [HttpGet]
         [Route("GetCategories")]
         public Task<IList<Category>> GetCategories(string houseHold)

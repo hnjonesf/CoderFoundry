@@ -14,7 +14,7 @@ namespace AngularTemplate.Models.Interfaces
     [Sql(Schema = "dbo")]
     public interface ICategoryDataAccess
     {
-        Task<IList<Category>> GetCategoriesForHouseHold(string HouseHold);
+        Task<IList<Category>> GetCategoriesByHouseHold(string HouseHold);
         Task<decimal> SumTransactionsByCategory(int AccountId, string HouseHold);
         
         // auto procs

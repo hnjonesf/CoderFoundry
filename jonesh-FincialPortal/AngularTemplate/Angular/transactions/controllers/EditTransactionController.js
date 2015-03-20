@@ -1,12 +1,12 @@
 ﻿angular.module('app')
-.controller('EditTransactionController', ['$scope', '$state', '$stateParams', 'transactionsService', 'authService', 'account',
-    function ($scope, $state, $stateParams, transactionsService, authService, account) {
+.controller('EditTransactionController', ['$scope', '$state', '$stateParams', 'transactionsService', 'authService', 'transaction',
+    function ($scope, $state, $stateParams, transactionsService, authService, transaction) {
 
         $scope.transaction = transaction;
 
         //edit or delete account
         $scope.editTransaction = function editTransaction() {
-            transactionsService.editTransaction($scope.category).then(function (res) {
+            transactionsService.editTransaction($scope.transaction).then(function (res) {
                 $state.go('Transactions');
             });
         }

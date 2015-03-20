@@ -14,10 +14,10 @@
             </tr>
             <tr ng-repeat="transaction in transactions">
                 <td>{{transacton.AccountId}}</td>
-                <td>{{transacton.Amount}}</td>
-                <td>{{transacton.AbsAmount}}</td>
-                <td>{{transacton.ReconciledAmount}}</td>
-                <td>{{transacton.AbsReconciledAmount}}</td>
+                <td>{{transacton.Amount| currency:'$'}}</td>
+                <td>{{transacton.AbsAmount| currency:'$'}}</td>
+                <td>{{transacton.ReconciledAmount| currency:'$'}}</td>
+                <td>{{transacton.AbsReconciledAmount| currency:'$'}}</td>
                 <td>{{transacton.Date}}</td>
                 <td>{{transacton.Description}}</td>
                 <td>{{transacton.Updated}}</td>

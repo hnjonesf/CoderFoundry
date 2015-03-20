@@ -2,14 +2,13 @@
 .controller('TransactionsController', ['$scope', '$state', '$stateParams', 'transactionsService', 'authService',
     function ($scope, $state, $stateParams, transactionsService, authService) {
 
-        //SETUP ACCOUNT TIES TO HOUSEHOLD
-        $scope.houseHold = authService.authentication.houseHold;
-        $scope.Name = "";
+        //SETUP TRANSACTION TIES TO ACCOUNT
+        $scope.AccountId = $scope.accountId;
 
 
         //get accounts
         $scope.getTransactions = function () {
-            transactionsService.getTransactions($scope.houseHold).then(function (data) {
+            transactionsService.getTransactions($scope.AccountId).then(function (data) {
                 $scope.Transactions = data;
             });
         }
@@ -31,6 +30,7 @@
             };
             transactionsService.createTransaction($scope.transaction).then(function (res) {
                 $scope.transaction = res.data;
+                $state.go('Transactions');
             });
         }
 

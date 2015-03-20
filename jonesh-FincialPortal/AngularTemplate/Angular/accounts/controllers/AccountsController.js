@@ -26,7 +26,8 @@
                 ReconciledBalance: $scope.ReconciledBalance
             };
             accountsService.createAccount($scope.account).then(function (res) {
-                $scope.Account = res.data;
+                $scope.account = res.data;
+                $state.go('Accounts');
             });
         }
  

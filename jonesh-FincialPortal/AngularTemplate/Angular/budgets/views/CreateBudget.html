@@ -2,16 +2,20 @@
     <h3>Create Budget</h3>
     <div class="row clearfix">
         <br />
-
         <form class="form-horizontal col-md-12" role="form">
             <div class="form-group">
-                <label class="control-label col-md-3" for="CategoryId">Category:</label>
-                <input type="text" class="form-control col-md-9" placeholder="Category" data-ng-model="Category" required autofocus />
+                <div>
+                    <label class="control-label col-md-3" for="Category">Select a Category:</label>
+                    <select type="text"
+                            select ng-model="Budget.CategoryId"
+                            data-ng-options="Id for Name in categories.Name"
+                            class="form-control col-md-9"></select>
+                </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-md-3" for="Amount">Amount:</label>
                 <input type="text" class="form-control col-md-9" placeholder="Amount" data-ng-model="Amount" />
-            </div> 
+            </div>
         </form>
         <br />
         <br />
@@ -21,3 +25,5 @@
         </div>
     </div>
 </div>
+
+           <!--typeahead=" categories.name for item in categories | filter:$viewvalue | limitto:8"-->

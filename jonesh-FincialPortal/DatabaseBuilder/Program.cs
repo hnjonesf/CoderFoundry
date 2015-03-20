@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using Insight.Database.Schema;
-using System.Configuration;
 
 namespace CoderFoundry.InsightUserStore.DB
 {

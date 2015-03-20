@@ -64,22 +64,6 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         //abstract: true
     })
 
-    .state('DeleteAccount', {
-        url: '/DeleteAccount/:id',
-        templateUrl: '/Angular/accounts/views/DeleteAccount.html',
-        data: {
-            Authorize: "All"
-        },
-        controller: 'DeleteAccountController',
-        resolve: {
-            account: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
-                return accountsService.deleteAccount($stateParams.id)
-                .then(function (data) { return data; });
-            }]
-        }
-        //abstract: true
-    })
-
 
       ///BUDGETS
     .state('Budgets', {
@@ -108,7 +92,7 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         },
         controller: 'EditBudgetController',
         resolve: {
-            account: ['$stateParams', 'budgetsService', function ($stateParams, budgetsService) {
+            budget: ['$stateParams', 'budgetsService', function ($stateParams, budgetsService) {
                 return budgetsService.getBudget($stateParams.id)
                 .then(function (data) { return data; });
             }]
@@ -116,23 +100,9 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         //abstract: true
     })
 
-    .state('DeleteBudget', {
-        url: '/DeleteBudget/:id',
-        templateUrl: '/Angular/budgets/views/BudgetAccount.html',
-        data: {
-            Authorize: "All"
-        },
-        controller: 'DeleteBudgetController',
-        resolve: {
-            account: ['$stateParams', 'budgetsService', function ($stateParams, budgetsService) {
-                return budgetsService.deleteBudget($stateParams.id)
-                .then(function (data) { return data; });
-            }]
-        }
-        //abstract: true
-    })
+
+
         ///CATEGORIES
-       ///ACCOUNTS
     .state('Categories', {
         url: '/Categories',
         templateUrl: '/Angular/categories/views/Categories.html',
@@ -159,29 +129,15 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         },
         controller: 'EditCategoryController',
         resolve: {
-            account: ['$stateParams', 'categoriesService', function ($stateParams, categoriesService) {
+            category: ['$stateParams', 'categoriesService', function ($stateParams, categoriesService) {
                 return categoriesService.getCategory($stateParams.id)
                 .then(function (data) { return data; });
             }]
         }
-        //abstract: true
     })
 
-    .state('DeleteCategory', {
-        url: '/DeleteCategory/:id',
-        templateUrl: '/Angular/categories/views/DeleteCategory.html',
-        data: {
-            Authorize: "All"
-        },
-        controller: 'DeleteCategoryController',
-        resolve: {
-            account: ['$stateParams', 'categoriesService', function ($stateParams, categoriesService) {
-                return categoriesService.deleteCategory($stateParams.id)
-                .then(function (data) { return data; });
-            }]
-        }
-        //abstract: true
-    })
+
+
         ///DASHBOARD***Homer template
     .state('Dashboard', {
         url: '/',
@@ -228,21 +184,6 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         //abstract: true
     })
 
-    .state('DeleteTransaction', {
-        url: '/DeleteTransaction/:id',
-        templateUrl: '/Angular/transactions/views/DeleteTransaction.html',
-        data: {
-            Authorize: "All"
-        },
-        controller: 'DeleteTransactionController',
-        resolve: {
-            account: ['$stateParams', 'transactionsService', function ($stateParams, transactionsService) {
-                return transactionsService.deleteTransaction($stateParams.id)
-                .then(function (data) { return data; });
-            }]
-        }
-        //abstract: true
-    })
 
         ///USERS
 

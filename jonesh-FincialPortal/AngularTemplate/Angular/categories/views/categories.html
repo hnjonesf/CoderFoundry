@@ -12,10 +12,10 @@
             <tr>
                 <th>Category Name</th>
             </tr>
-            <tr ng-repeat="account in accounts">
+            <tr ng-repeat="category in categories">
                 <td>{{category.Name}}</td>
                 <td>
-                    <a class="btn btn-primary" ui-sref="EditCategory({id: account.Id})">
+                    <a class="btn btn-primary" ui-sref="EditCategory({id: category.Id})">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit or Delete Category</span>
                     </a>
                 </td>

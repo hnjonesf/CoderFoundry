@@ -1,5 +1,5 @@
 ﻿angular.module('app')
-.controller('EditBudgetController', ['$scope', '$state', '$stateParams', 'budgetsService', 'authService', 'account',
+.controller('EditBudgetController', ['$scope', '$state', '$stateParams', 'budgetsService', 'authService', 'budget',
     function ($scope, $state, $stateParams, budgetsService, authService, budget) {
 
         $scope.budget = budget;

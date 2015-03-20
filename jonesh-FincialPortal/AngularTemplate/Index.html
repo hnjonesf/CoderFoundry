@@ -3,6 +3,13 @@
 <head>
     <title>Financial Portal</title>
 
+    <!--Copyright LibreWorx 2015 All rights reserved
+    LibreWorx WebDev
+    2715 Pinedale Rd
+    Greensboro, NC   27408 USA
+    www.LibreWorx.com-->
+
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <!--CSS-->
@@ -33,44 +40,44 @@
         }
     </style>
 
-
-
     <!--JavaScript-->
     <script src="Scripts/jquery-2.1.3.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+    <!--AngularJS-->
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-
     <script src="Scripts/angular-ui-router.min.js"></script>
     <script src="Scripts/angular-local-storage.min.js"></script>
-
-    <!--AngularJS-->
     <script src="Angular/app.js"></script>
     <script src="Angular/global/services/authIntercetper.js"></script>
     <script src="Angular/global/services/authService.js"></script>
-    <script src="Angular/global/services/accountsService.js"></script>
-    <script src="Angular/global/services/categoriesService.js"></script>
 
-    <!--Copyright LibreWorx 2015 All rights reserved
-    LibreWorx WebDev
-    2715 Pinedale Rd
-    Greensboro, NC   27408 USA
-    www.LibreWorx.com-->
     <!--Dashboard-->
     <script src="Angular/dashboard/controllers/DashboardController.js"></script>
     <script src="Angular/users/controllers/MenuController.js"></script>
+
+    <!--Template (Homer)-->
+
     <!--Accounts-->
     <script src="Angular/accounts/controllers/AccountsController.js"></script>
     <script src="Angular/accounts/controllers/EditAccountController.js"></script>
+    <script src="Angular/global/services/accountsService.js"></script>
     <!--About-->
     <script src="Angular/about/controllers/AboutController.js"></script>
     <!--Budgets-->
     <script src="Angular/budgets/controllers/BudgetsController.js"></script>
+    <script src="Angular/budgets/controllers/EditBudgetsController.js"></script>
+    <script src="Angular/global/services/budgetsService.js"></script>
     <!--Categories-->
     <script src="Angular/categories/controllers/CategoriesController.js"></script>
-    <!--Users-->
-    <!--(users of site, not of accouts, etc)-->
+    <script src="Angular/categories/controllers/EditCategoryController.js"></script>
+    <script src="Angular/global/services/categoriesService.js"></script>
+    <!--Transactions-->
+    <script src="Angular/transactions/controllers/EditTransactionController.js"></script>
+    <script src="Angular/transactions/controllers/TransactionsController.js"></script>
+    <script src="Angular/global/services/transactionsService.js"></script>
+    <!--(Users of site, not of accouts, etc)-->
     <script src="Angular/users/controllers/UsersController.js"></script>
     <script src="Angular/users/controllers/LoginController.js"></script>
     <script src="Angular/users/controllers/RegisterController.js"></script>

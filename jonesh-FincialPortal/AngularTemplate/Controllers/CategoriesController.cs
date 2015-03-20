@@ -35,9 +35,9 @@ namespace AngularTemplate.Controllers
         // GET: api/Categories
         [HttpGet]
         [Route("GetCategories")]
-        public Task<IList<Category>> GetCategory(string houseHold)
+        public Task<IList<Category>> GetCategories(string houseHold)
         {
-            return db.GetCategoriesForHouseHold(houseHold);
+            return db.GetCategoriesByHouseHold(houseHold);
         }   
 
         [HttpGet]

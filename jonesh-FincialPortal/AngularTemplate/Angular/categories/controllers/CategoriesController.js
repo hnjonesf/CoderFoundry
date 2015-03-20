@@ -7,15 +7,15 @@
         $scope.Name = "";
 
 
-        //get accounts
+        //get categories
         $scope.getCategories = function () {
-            accountsService.getCategories($scope.houseHold).then(function (data) {
+            categoriesService.getCategories($scope.houseHold).then(function (data) {
                 $scope.categories = data;
             });
         }
 
 
-        //create account
+        //create categories
         $scope.createCategory = function createCategory() {
             $scope.category = {
                 HouseHold: $scope.houseHold,
@@ -23,10 +23,11 @@
             };
             categoriesService.createCategory($scope.category).then(function (res) {
                 $scope.category = res.data;
+                $state.go('Categories');
             });
         }
 
-        $scope.getCategory();
+        $scope.getCategories();
 
     }]);
 

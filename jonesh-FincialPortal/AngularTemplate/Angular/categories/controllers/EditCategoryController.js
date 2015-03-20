@@ -1,8 +1,8 @@
 ﻿angular.module('app')
-.controller('EditCategoryController', ['$scope', '$state', '$stateParams', 'categoriesService', 'authService', 'account',
-    function ($scope, $state, $stateParams, categoriesService, authService, account) {
+.controller('EditCategoryController', ['$scope', '$state', '$stateParams', 'categoriesService', 'authService', 'category',
+    function ($scope, $state, $stateParams, categoriesService, authService, category) {
 
-        $scope.account = category;
+        $scope.category = category;
 
         //edit or delete account
         $scope.editCategory = function editCategory() {
@@ -13,7 +13,7 @@
 
         //delete account
         $scope.deleteCategory = function deleteCategory() {
-            categoriesService.deleteCategory($scope.categroy.Id).then(function (res) {
+            categoriesService.deleteCategory($scope.category.Id).then(function (res) {
                 $state.go('Categories');
             });
         }

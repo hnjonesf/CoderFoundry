@@ -87,7 +87,7 @@
     <EmbeddedResource Include="SQL\Security\Stored Procedures\RemoveUserClaim.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\RemoveUserFromRole.sql" />
     <EmbeddedResource Include="SQL\Security\Tables\Accounts.sql" />
-    <EmbeddedResource Include="SQL\Security\Tables\BudgetItems.sql" />
+    <EmbeddedResource Include="SQL\Security\Tables\Budgets.sql" />
     <EmbeddedResource Include="SQL\Security\Tables\Categories.sql" />
     <EmbeddedResource Include="SQL\Security\Tables\Invitations.sql" />
     <EmbeddedResource Include="SQL\Security\Tables\Transactions.sql" />
@@ -109,6 +109,9 @@
     <EmbeddedResource Include="SQL\Security\Stored Procedures\FindAccountsByName.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetUserLoginsByUserId.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\IsValidHousehold.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\GetBudgetsForHouseHold.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

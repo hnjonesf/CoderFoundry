@@ -14,10 +14,10 @@ namespace AngularTemplate.InsightUserStore.DataAccess
         Task<IList<Budget>> GetBudgetsForHouseHold(string HouseHold);
 
         // auto procs
-        Task<int> InsertBudgetAsync(Budget budget);
-        Task UpdateBudgetAsync(Budget budget);
-        Task<Budget> SelectBudgetAsync(int Id);
-        Task DeleteBudgetAsync(int Id);
+        Task<int> InsertBudgetsAsync(Budget budget);
+        Task UpdateBudgetsAsync(Budget budget);
+        Task<Budget> SelectBudgetsAsync(int Id);
+        Task DeleteBudgetsAsync(int Id);
         Task<Budget> GetBudgetForHouseHold(string HouseHold);
     }
 }

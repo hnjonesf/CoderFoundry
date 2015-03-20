@@ -7,7 +7,7 @@
                 <div>
                     <label class="control-label col-md-3" for="Category">Select a Category:</label>
                     <select type="text"
-                            select ng-model="Budget.CategoryId"
+                            select ng-model="budget"
                             data-ng-options="Id for Name in categories.Name"
                             class="form-control col-md-9"></select>
                 </div>
@@ -20,7 +20,7 @@
         <br />
         <br />
         <div>
-            <input type="button" class="btn btn-primary" value="Create Budget" ng-click="createBudget()" ui-sref="Budgets">
+            <input type="button" class="btn btn-primary" value="Create Budget" ng-click="createBudget()">
             <input type="button" class="btn" value="Cancel" ui-sref="Budgets">
         </div>
     </div>

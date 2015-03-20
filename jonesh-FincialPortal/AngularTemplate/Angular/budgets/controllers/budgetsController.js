@@ -9,15 +9,15 @@
 
 
         //get Budgets
+        //create BUDGET
         $scope.getBudgets = function () {
             budgetsService.getBudgets($scope.houseHold).then(function (data) {
                 $scope.budgets = data;
             });
         }
 
-
-        //create account
-        //get categories
+        //CREATE BUDGET
+        //get categories so you can pick FOREIGN KEY
         $scope.getCategories = function () {
             categoriesService.getCategories($scope.houseHold).then(function (data) {
                 $scope.categories = data;
@@ -29,6 +29,7 @@
         $scope.createBudget = function createBudget() {
         $scope.budget = {
             HouseHold: $scope.houseHold,
+            CategoryId: $scope.catatoryId,
             Amount: $scope.Amount
         };
         budgetsService.createBudget($scope.budget).then(function (res) {

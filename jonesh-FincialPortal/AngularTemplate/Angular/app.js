@@ -1,4 +1,4 @@
-﻿var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'LocalStorageModule']);
+﻿var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'LocalStorageModule','ngTable']);
 
 
 app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterProvider', function 
@@ -155,8 +155,13 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         templateUrl: '/Angular/transactions/views/Transactions.html',
         data: {
             Authorize: "All"
+        },
+        resolve: {
+            account: ['$stateParams', 'transactionsService', function ($stateParams, transactionsService) {
+                return transactionsService.getTransaction($stateParams.id)
+                .then(function (data) { return data; });
+            }]
         }
-        //PUT REFERRENCES TO ACCOUNTID HERE, E.G., RESOLVE
     })
 
     .state('CreateTransaction', {

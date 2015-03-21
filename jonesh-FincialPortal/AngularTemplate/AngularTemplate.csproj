@@ -325,6 +325,7 @@
     <Content Include="Content\Media\favicon.ico\ms-icon-310x310.png" />
     <Content Include="Content\Media\favicon.ico\ms-icon-70x70.png" />
     <Content Include="Content\Media\financial_portal.jpg" />
+    <Content Include="Content\ng-table.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1154,6 +1155,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\ng-table.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
@@ -1174,6 +1176,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Scripts\ng-table.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Angular\global\directives\" />

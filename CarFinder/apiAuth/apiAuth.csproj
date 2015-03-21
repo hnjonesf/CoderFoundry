@@ -236,11 +236,9 @@
     <Content Include="NgApps\Templates\about.html" />
     <Content Include="NgApps\Templates\carfinder.html" />
     <Content Include="NgApps\Templates\CarFinderDirectiveTemplate.html" />
-    <Content Include="NgApps\Templates\Login - Copy.html" />
     <Content Include="NgApps\Templates\Login.html" />
     <Content Include="NgApps\Templates\PasswordVerifyTemplate.html" />
     <Content Include="NgApps\Templates\profile.html" />
-    <Content Include="NgApps\Templates\register - Copy.html" />
     <Content Include="NgApps\Templates\Register.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />

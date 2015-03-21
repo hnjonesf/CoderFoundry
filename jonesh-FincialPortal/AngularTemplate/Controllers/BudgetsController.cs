@@ -44,7 +44,7 @@ namespace AngularTemplate.Controllers
         [Route("GetBudget")]
         public async Task<Budget> GetBudget(int id)
         {
-            return await db.SelectBudgetsAsync(id);
+            return await db.SelectBudgetAsync(id);
         }
 
         // POST: api/Budgets/Create
@@ -52,7 +52,7 @@ namespace AngularTemplate.Controllers
         [Route("CreateBudget")]
         public async Task CreateBudget(Budget budget)
         {
-            await db.InsertBudgetsAsync(budget);
+            await db.InsertBudgetAsync(budget);
         }
 
         // PUT: api/Budgets/Edit
@@ -60,7 +60,7 @@ namespace AngularTemplate.Controllers
         [Route("EditBudget")]
         public async Task EditAccount(Budget budget)
         {
-            await db.UpdateBudgetsAsync(budget);
+            await db.UpdateBudgetAsync(budget);
         }
 
 
@@ -68,7 +68,7 @@ namespace AngularTemplate.Controllers
         [Route("DeleteBudget")]
         public async Task DeleteBudgetItems([FromUri] int Id)
         {
-            await db.DeleteBudgetsAsync(Id);
+            await db.DeleteBudgetAsync(Id);
         }
     }
 }

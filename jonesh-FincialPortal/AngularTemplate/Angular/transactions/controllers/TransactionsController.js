@@ -3,7 +3,7 @@
     function ($scope, $state, $stateParams, transactionsService, authService) {
 
         //SETUP TRANSACTION TIES TO ACCOUNT
-        $scope.AccountId = $scope.accountId;
+        $scope.AccountId = $scope.account.id;
 
 
         //get accounts

@@ -1,17 +1,14 @@
-﻿<div ng-controller="BudgetsController">
-    <h3>Create Budget</h3>
-    <div class="row clearfix">
-        <br />
-        <form class="form-horizontal col-md-12" role="form">
-            <div class="form-group">
-                <div>
-                    <label class="control-label col-md-3" for="Category">Select a Category:</label>
-                    <select type="text"
-                            select ng-model="budget"
-                            data-ng-options="Id for Name in categories.Name"
-                            class="form-control col-md-9"></select>
+﻿    <div ng-controller="BudgetsController">
+        <h3>Create Budget</h3>
+        <form class="row clearfix">
+            <br />
+            <form class="form-horizontal col-md-12" role="form">
+                <div class="form-group">
+                    <label class="control-label col-md-3">Select a Category:</label>
+                    <select ng-model="categoryId" ng-options="category.Id as category.Name for category in categories"></select>
                 </div>
-            </div>
+            </form>
+
             <div class="form-group">
                 <label class="control-label col-md-3" for="Amount">Amount:</label>
                 <input type="text" class="form-control col-md-9" placeholder="Amount" data-ng-model="Amount" />
@@ -24,6 +21,6 @@
             <input type="button" class="btn" value="Cancel" ui-sref="Budgets">
         </div>
     </div>
-</div>
-
-           <!--typeahead=" categories.name for item in categories | filter:$viewvalue | limitto:8"-->
+    </div>
+    <!--categories[budget.categoryid].name                      <div class="form-control col-md-9">-->
+    <!--typeahead=" categories.name for item in categories | filter:$viewvalue | limitto:8"  data-ng-options="category in categories"-->

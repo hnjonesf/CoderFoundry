@@ -11,5 +11,6 @@ namespace FinalTemplate.Models.DataModels
         public string HouseHold { get; set; }
         public int CategoryId { get; set; }
         public string Amount { get; set; }
+
     }
 }

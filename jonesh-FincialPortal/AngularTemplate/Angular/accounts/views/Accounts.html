@@ -19,7 +19,7 @@
                 <td>{{account.Balance| currency:'$'}}</td>
                 <td>{{account.ReconciledBalance| currency:'$'}}</td>
                 <td>
-                    <a class="btn btn-primary" ng-click="goToTransactions(account.AccountId)">
+                    <a class="btn btn-primary" ui-sref="Transactions(account.AccountId)">
                         <span class="glyphicon glyphicon-list" aria-hidden="true">Transactions</span>
                     </a>
                 </td>

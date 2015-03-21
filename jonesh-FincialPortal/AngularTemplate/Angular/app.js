@@ -156,7 +156,7 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         data: {
             Authorize: "All"
         }
-        //abstract: true
+        //PUT REFERRENCES TO ACCOUNTID HERE, E.G., RESOLVE
     })
 
     .state('CreateTransaction', {

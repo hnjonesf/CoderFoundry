@@ -17,8 +17,8 @@ angular.module('app')
             });
         };
 
-        factory.createBudget = function (account) {
-            return $http.post('/api/budgets/CreateBudget', account).then(function (response) {
+        factory.createBudget = function (budget) {
+            return $http.post('/api/budgets/CreateBudget', budget).then(function (response) {
                 return response.data;
             });
         };
@@ -30,8 +30,8 @@ angular.module('app')
             });
         };
 
-        factory.editBudget = function (account) {
-            return $http.put('/api/budgets/EditBudget', account).then(function (response) {
+        factory.editBudget = function (budget) {
+            return $http.put('/api/budgets/EditBudget', budget).then(function (response) {
                 return response.data;
             });
         };

@@ -50,17 +50,17 @@ namespace AngularTemplate.Controllers
         // POST: api/Budgets/Create
         [HttpPost]
         [Route("CreateBudget")]
-        public async Task CreateBudget(Budget category)
+        public async Task CreateBudget(Budget budget)
         {
-            await db.InsertBudgetsAsync(category);
+            await db.InsertBudgetsAsync(budget);
         }
 
         // PUT: api/Budgets/Edit
         [HttpPut]
         [Route("EditBudget")]
-        public async Task EditAccount(Budget category)
+        public async Task EditAccount(Budget budget)
         {
-            await db.UpdateBudgetsAsync(category);
+            await db.UpdateBudgetsAsync(budget);
         }
 
 

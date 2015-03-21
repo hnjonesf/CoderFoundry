@@ -29,7 +29,7 @@
         $scope.createBudget = function createBudget() {
         $scope.budget = {
             HouseHold: $scope.houseHold,
-            CategoryId: $scope.catatoryId,
+            CategoryId: $scope.categoryId,
             Amount: $scope.Amount
         };
         budgetsService.createBudget($scope.budget).then(function (res) {

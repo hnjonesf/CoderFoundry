@@ -90,20 +90,16 @@
     <EmbeddedResource Include="SQL\Security\Tables\Budgets.sql" />
     <EmbeddedResource Include="SQL\Security\Tables\Categories.sql" />
     <EmbeddedResource Include="SQL\Security\Tables\Invitations.sql" />
-    <EmbeddedResource Include="SQL\Security\Tables\Transactions.sql" />
+    <EmbeddedResource Include="SQL\Security\Tables\AccountTransactions.sql" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetUserClaimsByUserId.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="SQL\Security\Stored Procedures\CreateAccount.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\DeleteAccount.sql" />
-    <EmbeddedResource Include="SQL\Security\Stored Procedures\DeleteTransaction.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetCategoriesByHousehold.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\FindTransactionsByUserId.sql" />
-    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindTransactionsByAccount.sql" />
-    <EmbeddedResource Include="SQL\Security\Stored Procedures\RemoveUserFromHousehold.sql" />
-    <EmbeddedResource Include="SQL\Security\Stored Procedures\SearchAccount.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\GetAccountTransactionsForAccount.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\FindUserByHousehold.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\FindAccountsByHouseHold.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\FindAccountsByName.sql" />

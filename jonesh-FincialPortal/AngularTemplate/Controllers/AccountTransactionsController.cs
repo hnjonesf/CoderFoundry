@@ -23,52 +23,51 @@ namespace AngularTemplate.Controllers
     [RoutePrefix("api/transactions")]
     public class ApiTransactionsController : ApiController
     {
-        private ITransactionDataAccess db;
+        private IAccountTransactionDataAccess db;
 
 
         public ApiTransactionsController()
         {
-            db = HttpContext.Current.GetOwinContext().Get<SqlConnection>
-                ().As<ITransactionDataAccess>();
+            db = HttpContext.Current.GetOwinContext().Get<SqlConnection>().As<IAccountTransactionDataAccess>();
         }
 
         // GET: api/Transactions
         [HttpGet]
         [Route("GetTransactions")]
-        public Task<IList<Transaction>> GetTransactions(int accountId)
+        public Task<IList<AccountTransaction>> GetTransactions(int accountId)
         {
-            return db.GetTransactionsForAccount(accountId);
+            return db.GetAccountTransactionsForAccount(accountId);
         }
 
         [HttpGet]
         [Route("GetTransaction")]
-        public async Task<Transaction> GetTransaction(int id)
+        public async Task<AccountTransaction> GetTransaction(int id)
         {
-            return await db.SelectTransactionAsync(id);
+            return await db.SelectAccountTransactionAsync(id);
         }
 
         // POST: api/Transactions/Create
         [HttpPost]
         [Route("CreateTransaction")]
-        public async Task CreateTransaction(Transaction transaction)
+        public async Task CreateAccountTransaction(AccountTransaction accounttransaction)
         {
-            await db.InsertTransactionAsync(transaction);
+            await db.InsertAccountTransactionAsync(accounttransaction);
         }
 
         // PUT: api/Transactions/Edit
         [HttpPut]
         [Route("EditTransaction")]
-        public async Task EditAccount(Transaction transaction)
+        public async Task EditAccountAccount(AccountTransaction accounttransaction)
         {
-            await db.UpdateTransactionAsync(transaction);
+            await db.UpdateAccountTransactionAsync(accounttransaction);
         }
 
 
         [HttpDelete]
         [Route("DeleteTransaction")]
-        public async Task DeleteTransaction([FromUri] int Id)
+        public async Task DeleteAccountTransaction([FromUri] int Id)
         {
-            await db.DeleteTransactionAsync(Id);
+            await db.DeleteAccountTransactionAsync(Id);
         }
     }
 }

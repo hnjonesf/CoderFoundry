@@ -1,5 +1,5 @@
-﻿<div ng-controller="TransactionsController">
-    <h1>Transactions Summary</h1>
+﻿<div ng-controller="AccountsController">
+    <h2>Transactions Summary for {{account}}</h2>
 
     <button class="btn btn-primary" ui-sref="CreateTransaction">
         Create A New Transaction
@@ -10,10 +10,17 @@
 
         <table class="table table-striped table-hover">
             <tr>
-                <th>Transaction Name</th>
+                <th>Amount</th>
+                <th>Abs Amount</th>
+                <th>Reconciled Amount</th>
+                <th>Abs Reconciled Amount</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Updated</th>
+                <th>Updated By</th>
+                <th>Category</th>
             </tr>
             <tr ng-repeat="transaction in transactions">
-                <td>{{transacton.AccountId}}</td>
                 <td>{{transacton.Amount| currency:'$'}}</td>
                 <td>{{transacton.AbsAmount| currency:'$'}}</td>
                 <td>{{transacton.ReconciledAmount| currency:'$'}}</td>
@@ -23,9 +30,8 @@
                 <td>{{transacton.Updated}}</td>
                 <td>{{transacton.UpdatedByUserId}}</td>
                 <td>{{transacton.CategoryId}}</td>
-                <td>{{transacton.AccountId}}</td>
                 <td>
-                    <a class="btn btn-primary" ui-sref="EditTransaction({id: account.Id})">
+                    <a class="btn btn-primary" ui-sref="getTransaction({id: account.Id})">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit or Delete Transaction</span>
                     </a>
                 </td>

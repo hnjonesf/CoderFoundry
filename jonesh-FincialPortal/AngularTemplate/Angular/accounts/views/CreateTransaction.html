@@ -1,19 +1,15 @@
-﻿<div ng-controller="TransactionsController">
+﻿<div ng-controller="AccountsController">
     <h3>Create Transaction</h3>
     <div class="row clearfix">
         <br />
         <form class="form-horizontal col-md-12" role="form">
-            <div class="form-group">
-                <label class="control-label col-md-3" for="AccountId">Account:</label>
-                <input type="text" class="form-control col-md-9" ng-model="transaction.AccountId" required autofocus />
-            </div>
             <div class="form-group">
                 <label class="control-label col-md-3" for="Amount">Amount:</label>
                 <input type="text" class="form-control col-md-9" ng-model="transaction.Amount" required autofocus />
             </div>
             <div class="form-group">
                 <label class="control-label col-md-3" for="AbsAmount">Absolute Amount:</label>
-                <input type="text" class="form-control col-md-9" ng-model="transaction.AbsAmount" required autofocus />
+                <input type="text" class="form-control col-md-9" ng-model="transaction.AbsAmount" />
             </div>
             <div class="form-group">
                 <label class="control-label col-md-3" for="ReconciledAmount">Reconciled Amount:</label>
@@ -32,22 +28,14 @@
                 <input type="text" class="form-control col-md-9" ng-model="transaction.Description" required autofocus />
             </div>
             <div class="form-group">
-                <label class="control-label col-md-3" for="Updated">Updated:</label>
-                <input type="text" class="form-control col-md-9" ng-model="transaction.Updated" required autofocus />
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" for="UpdatedByUserId">Updated By User Id:</label>
-                <input type="text" class="form-control col-md-9" ng-model="transaction.UpdatedByUserId" required autofocus />
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" for="CategoryId">CategoryId:</label>
-                <input type="text" class="form-control col-md-9" ng-model="transaction.CategoryId" required autofocus />
+                <label class="control-label col-md-3" for="CategoryId">Select a Category:</label>
+                <select type="text" class="form-control col-md-9" ng-model="categoryId" ng-options="category.Id as category.Name for category in categories"></select>
             </div>
         </form>
         <br />
         <br />
         <div>
-            <input type="button" class="btn btn-primary" value="Update Transaction" ng-click="editTransaction()">
+            <input type="button" class="btn btn-primary" value="Update Transaction" ng-click="createTransaction()">
             <input type="button" class="btn btn-primary" value="Delete Transaction" ng-click="deleteTransaction()">
             <input type="button" class="btn" value="Cancel" ui-sref="Transactions">
         </div>

@@ -36,14 +36,14 @@ namespace AngularTemplate.Controllers
         // GET: api/Accounts
         [HttpGet]
         [Route("GetAccounts")]
-        public Task<IList<Account>> GetAccounts(string houseHold)
+        public Task<IList<Accout>> GetAccounts(string houseHold)
         {
             return db.FindAccountsByHouseHold(houseHold);
         }
 
         [HttpGet]
         [Route("GetAccount")]
-        public async Task<Account> GetAccount(int id)
+        public async Task<Accout> GetAccount(int id)
         {
             return await db.SelectAccountAsync(id);
         }
@@ -51,7 +51,7 @@ namespace AngularTemplate.Controllers
         // POST: api/Accounts/Create
         [HttpPost]
         [Route("CreateAccount")]
-        public async Task<int> CreateAccount(Account account)
+        public async Task<int> CreateAccount(Accout account)
         {
             var user = await um.FindByIdAsync(HttpContext.Current.User.Identity.GetUserId<int>());
 
@@ -61,7 +61,7 @@ namespace AngularTemplate.Controllers
         // PUT: api/Accounts/Edit
         [HttpPut]
         [Route("EditAccount")]
-        public async Task EditAccount(Account account)
+        public async Task EditAccount(Accout account)
         {
             await db.UpdateAccountAsync(account);
         }

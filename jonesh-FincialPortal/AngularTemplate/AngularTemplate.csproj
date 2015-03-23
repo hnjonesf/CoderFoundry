@@ -228,7 +228,7 @@
     <Compile Include="Controllers\ApiAccountsController.cs" />
     <Compile Include="Controllers\BudgetsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
-    <Compile Include="Controllers\TransactionsController.cs" />
+    <Compile Include="Controllers\AccountTransactionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -241,11 +241,11 @@
     <Compile Include="Models\DataModels\Budget.cs" />
     <Compile Include="Models\DataModels\Category.cs" />
     <Compile Include="Models\DataModels\Invitation.cs" />
-    <Compile Include="Models\DataModels\Transaction.cs" />
+    <Compile Include="Models\DataModels\AccountTransaction.cs" />
     <Compile Include="Models\Interfaces\IAccountDataAccess .cs" />
     <Compile Include="Models\Interfaces\IBudgetDataAccess.cs" />
     <Compile Include="Models\Interfaces\ICategoryDataAccess.cs" />
-    <Compile Include="Models\Interfaces\ITransactonDataAccess.cs" />
+    <Compile Include="Models\Interfaces\IAccountTransactonDataAccess.cs" />
     <Compile Include="Models\Interfaces\IUserDataAccess.cs" />
     <Compile Include="Models\Stores\InsightUserStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -259,6 +259,7 @@
     <Content Include="Angular\accounts\controllers\AccountsController.js" />
     <Content Include="Angular\accounts\controllers\EditAccountController.js" />
     <Content Include="Angular\accounts\views\Accounts.html" />
+    <Content Include="Angular\accounts\views\Accounts.List.html" />
     <Content Include="Angular\accounts\views\CreateAccount.html" />
     <Content Include="Angular\accounts\views\EditAccount.html" />
     <Content Include="Angular\budgets\controllers\EditBudgetsController.js" />
@@ -278,12 +279,9 @@
     <Content Include="Angular\global\services\categoriesService.js" />
     <Content Include="Angular\global\services\accountsService.js" />
     <Content Include="Angular\global\services\authService.js" />
-    <Content Include="Angular\global\services\transactionsService.js" />
-    <Content Include="Angular\transactions\controllers\EditTransactionController.js" />
-    <Content Include="Angular\transactions\controllers\TransactionsController.js" />
-    <Content Include="Angular\transactions\views\Transactions.html" />
-    <Content Include="Angular\transactions\views\CreateTransaction.html" />
-    <Content Include="Angular\transactions\views\EditTransaction.html" />
+    <Content Include="Angular\accounts\views\Transactions.html" />
+    <Content Include="Angular\accounts\views\CreateTransaction.html" />
+    <Content Include="Angular\accounts\views\EditTransaction.html" />
     <Content Include="Angular\users\controllers\LoginController.js" />
     <Content Include="Angular\users\controllers\MenuController.js" />
     <Content Include="Angular\users\controllers\RegisterController.js" />
@@ -401,6 +399,7 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <None Include="Properties\PublishProfiles\LibreWorxFinancialPortal.pubxml" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />

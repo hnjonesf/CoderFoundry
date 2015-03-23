@@ -10,11 +10,11 @@ namespace AngularTemplate.InsightUserStore.DataAccess
     public interface IAccountDataAccess
     {
         // auto procs
-        Task<int> InsertAccountAsync(Account account);
-        Task UpdateAccountAsync(Account account);
-        Task<Account> SelectAccountAsync(int Id);
+        Task<int> InsertAccountAsync(Accout account);
+        Task UpdateAccountAsync(Accout account);
+        Task<Accout> SelectAccountAsync(int Id);
         Task DeleteAccountAsync(int Id);
-        Task<IList<Account>> FindAccountsByHouseHold(string HouseHold);
+        Task<IList<Accout>> FindAccountsByHouseHold(string HouseHold);
         Task<decimal> SumTransactionsByAccount(int AccountId, string HouseHold);
     }
 }

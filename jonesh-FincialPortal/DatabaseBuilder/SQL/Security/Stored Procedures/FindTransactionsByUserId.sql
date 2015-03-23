@@ -1,5 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[FindTransactionsByUserId] 
+﻿CREATE PROCEDURE [dbo].[FindAccountTransactionsByUserId] 
 	@userid int
 AS
-SELECT * From [dbo].[Transactions]
+SELECT * From [dbo].[AccountTransactions]
 WHERE UpdatedByUserId = @userid

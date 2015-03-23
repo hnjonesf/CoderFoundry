@@ -1,6 +1,7 @@
 ﻿angular.module('app')
-.controller('AccountsController', ['$scope', '$state', '$stateParams', '$filter', 'accountsService', 'authService', 'ngTableParams',
-    function ($scope, $state, $stateParams, $filter, accountsService, authService, ngTableParams) {
+.controller('AccountsController', ['$scope', '$state', '$stateParams', '$filter', 'accountsService', 'authService', 'ngTableParams','categoriesService', 'transactions',
+    function ($scope, $state, $stateParams, $filter, accountsService, authService, ngTableParams, categoriesService) {
+        $scope.transactions = transactions;
 
         //SETUP ACCOUNT TIES TO HOUSEHOLD
         $scope.houseHold = authService.authentication.houseHold;
@@ -11,36 +12,10 @@
 
         //get accounts
         $scope.getAccounts = function () {            
-            accountsService.getAccounts($scope.houseHold).then(function (data) {
+            accountsService.getAccounts($scope.houseHold)
+                .then(function (data) {
                 $scope.accounts = data;
-
-                //ng-Table Params
-                $scope.tableParams = new ngTableParams({
-                    page: 1,            // show first page
-                    count: 10,          // count per page
-                    filter: {
-                        name: 'M'       // initial filter
-                    },
-                    sorting: {
-                        name: 'asc'     // initial sorting
-                    }
-                }, {
-                    total: data.length, // length of data
-                    getData: function($defer, params) {
-                        // use build-in angular filter
-                        var filteredData = params.filter() ?
-                                $filter('filter')(data, params.filter()) :
-                                data;
-                        var orderedData = params.sorting() ?
-                                $filter('orderBy')(filteredData, params.orderBy()) :
-                                data;
-
-                        params.total(orderedData.length); // set total for recalc pagination
-                        $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-                    }
-                });
             });
-
         }
 
 
@@ -57,7 +32,37 @@
                 $state.go('Accounts');
             });
         }
- 
+
+
+
+        //GET TRANSACTIONS
+        $scope.getTransactions = function () {
+            accountsService.getTransactions($scope.AccountId).then(function (data) {
+                $scope.transactions = data;
+            });
+        }
+
+        //CREATE TRANSACTION
+        $scope.createTransaction = function createTransaction() {
+            $scope.transaction = {
+                AccountId: $scope.AccountId,
+                Amount: $scope.Amount,
+                AbsAmount: $scope.AbsAmount,
+                ReconciledAmount: $scope.ReconciledAmount,
+                AbsReconciledAmount: $scope.AbsReconciledAmount,
+                Date: $scope.Date,
+                Description: $scope.Description,
+                Updated: $scope.Date,
+                UpdatedByUserId: $scope.UpdatedByUserId,
+                CategoryId: $scope.CategoryId
+            };
+            accountsService.createTransaction($scope.transaction).then(function (res) {
+                $scope.transaction = res.data;
+                $state.go('Transactions');
+            });
+        }
+
+
         $scope.getAccounts();
 
     }]);

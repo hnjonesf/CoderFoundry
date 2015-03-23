@@ -5,7 +5,7 @@ using System.Web;
 
 namespace FinalTemplate.Models.DataModels
 {
-    public class Account
+    public class Accout
     {
         public int Id { get; set; }
         public string HouseHold { get; set; }

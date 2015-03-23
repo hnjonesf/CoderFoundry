@@ -29,40 +29,6 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         }
 
     })
-        ///ACCOUNTS
-    .state('Accounts', {
-        url: '/Accounts',
-        templateUrl: '/Angular/accounts/views/Accounts.html',
-        data: {
-            Authorize: "All"
-        }
-        //abstract: true
-    })
-
-    .state('CreateAccount', {
-        url: '/CreateAccount',
-        templateUrl: '/Angular/accounts/views/CreateAccount.html',
-        data: {
-            Authorize: "All"
-        }
-        //abstract: true
-    })
-
-    .state('EditAccount', {
-        url: '/EditAccount/:id',
-        templateUrl: '/Angular/accounts/views/EditAccount.html',
-        data: {
-            Authorize: "All"
-        },
-        controller: 'EditAccountController',
-        resolve: {
-            account: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
-                return accountsService.getAccount($stateParams.id)
-                .then(function (data) { return data; });
-            }]
-        }
-        //abstract: true
-    })
 
 
       ///BUDGETS
@@ -147,42 +113,92 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         }
     })
 
-
-
-              ///TRANSACTIONS
-    .state('Transactions', {
-        url: '/Transactions',
-        templateUrl: '/Angular/transactions/views/Transactions.html',
+                ///ACCOUNTS
+    .state('Accounts', {
+        url: '/Accounts',
+        templateUrl: '/Angular/accounts/views/Accounts.html',
         data: {
             Authorize: "All"
         },
-        resolve: {
-            account: ['$stateParams', 'transactionsService', function ($stateParams, transactionsService) {
-                return transactionsService.getTransaction($stateParams.id)
-                .then(function (data) { return data; });
-            }]
-        }
+        abstract: true
     })
 
-    .state('CreateTransaction', {
-        url: '/CreateTransaction',
-        templateUrl: '/Angular/transactions/views/CreateTransaction.html',
+        .state('Accounts.List', {
+            url: '/',
+            templateUrl: '/Angular/accounts/views/Accounts.List.html',
+            data: {
+                Authorize: "All"
+            }
+        })
+
+    .state('CreateAccount', {
+        url: '/CreateAccount',
+        templateUrl: '/Angular/accounts/views/CreateAccount.html',
         data: {
             Authorize: "All"
         }
         //abstract: true
     })
 
-    .state('EditTransaction', {
-        url: '/EditTransaction/:id',
-        templateUrl: '/Angular/transactions/views/EditTransaction.html',
+    .state('EditAccount', {
+        url: '/EditAccount/:id',
+        templateUrl: '/Angular/accounts/views/EditAccount.html',
         data: {
             Authorize: "All"
         },
-        controller: 'EditTransactionController',
+        controller: 'EditAccountController',
         resolve: {
-            account: ['$stateParams', 'transactionsService', function ($stateParams, transactionsService) {
-                return transactionsService.getTransaction($stateParams.id)
+            account: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
+                return accountsService.getAccount($stateParams.id)
+                .then(function (data) { return data; });
+            }]
+        }
+        //abstract: true
+    })
+
+
+              ///TRANSACTIONS
+    .state('Transactions', {
+        url: '/Account/:accountId/Transactions/',
+        templateUrl: '/Angular/accounts/views/Transactions.html',
+        data: {
+            Authorize: "All"
+        },
+        controller: 'transactionsController',
+        resolve: {
+            transactions: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
+                return accountsService.getTransactions($stateParams.accountId)
+                .then(function (data) { return data; });
+            }]
+        }
+    })
+
+    .state('CreateTransaction', {
+        url: '/CreateTransaction/:account.id',
+        templateUrl: '/Angular/accounts/views/CreateTransaction.html',
+        data: {
+            Authorize: "All"
+        },
+        //GET CATEGORIES FOR HOUSEHOLD
+        resolve: {
+        categories: ['$stateParams', 'categoriesService', function ($stateParams, categoriesService) {
+            return categories.getCategories($stateParams.id)
+            .then(function (data) { return data; });
+        }]
+    }
+        //abstract: true
+    })
+
+    .state('EditTransaction', {
+        url: '/EditTransaction/:id',
+        templateUrl: '/Angular/accounts/views/EditTransaction.html',
+        data: {
+            Authorize: "All"
+        },
+        controller: 'EditAccountsController',
+        resolve: {
+            account: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
+                return accountsService.getTransaction($stateParams.id)
                 .then(function (data) { return data; });
             }]
         }

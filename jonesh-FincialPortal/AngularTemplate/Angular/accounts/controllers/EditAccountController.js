@@ -19,5 +19,20 @@
         }
 
 
+        //edit or delete account
+        $scope.editTransaction = function editTransaction() {
+            accountsService.editTransaction($scope.transaction).then(function (res) {
+                $state.go('Transactions');
+            });
+        }
+
+        //delete account
+        $scope.deleteTransaction = function deleteTransaction() {
+            accountsService.deleteTransaction($scope.transaction.Id).then(function (res) {
+                $state.go('Transactions');
+            });
+        }
+
+
     }]);
 

@@ -279,6 +279,7 @@
     <Content Include="Angular\global\services\categoriesService.js" />
     <Content Include="Angular\global\services\accountsService.js" />
     <Content Include="Angular\global\services\authService.js" />
+    <Content Include="Angular\transactions\controllers\CreateTransactionController.js" />
     <Content Include="Angular\transactions\views\Transactions.html" />
     <Content Include="Angular\transactions\views\CreateTransaction.html" />
     <Content Include="Angular\transactions\views\EditTransaction.html" />

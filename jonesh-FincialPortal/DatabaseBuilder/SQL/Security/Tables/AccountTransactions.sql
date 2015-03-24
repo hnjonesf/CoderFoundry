@@ -23,13 +23,6 @@ ADD CONSTRAINT [PK_Transactions] PRIMARY KEY CLUSTERED
 
 GO
 
-
-ALTER TABLE [dbo].[AccountTransactions]  
-WITH CHECK ADD  CONSTRAINT [FK_Transactions_Users] 
-FOREIGN KEY([UpdatedByUserId])
-REFERENCES [Security].[Users] ([Id])
-GO
-
 ALTER TABLE [dbo].[AccountTransactions] 
 CHECK CONSTRAINT [FK_Transactions_Users]
 GO

@@ -137,7 +137,6 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         data: {
             Authorize: "All"
         }
-        //abstract: true
     })
 
     .state('EditAccount', {
@@ -153,18 +152,17 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
                 .then(function (data) { return data; });
             }]
         }
-        //abstract: true
     })
 
 
               ///TRANSACTIONS
     .state('Transactions', {
         url: '/Account/:accountId/Transactions/',
-        templateUrl: '/Angular/accounts/views/Transactions.html',
+        templateUrl: '/Angular/transactions/views/Transactions.html',
         data: {
             Authorize: "All"
         },
-        controller: 'transactionsController',
+        controller: 'TransactionsController',
         resolve: {
             transactions: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
                 return accountsService.getTransactions($stateParams.accountId)
@@ -174,8 +172,8 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
     })
 
     .state('CreateTransaction', {
-        url: '/CreateTransaction/:account.id',
-        templateUrl: '/Angular/accounts/views/CreateTransaction.html',
+        url: '/CreateTransaction/:accountId',
+        templateUrl: '/Angular/transactions/views/CreateTransaction.html',
         data: {
             Authorize: "All"
         },
@@ -186,16 +184,15 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
             .then(function (data) { return data; });
         }]
     }
-        //abstract: true
     })
 
     .state('EditTransaction', {
         url: '/EditTransaction/:id',
-        templateUrl: '/Angular/accounts/views/EditTransaction.html',
+        templateUrl: '/Angular/transactions/views/EditTransaction.html',
         data: {
             Authorize: "All"
         },
-        controller: 'EditAccountsController',
+        controller: 'EditTransactionController',
         resolve: {
             account: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
                 return accountsService.getTransaction($stateParams.id)

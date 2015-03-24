@@ -3,7 +3,7 @@ angular.module( 'app' )
     .factory('accountsService', ['$http', function ($http) {
 
         var factory = {};
-        factory.refreshAccounts = function (houseHold) {
+        factory.getAccounts = function (houseHold) {
             var options = { params: { houseHold: houseHold } };
             return $http.get('/api/accounts/GetAccounts', options).then(function (response) {
                 return response.data;

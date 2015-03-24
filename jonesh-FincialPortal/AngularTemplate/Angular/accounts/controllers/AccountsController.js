@@ -31,13 +31,9 @@
             };
             accountsService.createAccount($scope.account).then(function (res) {
                 $scope.account = res.data;
-                $state.go('Accounts');
+                $state.go('Accounts.List');
             });
         }
-
-
-
-
 
         $scope.getAccounts();
 

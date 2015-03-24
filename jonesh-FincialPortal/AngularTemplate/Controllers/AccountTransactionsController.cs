@@ -59,6 +59,8 @@ namespace AngularTemplate.Controllers
         [Route("EditTransaction")]
         public async Task EditAccountAccount(AccountTransaction accounttransaction)
         {
+            accounttransaction.UpdatedByUserId = User.Identity.GetUserId<int>();
+            accounttransaction.Updated = System.DateTimeOffset.Now;
             await db.UpdateAccountTransactionAsync(accounttransaction);
         }
 

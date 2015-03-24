@@ -140,7 +140,7 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
     })
 
     .state('EditAccount', {
-        url: '/EditAccount/:id',
+        url: '/EditAccount/{accountId}',
         templateUrl: '/Angular/accounts/views/EditAccount.html',
         data: {
             Authorize: "All"
@@ -148,8 +148,7 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         controller: 'EditAccountController',
         resolve: {
             account: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
-                return accountsService.getAccount($stateParams.id)
-                .then(function (data) { return data; });
+                return accountsService.getAccount($stateParams.accountId);
             }]
         }
     })
@@ -165,41 +164,42 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         controller: 'TransactionsController',
         resolve: {
             transactions: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
-                return accountsService.getTransactions($stateParams.accountId)
-                .then(function (data) { return data; });
+                return accountsService.getTransactions($stateParams.accountId);
             }]
         }
     })
 
     .state('CreateTransaction', {
-        url: '/CreateTransaction/:accountId',
+        url: '/Account/:accountId/CreateTransaction/',
         templateUrl: '/Angular/transactions/views/CreateTransaction.html',
         data: {
             Authorize: "All"
         },
+        controller: 'CreateTransactionController',
         //GET CATEGORIES FOR HOUSEHOLD
         resolve: {
-        categories: ['$stateParams', 'categoriesService', function ($stateParams, categoriesService) {
-            return categories.getCategories($stateParams.id)
-            .then(function (data) { return data; });
-        }]
-    }
+            categories: ['$stateParams', 'categoriesService', 'authService', function ($stateParams, categoriesService, authService) {
+                return categoriesService.getCategories(authService.authentication.houseHold);
+            }]
+        }
     })
 
     .state('EditTransaction', {
-        url: '/EditTransaction/:id',
+        url: '/EditTransaction/:transactionId',
         templateUrl: '/Angular/transactions/views/EditTransaction.html',
         data: {
             Authorize: "All"
         },
         controller: 'EditTransactionController',
+        //GET CATEGORIES FOR HOUSEHOLD///hugh work on this tomorrow
         resolve: {
             account: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
-                return accountsService.getTransaction($stateParams.id)
-                .then(function (data) { return data; });
+                return accountsService.getTransaction($stateParams.transactionId);        
+            }],
+            categories: ['$stateParams', 'categoriesService', 'authService', function ($stateParams, categoriesService, authService) {
+                return categoriesService.getCategories(authService.authentication.houseHold);
             }]
         }
-        //abstract: true
     })
 
 
@@ -233,7 +233,7 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
 
 // Gets executed after the injector is created and are used to kickstart the application. Only instances and constants
 // can be injected here. This is to prevent further system configuration during application run time.
-.run(['$templateCache', '$rootScope', '$state', '$stateParams', 'authService', function ($templateCache, $rootScope, $state, $stateParams, authService) {
+.run(['$templateCache', '$rootScope', '$state', '$stateParams', 'authService',  function ($templateCache, $rootScope, $state, $stateParams, authService) {
     // Allows to retrieve UI Router state information from inside templates
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
@@ -242,6 +242,7 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
         //For later improved security
+
         var authorized = false;
 
         if (toState.data.Authorize.indexOf("Anonymous") > -1)

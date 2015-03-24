@@ -18,8 +18,8 @@ angular.module( 'app' )
             });
         };
 
-        factory.getAccount = function (id) {
-            var options = { params: { id: id } };
+        factory.getAccount = function (accountId) {
+            var options = { params: { id: accountId } };
             return $http.get('/api/accounts/GetAccount', options)
 
                 .then(function (response) {
@@ -55,7 +55,7 @@ angular.module( 'app' )
             });
         };
 
-        factory.createTransaction = function (account) {
+        factory.createTransaction = function (transaction) {
             return $http.post('/api/transactions/CreateTransaction', account).then(function (response) {
                 return response.data;
             });
@@ -68,8 +68,8 @@ angular.module( 'app' )
             });
         };
 
-        factory.editTransaction = function (account) {
-            return $http.put('/api/transactions/EditTransaction', account).then(function (response) {
+        factory.editTransaction = function (transaction) {
+            return $http.put('/api/transactions/EditTransaction', transaction).then(function (response) {
                 return response.data;
             });
         };

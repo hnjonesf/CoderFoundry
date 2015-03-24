@@ -1,14 +1,17 @@
 ﻿angular.module('app')
-.controller('AccountsController', ['$scope', '$state', '$stateParams', '$filter', 'accountsService', 'authService', 'ngTableParams','categoriesService', 'transactions',
-    function ($scope, $state, $stateParams, $filter, accountsService, authService, ngTableParams, categoriesService) {
-        $scope.transactions = transactions;
+.controller('AccountsController', ['$scope', '$state', '$stateParams', '$filter', 'accountsService', 'authService','categoriesService',
+    function ($scope, $state, $stateParams, $filter, accountsService, authService, categoriesService) {
 
-        //SETUP ACCOUNT TIES TO HOUSEHOLD
+
+        //ACCOUNT TO HOUSEHOLD
         $scope.houseHold = authService.authentication.houseHold;
         $scope.Name = "";
         $scope.Balance = "";
         $scope.ReconciledBalance = "";
 
+        //TRANSACTIONS FOR A GIVEN ACCOUNT
+
+        //CATEGORIES FOR A HOUSEHOLD TO BE USED IN A SELECT LIST
 
         //get accounts
         $scope.getAccounts = function () {            
@@ -17,7 +20,6 @@
                 $scope.accounts = data;
             });
         }
-
 
         //create account
         $scope.createAccount = function createAccount() {
@@ -35,32 +37,6 @@
 
 
 
-        //GET TRANSACTIONS
-        $scope.getTransactions = function () {
-            accountsService.getTransactions($scope.AccountId).then(function (data) {
-                $scope.transactions = data;
-            });
-        }
-
-        //CREATE TRANSACTION
-        $scope.createTransaction = function createTransaction() {
-            $scope.transaction = {
-                AccountId: $scope.AccountId,
-                Amount: $scope.Amount,
-                AbsAmount: $scope.AbsAmount,
-                ReconciledAmount: $scope.ReconciledAmount,
-                AbsReconciledAmount: $scope.AbsReconciledAmount,
-                Date: $scope.Date,
-                Description: $scope.Description,
-                Updated: $scope.Date,
-                UpdatedByUserId: $scope.UpdatedByUserId,
-                CategoryId: $scope.CategoryId
-            };
-            accountsService.createTransaction($scope.transaction).then(function (res) {
-                $scope.transaction = res.data;
-                $state.go('Transactions');
-            });
-        }
 
 
         $scope.getAccounts();

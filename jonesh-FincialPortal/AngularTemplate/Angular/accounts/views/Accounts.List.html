@@ -8,27 +8,29 @@
         <br />
         <br />
 
-        <table class="table table-striped table-hover">
-            <tr>
-                <th>Account Name</th>
-                <th>Balance</th>
-                <th>Reconciled Balance</th>
-            </tr>
-            <tr ng-repeat="account in accounts">
-                <td data-title="'Name'" sortable="'name'">{{account.Name}}</td>
-                <td data-title="'Balance'" sortable="'balance'">{{account.Balance| currency:'$'}}</td>
-                <td data-title="'ReconciledBalance'" sortable="'reconciledBalance'">{{account.ReconciledBalance| currency:'$'}}</td>
-                <td>
-                    <a class="btn btn-primary" ui-sref="Transactions({accountId: account.Id})">
-                        <span class="glyphicon glyphicon-list" aria-hidden="true">Transactions</span>
-                    </a>
-                </td>
-                <td>
-                    <a class="btn btn-primary" ui-sref="EditAccount({accountId: account.Id})">
-                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit or Delete Account</span>
-                    </a>
-                </td>
-            </tr>
-        </table>
+        <div class="gridStyle" ui-grid="gridOptions">
+            <!--<table class="table table-striped table-hover">
+                <tr>
+                    <th>Account Name</th>
+                    <th>Balance</th>
+                    <th>Reconciled Balance</th>
+                </tr>
+                <tr ng-repeat="account in accounts">
+                    <td data-title="'Name'" sortable="'name'">{{account.Name}}</td>
+                    <td data-title="'Balance'" sortable="'balance'">{{account.Balance| currency:'$'}}</td>
+                    <td data-title="'ReconciledBalance'" sortable="'reconciledBalance'">{{account.ReconciledBalance| currency:'$'}}</td>
+                    <td>
+                        <a class="btn btn-primary" ui-sref="Transactions({accountId: account.Id})">
+                            <span class="glyphicon glyphicon-list" aria-hidden="true">Transactions</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" ui-sref="EditAccount({accountId: account.Id})">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit or Delete Account</span>
+                        </a>
+                    </td>
+                </tr>
+            </table>-->
+        </div>
     </div>
 </div>

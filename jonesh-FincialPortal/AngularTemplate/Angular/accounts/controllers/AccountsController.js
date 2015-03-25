@@ -2,14 +2,17 @@
 .controller('AccountsController', ['$scope', '$state', '$stateParams', '$filter', 'accountsService', 'authService','categoriesService',
     function ($scope, $state, $stateParams, $filter, accountsService, authService, categoriesService) {
 
+        //GRID Options
+
 
         //ACCOUNT TO HOUSEHOLD
         $scope.houseHold = authService.authentication.houseHold;
         $scope.Name = "";
         $scope.Balance = "";
         $scope.ReconciledBalance = "";
-
+       
         //TRANSACTIONS FOR A GIVEN ACCOUNT
+         $scope.gridOptions = { data: 'accounts' };
 
         //CATEGORIES FOR A HOUSEHOLD TO BE USED IN A SELECT LIST
 

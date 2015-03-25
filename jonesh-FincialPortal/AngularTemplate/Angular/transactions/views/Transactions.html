@@ -29,7 +29,7 @@
                 <td>{{transaction.Description}}</td>
                 <td>{{transaction.Updated | date}}</td>
                 <td>{{transaction.UpdatedByUserId}}</td>
-                <td>{{transaction.CategoryId}}</td>
+                <td>{{categories[transaction.CategoryId].Name}}</td>
                 <td>
                     <a class="btn btn-primary" ui-sref="EditTransaction({transactionId: transaction.Id})">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit or Delete Transaction</span>

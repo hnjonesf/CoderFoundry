@@ -1,4 +1,4 @@
-﻿var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'LocalStorageModule','ngTable']);
+﻿var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'LocalStorageModule', 'ui.grid']);
 
 
 app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterProvider', function 
@@ -57,6 +57,11 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
             Authorize: "All"
         },
         controller: 'CreateBudgetController',
+        resolve: {
+            categories: ['authService', 'categoriesService', function (authService, categoriesService) {
+                return categoriesService.getCategories(authService.authentication.houseHold);
+            }]
+        }
     })
 
     .state('EditBudget', {
@@ -70,9 +75,11 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
             budget: ['$stateParams', 'budgetsService', function ($stateParams, budgetsService) {
                 return budgetsService.getBudget($stateParams.id)
                 .then(function (data) { return data; });
+            }],
+            categories: ['authService', 'categoriesService', function (authService, categoriesService) {
+                    return categoriesService.getCategories(authService.authentication.houseHold);
             }]
         }
-        //abstract: true
     })
 
 
@@ -173,6 +180,9 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         },
         controller: 'TransactionsController',
         resolve: {
+            categories: [ 'authService','categoriesService', function (authService, categoriesService) {
+                return categoriesService.getCategories(authService.authentication.houseHold);
+            }],
             transactions: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
                 return accountsService.getTransactions($stateParams.accountId);
             }]
@@ -201,9 +211,9 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
             Authorize: "All"
         },
         controller: 'EditTransactionController',
-        //GET CATEGORIES FOR HOUSEHOLD///hugh work on this tomorrow
+        //GET CATEGORIES FOR HOUSEHOLD, too
         resolve: {
-            account: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
+            transaction: ['$stateParams', 'accountsService', function ($stateParams, accountsService) {
                 return accountsService.getTransaction($stateParams.transactionId);        
             }],
             categories: ['$stateParams', 'categoriesService', 'authService', function ($stateParams, categoriesService, authService) {

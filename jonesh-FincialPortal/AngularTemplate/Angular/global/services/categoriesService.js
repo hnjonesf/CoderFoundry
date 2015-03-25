@@ -17,8 +17,8 @@ angular.module('app')
             });
         };
 
-        factory.createCategory = function (account) {
-            return $http.post('/api/categories/CreateCategory', account).then(function (response) {
+        factory.createCategory = function (category) {
+            return $http.post('/api/categories/CreateCategory', category).then(function (response) {
                 return response.data;
             });
         };
@@ -30,8 +30,8 @@ angular.module('app')
             });
         };
 
-        factory.editCategory = function (account) {
-            return $http.put('/api/categories/EditCategory', account).then(function (response) {
+        factory.editCategory = function (category) {
+            return $http.put('/api/categories/EditCategory', category).then(function (response) {
                 return response.data;
             });
         };

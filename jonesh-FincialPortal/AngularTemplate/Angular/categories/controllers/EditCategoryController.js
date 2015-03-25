@@ -11,12 +11,14 @@
             });
         }
 
-        //delete account
-        //TODO: IF CATEGORY BEING USED IN A BUDGET OR TRANSACTION, RETURN UNABLE TO DELETE MESSAGE.
-        //TODO: GetCategoriesByHousehold == true.
+        //NOT AVAILABLE DUE TO FK_CONSTRAINTS AND LACK OF TIME TO DO LOOKUP
+        //delete CATEGORY
         $scope.deleteCategory = function deleteCategory() {
             categoriesService.deleteCategory($scope.category.Id).then(function (res) {
                 $state.go('Categories');
+            },
+            function (res) {
+                console.log('FK ERROR');
             });
         }
 

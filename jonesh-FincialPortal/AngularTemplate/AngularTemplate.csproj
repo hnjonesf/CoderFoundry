@@ -262,10 +262,12 @@
     <Content Include="Angular\accounts\views\Accounts.List.html" />
     <Content Include="Angular\accounts\views\CreateAccount.html" />
     <Content Include="Angular\accounts\views\EditAccount.html" />
+    <Content Include="Angular\budgets\controllers\CreateBudgetController.js" />
     <Content Include="Angular\budgets\controllers\EditBudgetsController.js" />
     <Content Include="Angular\budgets\views\CreateBudget.html" />
     <Content Include="Angular\budgets\views\EditBudget.html" />
     <Content Include="Angular\categories\controllers\CategoriesController.js" />
+    <Content Include="Angular\categories\controllers\CreateCategoryController.js" />
     <Content Include="Angular\categories\controllers\EditCategoryController.js" />
     <Content Include="Angular\categories\views\Categories.html" />
     <Content Include="Angular\budgets\controllers\BudgetsController.js" />

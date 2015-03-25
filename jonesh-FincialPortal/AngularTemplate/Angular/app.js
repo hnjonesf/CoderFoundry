@@ -37,8 +37,17 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         templateUrl: '/Angular/budgets/views/Budgets.html',
         data: {
             Authorize: "All"
-        }
+        },
         //abstract: true
+        controller: 'BudgetsController',
+        resolve: {
+            categories: [ 'authService','categoriesService', function (authService, categoriesService) {
+                return categoriesService.getCategories(authService.authentication.houseHold);
+            }],
+            budgets: ['authService', 'budgetsService', function (authService, budgetsService) {
+                return budgetsService.getBudgets(authService.authentication.houseHold);
+            }]
+        }
     })
 
     .state('CreateBudget', {
@@ -46,8 +55,8 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         templateUrl: '/Angular/budgets/views/CreateBudget.html',
         data: {
             Authorize: "All"
-        }
-        //abstract: true
+        },
+        controller: 'CreateBudgetController',
     })
 
     .state('EditBudget', {
@@ -83,9 +92,10 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         templateUrl: '/Angular/categories/views/CreateCategory.html',
         data: {
             Authorize: "All"
-        }
-        //abstract: true
+        },
+        controller: 'CreateCategoryController',
     })
+
 
     .state('EditCategory', {
         url: '/EditCategory/:id',

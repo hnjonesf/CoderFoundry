@@ -4,21 +4,8 @@
         <br />
         <form class="form-horizontal col-md-12" role="form">
             <div class="form-group">
-
-                <!-- Select -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="selectCategory">Select Category</label>
-                    <div class="col-md-4">
-                        <select id="selectCategory" name="selectCategpru" class="form-control"
-                                ng-model="budget.Category"
-                                ng-options="budget in Budgets></select>
-                    </div>
-                </div>
-
-
                 <label class="control-label col-md-3" for="CategoryId">Category:</label>
-                <input type="text" class="form-control col-md-9" ng-model="budget.Category" required autofocus />
-            </div>
+                <select type="text" class="form-control col-md-9" ng-model="budget.CategoryId" ng-options="v.Id as v.Name for (k,v) in categories"></select>            </div>
             <div class="form-group">
                 <label class="control-label col-md-3" for="Amount">Amount:</label>
                 <input type="text" class="form-control col-md-9" ng-model="budget.Amount" />

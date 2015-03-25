@@ -328,7 +328,7 @@
     <Content Include="Content\Media\favicon.ico\ms-icon-310x310.png" />
     <Content Include="Content\Media\favicon.ico\ms-icon-70x70.png" />
     <Content Include="Content\Media\financial_portal.jpg" />
-    <Content Include="Content\ng-table.css" />
+    <Content Include="Content\ui-grid-stable.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -363,6 +363,7 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\AngularUI\ui-grid-stable.js" />
     <Content Include="Scripts\AngularUI\ui-router.js" />
     <Content Include="Scripts\AngularUI\ui-router.min.js" />
     <Content Include="Scripts\bootstrap.js" />

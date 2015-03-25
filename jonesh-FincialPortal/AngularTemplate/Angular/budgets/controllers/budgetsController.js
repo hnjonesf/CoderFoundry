@@ -6,7 +6,5 @@
         $scope.categories = categories;
         $scope.budgets = budgets;
 
-        console.log($scope.categories);
-        console.log($scope.budgets);
     }]);
 

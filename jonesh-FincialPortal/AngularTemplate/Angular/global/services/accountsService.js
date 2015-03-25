@@ -56,7 +56,7 @@ angular.module( 'app' )
         };
 
         factory.createTransaction = function (transaction) {
-            return $http.post('/api/transactions/CreateTransaction', account).then(function (response) {
+            return $http.post('/api/transactions/CreateTransaction', transaction).then(function (response) {
                 return response.data;
             });
         };

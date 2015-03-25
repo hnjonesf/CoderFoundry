@@ -10,7 +10,7 @@ namespace FinalTemplate.Models.DataModels
         public int Id { get; set; }
         public string HouseHold { get; set; }
         public int CategoryId { get; set; }
-        public string Amount { get; set; }
+        public decimal Amount { get; set; }
 
     }
 }

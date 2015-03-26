@@ -6,5 +6,15 @@
         $scope.accountId = $stateParams.accountId;
         $scope.transactions = transactions;
 
+        //$scope.gridOptions = {
+        //    data: 'transactions'
+        //};
+        ////
+        //$scope.gridOptionsTwo = {
+        //    data: 'transactions',
+        //    showGroupPanel: true,
+        //    jqueryUIDraggable: true
+        //}
+
     }]);
 

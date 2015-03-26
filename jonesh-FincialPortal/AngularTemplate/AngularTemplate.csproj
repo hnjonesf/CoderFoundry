@@ -329,6 +329,7 @@
     <Content Include="Content\Media\favicon.ico\ms-icon-70x70.png" />
     <Content Include="Content\Media\financial_portal.jpg" />
     <Content Include="Content\ui-grid-stable.css" />
+    <Content Include="Content\ui-grid.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

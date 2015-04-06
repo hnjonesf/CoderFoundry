@@ -2,25 +2,17 @@ var myApp = angular.module('myApp', []);
 
 myApp.controller('mainController', ['$scope', '$filter', '$timeout', function($scope, $filter, $timeout) {
     
-    $scope.handle = '';
+    $scope.userName = '';
     
     $scope.lowercasehandle = function() {
-        return $filter('lowercase')($scope.handle);
+        return $filter('lowercase')($scope.userName);
     };
+
+    $scope.uppercase = function () { return $filter('uppercase')($scope.userName) };
     
-    $scope.$watch('handle', function(newValue, oldValue) {
-        
-        console.info('Changed!');
-        console.log('Old:' + oldValue);
-        console.log('New:' + newValue);
-        
-    });
-    
-    $timeout(function() {
-       
-        $scope.handle = 'newtwitterhandle';
-        console.log('Scope changed!');
-        
-    }, 3000);
+    //$scope.userName = "Hugh Jones";
+
     
 }]);
+
+myApp.service('cardService', ['$scope']);

@@ -3515,6 +3515,7 @@ tbody.collapse.in {
   content: "";
   border-top: 0;
   border-bottom: 4px solid;
+  padding-top: 60px;
 }
 .dropup .dropdown-menu,
 .navbar-fixed-bottom .dropdown .dropdown-menu {

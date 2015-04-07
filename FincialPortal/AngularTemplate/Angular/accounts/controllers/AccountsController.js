@@ -2,9 +2,6 @@
 .controller('AccountsController', ['$scope', '$state', '$stateParams', '$filter', 'accountsService', 'authService','categoriesService',
     function ($scope, $state, $stateParams, $filter, accountsService, authService, categoriesService) {
 
-        //GRID Options
-
-
         //ACCOUNT TO HOUSEHOLD
         $scope.houseHold = authService.authentication.houseHold;
         $scope.Name = "";

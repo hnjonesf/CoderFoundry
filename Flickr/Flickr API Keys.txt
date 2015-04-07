@@ -1,6 +1,0 @@
-TravelVistas
-Key:
-926f257e3df84db2636b0b2d682479fa
-Secret:
-4362e98b330046a4
-

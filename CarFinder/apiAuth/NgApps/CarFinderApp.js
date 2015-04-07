@@ -36,7 +36,9 @@ app.run(['authService', function (authService) {
 }]);
 
 // controller declaration (DisplayController) for module
-angular.module('CarFinderApp').controller('DisplayController', ['$scope', '$http', function ($scope, $http) {
+angular.module('CarFinderApp')
+
+    .controller('DisplayController', ['$scope', '$http', function ($scope, $http) {
         //declare properties and initialize to null
         $scope.selected = {
             year: '',

@@ -6,10 +6,15 @@
         $scope.accountId = $stateParams.accountId;
         $scope.transactions = transactions;
 
+        $scope.filterOptions = {
+    filterText: ''
+  };
+
         //
         $scope.gridOptions = {
             data: 'transactions',
             showGroupPanel: true,
+            filterOptions: $scope.filterOptions,
             jqueryUIDraggable: true,
             columnDefs: [{ field: 'Description', displayName: 'Description', width: "*" },
                                     { field: 'Amount', displayName: 'Amount', width: "*" },

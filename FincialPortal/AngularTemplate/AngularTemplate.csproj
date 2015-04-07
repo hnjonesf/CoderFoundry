@@ -2125,21 +2125,6 @@
     <Content Include="bower_components\summernote\src\js\Renderer.js" />
     <Content Include="bower_components\summernote\src\js\settings.js" />
     <Content Include="bower_components\summernote\src\js\summernote.js" />
-    <Content Include="bower_components\sweetalert\example\example.css" />
-    <Content Include="bower_components\sweetalert\example\images\logo_big%402x.png" />
-    <Content Include="bower_components\sweetalert\example\images\logo_big.png" />
-    <Content Include="bower_components\sweetalert\example\images\logo_small%402x.png" />
-    <Content Include="bower_components\sweetalert\example\images\logo_small.png" />
-    <Content Include="bower_components\sweetalert\example\images\te-logo-small.svg" />
-    <Content Include="bower_components\sweetalert\example\images\thumbs-up.jpg" />
-    <Content Include="bower_components\sweetalert\example\images\vs_icon%402x.png" />
-    <Content Include="bower_components\sweetalert\example\images\vs_icon.png" />
-    <Content Include="bower_components\sweetalert\example\index.html" />
-    <Content Include="bower_components\sweetalert\lib\sweet-alert.css" />
-    <Content Include="bower_components\sweetalert\lib\sweet-alert.html" />
-    <Content Include="bower_components\sweetalert\lib\sweet-alert.js" />
-    <Content Include="bower_components\sweetalert\lib\sweet-alert.min.js" />
-    <Content Include="bower_components\sweetalert\sweetalert.gif" />
     <Content Include="bower_components\ui-select\dist\select.css" />
     <Content Include="bower_components\ui-select\dist\select.js" />
     <Content Include="bower_components\ui-select\dist\select.min.css" />
@@ -2208,7 +2193,6 @@
     <Content Include="images\p1.jpg" />
     <Content Include="images\p2.jpg" />
     <Content Include="images\profile.jpg" />
-    <Content Include="indexFORSTEALING.html" />
     <Content Include="Index.html" />
     <Content Include="ScriptsPREHOMER\angular-animate.js" />
     <Content Include="ScriptsPREHOMER\angular-animate.min.js" />
@@ -2793,14 +2777,6 @@
     <Content Include="bower_components\summernote\README.md" />
     <Content Include="bower_components\summernote\src\less\elements.less" />
     <Content Include="bower_components\summernote\src\less\summernote.less" />
-    <Content Include="bower_components\sweetalert\.bower.json" />
-    <Content Include="bower_components\sweetalert\.editorconfig" />
-    <Content Include="bower_components\sweetalert\bower.json" />
-    <Content Include="bower_components\sweetalert\example\example.scss" />
-    <Content Include="bower_components\sweetalert\lib\.sass-cache\7981e80cc38cc883c439302cccda55b50fb7fde4\sweet-alert.scssc" />
-    <Content Include="bower_components\sweetalert\lib\sweet-alert.scss" />
-    <Content Include="bower_components\sweetalert\LICENSE" />
-    <Content Include="bower_components\sweetalert\README.md" />
     <Content Include="bower_components\ui-select\.bower.json" />
     <Content Include="bower_components\ui-select\bower.json" />
     <Content Include="bower_components\ui-select\LICENSE" />
@@ -3594,7 +3570,6 @@
     <Content Include="scripts\controllers\wizard.js" />
     <Content Include="scripts\directives\directives.js" />
     <Content Include="scripts\directives\touchSpin.js" />
-    <Content Include="scripts\factories\sweet-alert.js" />
     <Content Include="scripts\filters\props.js" />
     <Content Include="scripts\homer.js" />
     <Content Include="styles\img\green%402x.png" />
@@ -3675,6 +3650,7 @@
   <ItemGroup>
     <Folder Include="Angular\global\directives\" />
     <Folder Include="App_Data\" />
+    <Folder Include="scripts\factories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -6,15 +6,18 @@
         $scope.accountId = $stateParams.accountId;
         $scope.transactions = transactions;
 
-        //$scope.gridOptions = {
-        //    data: 'transactions'
-        //};
-        ////
-        //$scope.gridOptionsTwo = {
-        //    data: 'transactions',
-        //    showGroupPanel: true,
-        //    jqueryUIDraggable: true
-        //}
+        //
+        $scope.gridOptions = {
+            data: 'transactions',
+            showGroupPanel: true,
+            jqueryUIDraggable: true,
+            columnDefs: [{ field: 'Description', displayName: 'Description', width: "*" },
+                                    { field: 'Amount', displayName: 'Amount', width: "*" },
+                                    { field: 'Date', displayName: 'Date', width: "*" },
+                                    { field: 'CategoryId', cellClass: 'Category', width: "*" }]
+        }
+
+        console.log(transactions);
 
     }]);
 

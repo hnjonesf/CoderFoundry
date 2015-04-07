@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -28,4 +29,13 @@ textarea {
     z-index: 1;
     background-image: url('/Content/Media/financial_portal.jpg');
    opacity: 0.2;
+}
+
+/* Styles go here */
+
+.gridStyle {
+  height: 300px;
+}
+.selectedItems{
+    float: left; 
 }

@@ -164,7 +164,7 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
     })
 
         .state('Accounts.List', {
-            url: '/',
+            url: '/Accounts',
             templateUrl: '/Angular/accounts/views/Accounts.List.html',
             data: {
                 Authorize: "All"

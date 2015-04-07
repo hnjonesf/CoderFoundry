@@ -17,6 +17,9 @@
     <link href="Content/Site.css" rel="stylesheet" />
     <link href="Content/bootstrap-theme.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="bower_components/ng-grid/ng-grid.min.css" />
+    <link href="bower_components/jquery-ui/themes/base/theme.css" rel="stylesheet" />
+
     <link rel="apple-touch-icon" sizes="57x57" href="Content/Media/favicon.ico/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="Content/Media/favicon.ico/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="Content/Media/favicon.ico/apple-icon-72x72.png">
@@ -59,14 +62,12 @@
     <script src="bower_components/jquery.flot.spline/index.js"></script>
     <script src="bower_components/angular-flot/angular-flot.js"></script>
     <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
-    <script src="bower_components/sweetalert/lib/sweet-alert.js"></script>
     <script src="bower_components/iCheck/icheck.min.js"></script>
     <script src="bower_components/sparkline/index.js"></script>
     <script src="bower_components/chartjs/Chart.min.js"></script>
     <script src="bower_components/angles/angles.js"></script>
     <script src="bower_components/peity/jquery.peity.min.js"></script>
     <script src="bower_components/angular-peity/angular-peity.js"></script>
-    <script src="bower_components/sweetalert/lib/sweet-alert.min.js"></script>
     <script src="bower_components/angular-notify/dist/angular-notify.min.js"></script>
     <script src="bower_components/chartjs/Chart.min.js"></script>
     <script src="bower_components/angles/angles.js"></script>
@@ -170,9 +171,7 @@
                     <a ui-sref="About">About</a>
             </ul><!--About Item-->
 
-
-
-
+            <!--Login-->
             <ul class="nav navbar-nav navbar-right">
                 <li ng-if="authentication.isAuth" dropdown>
                     <a class="dropdown-toggle" dropdown-toggle>
@@ -197,10 +196,10 @@
 
 
     <div class="container">
-        <div ui-view class="moveDown"> </div>
+        <div ui-view> </div>
     </div><!--end of contain for body-->
-    <!--<footer class="footer navbar navbar-inverse navbar-fixed-bottom">
+    <footer class="footer navbar navbar-inverse navbar-fixed-bottom">
         <p>&copy; 2015 - LibreWorx</p>
-    </footer>-->
+    </footer>
 </body>
 </html>

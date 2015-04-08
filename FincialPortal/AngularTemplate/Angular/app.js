@@ -149,7 +149,9 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         url: '/',
         templateUrl: '/Angular/dashboard/views/dashboard.html',
         data: {
-            Authorize: "All"
+            Authorize: "All",
+            pageTitle: 'Expense to Budget Chart',
+            pageDesc: 'Financial Portal Summary Dashboard'
         }
     })
 

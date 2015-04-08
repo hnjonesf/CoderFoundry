@@ -1,4 +1,5 @@
 ﻿using AngularTemplate.InsightUserStore.DataAccess;
+using AngularTemplate.Models.DataModels;
 using AngularTemplate.Models.Interfaces;
 using FinalTemplate.Models.DataModels;
 using Insight.Database;
@@ -38,6 +39,40 @@ namespace AngularTemplate.Controllers
         {
             return db.GetAccountTransactionsForAccount(accountId);
         }
+
+        // GET: api/Transactions for PagedList
+
+        [HttpGet]
+        [Route("GetTransactionsPagedList")]
+        public PagedList GetTransactions(string searchtext, int page = 1, int pageSize = 10, string sortBy = "Date", string sortDirection = "asc")
+        {
+            var pagedRecord = new PagedList();
+            //Hugh help with account Id below...plugged with 1 to build.04-08-2015
+            //pagedRecord.Content = db.GetAccountTransactionsForAccount(1)
+            //            //.Where(x => searchtext == null ||
+            //            //        ((x.Amount.Contains(searchtext)) ||
+            //            //        (x.Description.Contains(searchtext))
+            //            //    ))
+            //            .OrderBy(sortBy + " " + sortDirection)
+            //            .Skip((page - 1) * pageSize)
+            //            .Take(pageSize)
+            //            .ToList();
+
+            // Count
+            //pagedRecord.TotalRecords = db.GetAccountTransactionsForAccount(1)
+            //            .Where(x => searchtext == null ||
+            //                    ((x.Amount.Contains(searchtext)) ||
+            //                    (x.Description.Contains(searchtext))
+            //                )).Count();
+
+            //pagedRecord.CurrentPage = page;
+            //pagedRecord.PageSize = pageSize;
+
+            return pagedRecord;
+        }
+
+
+
 
         [HttpGet]
         [Route("GetTransaction")]

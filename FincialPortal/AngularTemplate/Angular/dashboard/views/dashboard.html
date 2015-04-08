@@ -3,63 +3,50 @@
     <div id="wrapper">
 
         <div class="row">
-                <div class="col-lg-4">
-                    <div class="panel-body">
-                        <h4>Accounts/Balances</h4>
-                        <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
-                            some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum...
-                        </p>
-                        <p>
-                            Praesent at sodales lectus. Donec et viverra est. Sed eu est fermentum felis placerat pretium sit amet sed ligula. Morbi nec faucibus odio.
-                        </p>
-                        <a ui-sref="Accounts.List" class="btn btn-primary btn-xs">Full Account Details</a>
-                    </div>
-                    <div class="panel-body">
-                        <h4>Recent Transactions from All Accounts</h4>
-                        <!-- GET TRANSACTIONS REGARDLESS OF ACCOUNT, SORTED INVERSE BY DATE, LIMITED TO FOUR  HUGH -->
-                        <!--<table class="table table-striped table-hover">
-        <tr>
-                <th>Account</th> FROM ACCOUNTID  HELP
-                <th>Date</th>
-                <th>Amount</th>
-                <th>Description</th>
-        </tr>
-        <tr ng-repeat="transaction in transactions">
-                <td>{{transaction.Date | date}}</td>
-                <td>{{transaction[AccountId].Name}}</td>
-                <td>{{transaction.UpdatedByUserId}}</td>
-                <td>{{transaction.Amount| currency:'$'}}</td> 
-                <td>{{transaction.Description}}</td>
-        </tr>
-
-                <a class="btn btn-primary" ui-sref="EditTransaction({transactionId: transaction.Id})">
-                    <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit or Delete Transaction</span>
-                </a>
-         </td>
-        </tr>
-    </table>-->
-
-                    </div>
+            <div class="col-lg-4">
+                <div class="panel-body">
+                    <h4>Accounts/Balances</h4>
+<ul><li>Checking $2343.22</li><li>Savings $12,342.21</li></ul>
+                    <a ui-sref="Accounts.List" class="btn btn-primary btn-xs">Full Account Details</a>
                 </div>
-                <div class="col-lg-8">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <div class="hpanel">
-                        <div class="panel-heading">
-                            <div panel-tools></div>
-                            Budget vs. Actual Expenses by Category
-                        </div>
-                        <div class="panel-body">
-                            <div>
-                                <canvas barchart options="barOptions" data="barData" height="140" responsive=true></canvas>
-                            </div>
+                <div class="panel-body">
+                    <h4>Recent Transactions from All Accounts</h4>
+                    <!-- GET TRANSACTIONS REGARDLESS OF ACCOUNT, SORTED INVERSE BY DATE, LIMITED TO FOUR  HUGH -->
+                    <ul>
+                        <li>
+                            07/12/2015 Checking $44.00 Shoes
+                          <!-- above put ng-repeat for transaction in transactions{{transaction.Date | date}}{{transaction[AccountId].Name}}{{transaction.Amount| currency:'$'}}{{transaction.UpdatedByUserId}}{{transaction.Description}}-->
+                        </li>
+                        <li>
+                            07/10/2015 Checking $64.00 Dinner
+                        </li>
+                        <li>
+                            07/10/2015 Savings $114.00 Vacation Contribution
+                        </li>
+                        <li>
+                            07/04/2015 Checking $647.12 BOA Mortgage
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div panel-tools></div>
+                        Budget vs. Actual Expenses by Category
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            <canvas barchart options="barOptions" data="barData" height="140" responsive=true></canvas>
                         </div>
                     </div>
                 </div>
+            </div>
 
         </div>
     </div>

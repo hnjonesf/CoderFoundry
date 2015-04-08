@@ -142,16 +142,11 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         }
     })
 
-
-
-        ///DASHBOARD***Homer template
     .state('Dashboard', {
         url: '/',
         templateUrl: '/Angular/dashboard/views/dashboard.html',
         data: {
-            Authorize: "All",
-            pageTitle: 'Expense to Budget Chart',
-            pageDesc: 'Financial Portal Summary Dashboard'
+            Authorize: "All"
         }
     })
 

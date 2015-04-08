@@ -242,6 +242,7 @@
     <Compile Include="Models\DataModels\Category.cs" />
     <Compile Include="Models\DataModels\Invitation.cs" />
     <Compile Include="Models\DataModels\AccountTransaction.cs" />
+    <Compile Include="Models\DataModels\PagedList.cs" />
     <Compile Include="Models\Interfaces\IAccountDataAccess .cs" />
     <Compile Include="Models\Interfaces\IBudgetDataAccess.cs" />
     <Compile Include="Models\Interfaces\ICategoryDataAccess.cs" />

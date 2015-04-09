@@ -6,4 +6,7 @@ angular.module('app')
         authSvc.logOut();
         $state.go('Login');
     }
+
+    $scope.isCollapsed = false;
+    
 }]);

@@ -96,9 +96,8 @@
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetUserClaimsByUserId.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="SQL\Security\Stored Procedures\DeleteAccount.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetCategoriesByHousehold.sql" />
-    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindTransactionsByUserId.sql" />
+    <EmbeddedResource Include="SQL\Security\Stored Procedures\FindAccountTransactionsByUserId.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetAccountTransactionsForAccount.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\FindUserByHousehold.sql" />
     <EmbeddedResource Include="SQL\Security\Stored Procedures\FindAccountsByHouseHold.sql" />
@@ -110,7 +109,21 @@
     <EmbeddedResource Include="SQL\Security\Stored Procedures\GetBudgetsForHouseHold.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SQL\Security\Stored Procedures\GetAccountBalance.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetAccountBalanceTHOMAS.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetAccountsByHousehold.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetAcctTransactions.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetAcctTransCount.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetBudgetItemsByHousehold.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetBudgetStatus.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetHouseholdName.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetInvitations.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetRecentTransByHousehold.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetTransSumByCatPeriod.sql" />
+    <Content Include="SQL\Security\Stored Procedures\GetUserInfo.sql" />
+    <Content Include="SQL\Security\Stored Procedures\InsertTransactionWithUpdate.sql" />
+    <Content Include="SQL\Security\Stored Procedures\IsInvitation.sql" />
+    <Content Include="SQL\Security\Stored Procedures\UpdateAccountBalances.sql" />
+    <Content Include="SQL\Security\Stored Procedures\UpdateTransactionWithUpdate.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

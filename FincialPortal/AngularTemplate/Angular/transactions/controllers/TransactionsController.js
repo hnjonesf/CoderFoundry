@@ -22,13 +22,19 @@
             data: 'transactions',
             showSelectionCheckbox: true,
             selectedItems: $scope.selectedRows,
+            enableCellSelection: true,
+            enableCellEdit: true,
+            showFooter: true,
             showGroupPanel: true,
             filterOptions: $scope.filterOptions,
             jqueryUIDraggable: true,
-            columnDefs: [{ field: 'Description', displayName: 'Description', width: "*" },
-                                    { field: 'Amount', displayName: 'Amount', width: "*", cellFilter: 'currency' },
-                                    { field: 'Date', displayName: 'Date', width: "*", cellFilter: "date:'MM-dd-yyyy'" },
-                                    { field: 'CategoryId', cellClass: 'Category', width: "*" }]
+            columnDefs: [{ field: 'Date', displayName: 'Date', width: "*", cellFilter: "date:'MM-dd-yyyy'" },
+                        { field: 'Description', displayName: 'Description', width: "*" },
+                        { field: 'CategoryId', cellClass: 'Category', width: "*" },
+                        { field: 'Amount', displayName: 'Amount', width: "*", cellFilter: 'currency' },
+                        { field: 'Reconcilled', cellClass: 'Reconcilled', width: "*" },
+                        { field: 'UpdatedByUserId', cellClass: 'Updated By', width: "*" }
+                        ]
         }
 
     }]);

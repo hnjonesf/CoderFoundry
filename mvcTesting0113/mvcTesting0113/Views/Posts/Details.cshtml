@@ -47,17 +47,19 @@
         </dt>
 
         <dd>
-            @if (@Html.DisplayFor(model => model.MediaURL) != null)
+
+            @*@if (@Html.DisplayFor(model => model.MediaURL) != null)
+                
             {
                 <div class="col-md-7"><p>@Html.DisplayFor(model => model.MediaURL)</p></div>
                 <div class="col-md-5">
                     <img src="@Url.Content(Model.MediaURL)" class="img-responsive" alt="@Html.DisplayFor(model => model.MediaURL)" />
                 </div>
             }
-            else
-            {
+            else*@
+
                 <div class="col-md-12"><p>@Html.DisplayFor(model => model.MediaURL)</p></div>
-            }
+
         </dd>
 
     </dl>

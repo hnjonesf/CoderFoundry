@@ -45,8 +45,6 @@ namespace BugTracker_The_Reckoning.Controllers
             return View(ticketComment);
         }
         // POST: TicketComments/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,TicketId,UserId,Comment,Created")] TicketComment ticketComment)
@@ -60,8 +58,7 @@ namespace BugTracker_The_Reckoning.Controllers
             }
 
             ViewBag.TicketId = new SelectList(db.Tickets, "Id", "Title", ticketComment.TicketId);
-            return View(ticketComment);
-            
+            return View(ticketComment);      
         }
 
 

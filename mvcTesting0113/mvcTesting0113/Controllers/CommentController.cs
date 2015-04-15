@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using mvcTesting0113.Models;
 
 namespace mvcTesting0113.Controllers
@@ -39,8 +40,6 @@ namespace mvcTesting0113.Controllers
         // GET: Comment/Create
         public ActionResult Create(int id)
         {
-            //FIX LATER HUGH
-            //ViewBag.Authorid = new SelectList(db.ApplicationUsers, "Id", "FirstName");
             var model = new Comment { PostId = id };
             return View(model);
         }
@@ -54,8 +53,7 @@ namespace mvcTesting0113.Controllers
             {
                 comment.Created = System.DateTimeOffset.UtcNow;
                 comment.Updated = null;
-                //comment.Authorid = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name).Id;
-                comment.UpdateReason = null;
+                comment.Authorid = User.Identity.GetUserId();
                 db.Comments.Add(comment);
                 db.SaveChanges();
                 return RedirectToAction("Index", "Posts");

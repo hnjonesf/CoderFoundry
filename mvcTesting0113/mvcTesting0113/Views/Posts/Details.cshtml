@@ -4,68 +4,101 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="container">
 
-<div>
-    <h4>Post</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Created)
-        </dt>
+    <div class="row">
 
-        <dd>
-            @Html.DisplayFor(model => model.Created)
-        </dd>
+        <!-- Blog Post Content Column -->
+        <div class="col-lg-12">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Updated)
-        </dt>
+            <!-- Blog Post -->
+            <!-- Title -->
+            <h1>@Model.Title</h1>
 
-        <dd>
-            @Html.DisplayFor(model => model.Updated)
-        </dd>
+            <!-- Author -->
+            <p class="lead">
+                by <span>Hugh Jones</span>
+            </p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+            <hr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+            <!-- Date/Time -->
+            <p>
+                <span class="glyphicon glyphicon-time"></span> Posted on @Model.Created.DateTime.ToLongDateString()
+            </p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Body)
-        </dt>
+            <hr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Body)
-        </dd>
+            <!-- Preview Image -->
+            <img class="img-responsive" src="@Url.Content(Model.MediaURL)" alt="">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MediaURL)
-        </dt>
+            <hr>
 
-        <dd>
+            <!-- Post Content -->
+            <div>
+                @Html.Raw(Model.Body)
+            </div>
+            <hr>
 
-            @*@if (@Html.DisplayFor(model => model.MediaURL) != null)
-                
+            <!-- Blog Comments -->
+            <!-- Comments Form -->
+            @using (Html.BeginForm("AddComment", "Posts"))
             {
-                <div class="col-md-7"><p>@Html.DisplayFor(model => model.MediaURL)</p></div>
-                <div class="col-md-5">
-                    <img src="@Url.Content(Model.MediaURL)" class="img-responsive" alt="@Html.DisplayFor(model => model.MediaURL)" />
+
+                <div class="well">
+                    <h5>Add a comment</h5>
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("PostId", Model.Id)
+                    @Html.TextArea("Body", "", new { @class = "form-control" })
+                    <input type="submit" value="Submit" class="btn btn-sm btn-primary pull-right" />
+                    <span class="clearfix"></span>
                 </div>
             }
-            else*@
+            <hr>
 
-                <div class="col-md-12"><p>@Html.DisplayFor(model => model.MediaURL)</p></div>
+            <!-- Posted Comments -->
+            <!-- Comment -->
+            @foreach (var comment in Model.Comments)
+            {
+                <div class="media">
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            @comment.Author.DisplayName
+                            <small>@comment.Created.DateTime.ToShortDateString()</small>
+                        </h4>
+                        <span>
+                            @comment.Body
+                        </span>
+                    </div>
+                </div>
+            }
+            
 
-        </dd>
+        </div>
 
-    </dl>
+        <!-- Blog Sidebar Widgets Column -->
+     
 
-</div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
 <p>
+    @*Next line is to add a comment to the post*@
+    @Html.ActionLink("Comment", "Create", "Comments", new { id = Model.Id }, null) |
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright © Your Website 2014</p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </footer>
+
+</div>
+

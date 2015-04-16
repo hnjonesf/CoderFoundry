@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using mvcTesting0113.Models;
 using System.IO;
 
@@ -92,6 +93,31 @@ namespace mvcTesting0113.Controllers
 
             return View(post);
         }
+
+        // POST: /AddComment
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddComment([Bind(Include = "PostId,Body,UpdateReason")] Comment comment)
+        {
+            if (ModelState.IsValid)
+            {
+                comment.Created = System.DateTimeOffset.UtcNow;
+                comment.Updated = null;
+                comment.Authorid = User.Identity.GetUserId();
+                db.Comments.Add(comment);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Posts");
+            }
+
+            ////FIX LATER HUGH
+            ////ViewBag.Authorid = new SelectList(db.ApplicationUsers, "Id", "FirstName", comment.Authorid);
+            //ViewBag.PostId = new SelectList(db.Posts, "Id", "Title", comment.PostId);
+            return View(comment);
+        }
+
+
+
+
 
         // GET: Posts/Edit/5
         public ActionResult Edit(int? id)

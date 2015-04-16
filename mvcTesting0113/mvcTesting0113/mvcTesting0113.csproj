@@ -297,6 +297,7 @@
     <Content Include="fontawesome\font\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\jonesh-mvc3.pubxml" />
     <None Include="Properties\PublishProfiles\LibreWorx.pubxml" />
+    <None Include="Properties\PublishProfiles\LibreWorxBlog.pubxml" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />

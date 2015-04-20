@@ -7,8 +7,10 @@
                 <div class="panel-body">
                     <h4>Accounts/Balances</h4>
                     <!-- howto write a stored procedure to sum accounts  HUGH -->
+                    <input type="number" ng-model="valueCustomer" />
                     <ul>
                         <li>Checking $2343.22</li>
+                        {{value}}
                         <li>Savings $12,342.21</li>
                     </ul>
                     <a ui-sref="Accounts.List" class="btn btn-primary btn-xs">Full Account Details</a>
@@ -44,7 +46,7 @@
                 <br />
                 <br />
                 <br />
-                <div class="hpanel">
+                <div class="hpanel hidden-sm hidden-xs">
                     <div class="panel-heading">
                         <div panel-tools></div>
                         Budget vs. Actual Expenses by Category

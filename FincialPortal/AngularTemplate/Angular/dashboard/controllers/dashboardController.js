@@ -1,6 +1,9 @@
 ﻿angular.module('app')
         .controller('DashboardController', ['$scope', '$state', '$stateParams', function ($scope, $state, $stateParams) {
 
+            var valueCustomer = 0.0;
+            var value = 0.0;
+            $scope.value = valueCustomer * 600.00;
             /**
              * Options for Bar chart
              */

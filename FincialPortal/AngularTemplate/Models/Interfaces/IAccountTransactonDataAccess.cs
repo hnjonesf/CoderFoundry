@@ -17,6 +17,7 @@ namespace AngularTemplate.InsightUserStore.DataAccess
     {
 
         Task<IList<AccountTransaction>> GetAccountTransactionsForAccount(int AccountId);
+        Task<int> GetAcctTransCount(int AccountId);
 
         // auto procs
         Task<ApplicationUser> SelectUserAsync(int id);

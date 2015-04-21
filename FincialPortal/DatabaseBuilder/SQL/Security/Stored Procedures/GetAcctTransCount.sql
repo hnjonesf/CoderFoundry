@@ -3,7 +3,7 @@
 AS
 BEGIN
 	SELECT COUNT(Id)
-	FROM Transactions
+	FROM AccountTransactions
 	WHERE AccountId = @accountId
 END
 GO

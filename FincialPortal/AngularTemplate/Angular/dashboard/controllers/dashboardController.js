@@ -1,9 +1,21 @@
 ﻿angular.module('app')
-        .controller('DashboardController', ['$scope', '$state', '$stateParams', function ($scope, $state, $stateParams) {
+        .controller('DashboardController', ['$scope', '$state', '$stateParams', '$filter', 'accountsService', 'authService', 'categoriesService', function ($scope, $state, $stateParams, $filter, accountsService, authService) {
 
-            var valueCustomer = 0.0;
-            var value = 0.0;
-            $scope.value = valueCustomer * 600.00;
+            //ACCOUNT TO HOUSEHOLD
+            $scope.houseHold = authService.authentication.houseHold;
+            $scope.Name = "";
+            $scope.Balance = "";
+            $scope.ReconciledBalance = "";
+
+            //get transaction counts for account
+            $scope.getTransCount = function () {
+                //plugged account id here to get working, will change logic to pull from id as pulling transactions
+                accountsService.GetAcctTransCount(2)
+                    .then(function (data) {
+                        $scope.transCount = data;
+                    });
+            }
+
             /**
              * Options for Bar chart
              */

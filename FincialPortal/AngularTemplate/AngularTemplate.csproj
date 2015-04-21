@@ -2249,10 +2249,6 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\Media\favicon.ico\manifest.json" />
@@ -2787,6 +2783,11 @@
     <Content Include="fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
     <Content Include="images\Thumbs.db" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bower_components\bootstrap-tour\src\docs\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\LibreWorxFinancialPortal.pubxml" />
     <None Include="ScriptsPREHOMER\jquery-2.1.3.intellisense.js" />
     <Content Include="ScriptsPREHOMER\i18n\angular-locale_aa-dj.js" />

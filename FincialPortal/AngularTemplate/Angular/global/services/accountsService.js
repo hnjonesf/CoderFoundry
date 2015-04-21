@@ -74,6 +74,12 @@ angular.module( 'app' )
             });
         };
 
+        factory.getTransCount = function (transCount) {
+            return $http.put('/api/transactions/GetAcctTransCount', transCount).then(function (response) {
+                return response.data;
+            });
+        };
+
         return factory;
 
 }]);

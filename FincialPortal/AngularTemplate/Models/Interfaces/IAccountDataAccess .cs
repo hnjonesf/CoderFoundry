@@ -10,6 +10,7 @@ namespace AngularTemplate.InsightUserStore.DataAccess
     public interface IAccountDataAccess
     {
         // auto procs
+        Task<int> GetAcctTransCount(int count);
         Task<int> InsertAccountAsync(Accout account);
         Task UpdateAccountAsync(Accout account);
         Task<Accout> SelectAccountAsync(int Id);

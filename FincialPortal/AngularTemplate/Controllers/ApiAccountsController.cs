@@ -73,5 +73,12 @@ namespace AngularTemplate.Controllers
         {
             await db.DeleteAccountAsync(Id);
         }
+
+        [HttpGet]
+        [Route("GetAcctTransCount")]
+        public async Task GetAcctTransCount(int id)
+        {
+            return await db.GetAcctTransCount(count);
+        }
     }
 }

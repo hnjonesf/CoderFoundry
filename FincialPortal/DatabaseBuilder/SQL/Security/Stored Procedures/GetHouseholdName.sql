@@ -1,8 +1,8 @@
 ﻿CREATE PROCEDURE [Security].[GetHouseholdName]
-	@householdId int
+	@householdId uniqueidentifier
 AS
 BEGIN
-	SELECT [Name] FROM [Security].[Households]
+	SELECT [Name] FROM [Security].[HouseHolds]
 	WHERE Id = @householdId
 END
 GO

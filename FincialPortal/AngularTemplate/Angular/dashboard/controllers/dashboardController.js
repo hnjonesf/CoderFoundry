@@ -7,14 +7,16 @@
             $scope.Balance = "";
             $scope.ReconciledBalance = "";
 
+            //plugged account id here to get working, will change logic to pull from id as pulling transactions
             //get transaction counts for account
             $scope.getTransCount = function () {
-                //plugged account id here to get working, will change logic to pull from id as pulling transactions
-                accountsService.GetAcctTransCount(2)
+                accountsService.getAcctTransCount(2)
                     .then(function (data) {
                         $scope.transCount = data;
                     });
             }
+
+            $scope.getTransCount();
 
             /**
              * Options for Bar chart

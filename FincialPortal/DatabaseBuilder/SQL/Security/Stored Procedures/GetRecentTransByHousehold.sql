@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[GetRecentTransByHousehold]
-	@householdId int
+	@householdId uniqueidentifier
 AS
 BEGIN
 	SELECT TOP 5 CONVERT(varchar(10),[dbo].AccountTransactions.[Date],101) AS Date

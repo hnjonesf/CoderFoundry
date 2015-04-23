@@ -46,8 +46,6 @@ angular.module( 'app' )
             });
         };
 
-
-
         factory.getTransaction = function (id) {
             var options = { params: { id: id } };
             return $http.get('/api/transactions/GetTransaction', options).then(function (response) {

@@ -113,8 +113,9 @@ namespace AngularTemplate.Controllers
         [Route("GetAcctTransCount")]
         public async Task GetAcctTransCount(int id)
         {
-            int count = 0;
-            await db.GetAcctTransCount(count);
+            int transCount = 0;
+            return await db.GetAcctTransCount(transCount);
         }
+
     }
 }

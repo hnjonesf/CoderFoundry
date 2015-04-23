@@ -28,8 +28,7 @@ namespace AngularTemplate.Controllers
 
         public ApiAccountsController()
         {
-            db = HttpContext.Current.GetOwinContext().Get<SqlConnection>
-                ().As<IAccountDataAccess>();
+            db = HttpContext.Current.GetOwinContext().Get<SqlConnection>().As<IAccountDataAccess>();
             um = HttpContext.Current.GetOwinContext().Get<ApplicationUserManager>();
         }
 

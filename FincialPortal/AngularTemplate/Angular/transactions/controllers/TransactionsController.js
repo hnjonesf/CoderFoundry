@@ -15,7 +15,7 @@
         //    categories[transaction.CategoryId].Name;
         //};
 
-        //
+        //Hugh Enable SELECT and edit of a transaction.
         $scope.selectedRows = [];
 
         $scope.gridOptions = {

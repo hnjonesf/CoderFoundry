@@ -8,7 +8,7 @@ AS
 BEGIN
 	DECLARE @Total money
 	SET @Total = (SELECT SUM(Transactions.SignedAmount)
-	FROM Transactions 
+	FROM AccountTransactions 
 	WHERE CategoryId = @catId 
 		AND DATEDIFF(day,[Date],GETDATE()) < @period)
 	RETURN @Total

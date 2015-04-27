@@ -110,10 +110,10 @@ namespace AngularTemplate.Controllers
         }
 
         [Route("GetAcctTransCount")]
-        [HttpPut]
-        public IHttpActionResult GetAcctTransCount([FromBody] int accountId)
+        [HttpPost]
+        public async Task<IHttpActionResult> GetAcctTransCount([FromBody] int accountId)
         {
-            var results = db.GetAcctTransCount(accountId);
+            var results = await db.GetAcctTransCount(accountId);
             return Ok(results);
         }
 

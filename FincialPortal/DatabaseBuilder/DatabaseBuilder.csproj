@@ -110,7 +110,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SQL\Security\Stored Procedures\GetAccountBalanceTHOMAS.sql" />
-    <Content Include="SQL\Security\Stored Procedures\GetAccountsByHousehold.sql" />
     <Content Include="SQL\Security\Stored Procedures\GetAcctTransactions.sql" />
     <Content Include="SQL\Security\Stored Procedures\GetAcctTransCount.sql" />
     <Content Include="SQL\Security\Stored Procedures\GetBudgetItemsByHousehold.sql" />

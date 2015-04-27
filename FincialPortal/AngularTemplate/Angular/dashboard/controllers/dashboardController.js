@@ -10,20 +10,24 @@
             //Accounts/Balances: list all accounts and their balance (not reconcilled)
             //Use [GetAccountBalance] SQL which takes Account/Balance, and sums Accounttransactions/Amount
 
+            $scope.findAccountsByHousehold = function(){
+            accountsService.findAccountsByHousehold($scope.houseHold)
+            .then(function(data){
+                $scope.accounts = data;
+                });
+            }
 
             //Recent Transactions from Account
             //Use [GetRecentTransByHousehold] SQL and display.
-            //plugged account id here to get working, will change logic to pull from id as pulling transactions Hugh
-            $scope.accountPlug = 2;
-            //get transaction counts for account
+            //FOREACH ACCOUNT IN HOUSEHOLD, get AccountTransaction Count.
+
             $scope.getTransCount = function () {
-                accountsService.getAcctTransCount($scope.accountPlug)
+                accountsService.getAcctTransCount($scope.accountId)
                     .then(function (data) {
                         $scope.transCount = data;
                     });
             }
 
-            $scope.transCount = 5;
             $scope.getTransCount();
 
             //HouseHold Invitation: 1). Lookup Email from list of registered Users NOT in a HH.

@@ -73,7 +73,7 @@ angular.module( 'app' )
         };
 
         factory.getAcctTransCount = function (transCount) {
-            return $http.put('/api/transactions/GetAcctTransCount', transCount).then(function (response) {
+            return $http.post('/api/transactions/GetAcctTransCount', transCount).then(function (response) {
                 return response.data;
             });
         };

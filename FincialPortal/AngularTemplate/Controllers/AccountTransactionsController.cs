@@ -109,17 +109,13 @@ namespace AngularTemplate.Controllers
             await db.DeleteAccountTransactionAsync(Id);
         }
 
-
-        //why does return error out?  Hugh
-        // GET: api/GetAcctTransCount
-        [HttpGet]
         [Route("GetAcctTransCount")]
-        public async Task GetAcctTransCount(int accountId)
+        [HttpPut]
+        public IHttpActionResult GetAcctTransCount([FromBody] int accountId)
         {
-            int transCount = 0;
-            await db.GetAcctTransCount(transCount);
+            var results = db.GetAcctTransCount(accountId);
+            return Ok(results);
         }
-
 
     }
 }

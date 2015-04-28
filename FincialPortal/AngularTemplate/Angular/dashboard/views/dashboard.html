@@ -6,13 +6,13 @@
             <div class="col-lg-4">
                 <div class="panel-body">
                     <h4>Accounts/Balances</h4>
-                    <!-- howto write a stored procedure to sum accounts  HUGH -->
-                    <ul>
-                        <li>Checking $2343.22</li>
-                        <li>Savings $12,342.21 of {{transCount}} Transactions</li>
-                    </ul>
-                    <a ui-sref="Accounts.List" class="btn btn-primary btn-xs">Full Account Details</a>
-                </div>
+                    <!-- Account Summary Display -->
+
+                        <ul ng-repeat="account in accounts">
+                            <li>{{account.Name}} {{account.Balance| currency:'$'}} {{transCount}} Transactions </li>
+                        </ul>
+                        <a ui-sref="Accounts.List" class="btn btn-primary btn-xs">Full Account Details</a>
+</div>
                 <div class="panel-body">
                     <h4>Recent Transactions from All Accounts</h4>
                     <!-- GET TRANSACTIONS REGARDLESS OF ACCOUNT, SORTED INVERSE BY DATE, LIMITED TO FOUR  HUGH -->

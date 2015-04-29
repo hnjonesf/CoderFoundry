@@ -6239,6 +6239,8 @@
     <Content Include="ScriptsPREHOMER\respond.min.js" />
     <Content Include="ScriptsPREHOMER\ui-grid-unstable.js" />
     <Content Include="ScriptsPREHOMER\ui-grid-unstable.min.js" />
+    <Content Include="scripts\angular-ui-router.js" />
+    <Content Include="scripts\angular-ui-router.min.js" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />

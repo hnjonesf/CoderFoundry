@@ -147,7 +147,8 @@ app.config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterP
         templateUrl: '/Angular/dashboard/views/dashboard.html',
         data: {
             Authorize: "All"
-        }
+        } 
+
     })
 
                 ///ACCOUNTS

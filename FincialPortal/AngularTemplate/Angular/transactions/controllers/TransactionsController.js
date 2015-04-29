@@ -6,6 +6,8 @@
         $scope.accountId = $stateParams.accountId;
         $scope.transactions = transactions;
 
+ 
+
         $scope.filterOptions = {
         filterText: ''
         };
@@ -15,15 +17,17 @@
         //    categories[transaction.CategoryId].Name;
         //};
 
-        //Hugh Enable SELECT and edit of a transaction.
         $scope.selectedRows = [];
 
         $scope.gridOptions = {
             data: 'transactions',
             showSelectionCheckbox: true,
+            enableRowSelection: false,
+            enableCellEditOnFocus: true,
+            multiSelect: false,
             selectedItems: $scope.selectedRows,
             enableCellSelection: true,
-            enableCellEdit: true,
+            enableCellEdit: false,
             showFooter: true,
             showGroupPanel: true,
             filterOptions: $scope.filterOptions,
@@ -33,7 +37,7 @@
                         { field: 'CategoryId', cellClass: 'Category', width: "*" },
                         { field: 'Amount', displayName: 'Amount', width: "*", cellFilter: 'currency' },
                         { field: 'Reconcilled', cellClass: 'Reconcilled', width: "*" },
-                        { field: 'UpdatedByUserId', cellClass: 'Updated By', width: "*" }
+                        { field: 'UpdatedByUserId', cellClass: 'Updated By', width: "*", enableCellEdit: false }
                         ]
         }
 

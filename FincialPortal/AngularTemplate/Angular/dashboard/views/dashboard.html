@@ -5,11 +5,11 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="panel-body">
-                    <h4>Accounts/Balances</h4>
-                    <!-- Account Summary Display -->
-
+                    <h4>Accounts ({{accounts.length}}) </h4>
+                    <!-- Account Summary Display    getTransCount()-->
+                    
                         <ul ng-repeat="account in accounts">
-                            <li>{{account.Name}} {{account.Balance| currency:'$'}} {{transCount}} Transactions </li>
+                            <li>{{account.Name}} has {{account.Balance| currency:'$'}} from {{transCount}} Transactions </li>
                         </ul>
                         <a ui-sref="Accounts.List" class="btn btn-primary btn-xs">Full Account Details</a>
 </div>

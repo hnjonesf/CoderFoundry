@@ -20,7 +20,7 @@
             //Recent Transactions from Account
             //Use [GetRecentTransByHousehold] SQL and display.
             //FOREACH ACCOUNT IN HOUSEHOLD, get AccountTransaction Count.
-            $scope.accountId = 2;
+            $scope.accountId = 2; //pull this each round from accounts.
             $scope.getTransCount = function () {
                 accountsService.getAcctTransCount($scope.accountId)
                     .then(function (data) {
@@ -29,7 +29,7 @@
             }
 
             $scope.getAccounts();
-            $scope.getTransCount();
+            $scope.getTransCount($scope.accountId);
 
             //HouseHold Invitation: 1). Lookup Email from list of registered Users NOT in a HH.
             //2). Write GUID to that user, and send notice of acceptance.

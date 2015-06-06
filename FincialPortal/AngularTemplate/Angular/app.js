@@ -1,7 +1,4 @@
 ﻿var app = angular.module('app', [
-
-    'ui.router',
-    'ui.bootstrap',
         'ui.router',                // Angular flexible routing
         'ngSanitize',               // Angular-sanitize
         'ui.bootstrap',             // AngularJS native directives for Bootstrap
@@ -19,8 +16,8 @@
         'bm.bsTour',                // Angular bootstrap tour
         'datatables',               // Angular datatables plugin
         'xeditable',                // Angular-xeditable
-        'ui.select',                 // AngularJS ui-select
-        'LocalStorageModule'
+        'ui.select',                // AngularJS ui-select
+        'LocalStorageModule'        // Local Storage
 ]);
 
 

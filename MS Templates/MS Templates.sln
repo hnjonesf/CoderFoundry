@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MS Templates", "http://localhost:59144", "{E521D8FB-AE50-4EDD-B164-43949B30220D}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59144"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Dropbox\Squad Drive\netdrive\marketing\Graphics and Email Templates\MS Templates\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59144\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59144"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Dropbox\Squad Drive\netdrive\marketing\Graphics and Email Templates\MS Templates\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59144\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\Dropbox\Squad Drive\netdrive\marketing\Graphics and Email Templates\MS Templates\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E521D8FB-AE50-4EDD-B164-43949B30220D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E521D8FB-AE50-4EDD-B164-43949B30220D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

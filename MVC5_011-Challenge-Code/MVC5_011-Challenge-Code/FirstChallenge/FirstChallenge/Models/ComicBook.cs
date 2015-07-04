@@ -5,6 +5,9 @@ using System.Web;
 
 namespace FirstChallenge.Models
 {
+    /// <summary>
+    /// Constructor for Comic Books
+    /// </summary>
     public class ComicBookManager
     {
         public static List<ComicBook> GetComicBooks() {
@@ -16,6 +19,9 @@ namespace FirstChallenge.Models
         }
     }
 
+    /// <summary>
+    /// Comic Book Model
+    /// </summary>
     public class ComicBook
     {
         public int ComicBookId { get; set; }
@@ -25,6 +31,9 @@ namespace FirstChallenge.Models
         public List<Character> Characters { get; set; }
     }
 
+    /// <summary>
+    /// Character Model
+    /// </summary>
     public class Character
     {
         public int CharacterId { get; set; }

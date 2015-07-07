@@ -25,7 +25,7 @@ namespace TimeClock
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
+                      "~/Content/bootstrap.min.css",
                       "~/Content/bootstrap-theme.css",
                       "~/Content/elegant-icons-style.css",
                       "~/Content/font-awesome.css))",

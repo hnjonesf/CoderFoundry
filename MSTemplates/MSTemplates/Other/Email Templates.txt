@@ -1,0 +1,102 @@
+What makes a great email sales campaign
+
+Story: a character, who has a problem, that meets a guide, that has a clear solution, and calls them to action, that results in: success or failure.
+Graphic that highlights the solution. Not too large, and web-optimized.
+Common look/feel of tag lines, usually coupled to the graphic.
+White space.
+Call to action-clear.
+Social: use buttons to keep their role small.
+Test before production.
+Unsubscribe: <a HREF="mailto:?subject=look at this website&body=Hi,I found this website
+and thought you might like it http://www.geocities.com/wowhtml/">tell a friend</a>
+Could we roll Constant Contact's role into MSO? Save $, track responses.
+
+
+Process for Template Generation
+1. Select version of Vanilla.[???].html with which to begin.  Make the changes.
+2. Copy Vanilla.css and replace the <style> link with this actual css.
+3. Copy the entire document and paste it into http://templates.mailchimp.com/resources/inline-css/ 
+5. Save it, and then copy and paste the same markup into the CRM.
+6. Inside the CRM, adjust the merge fields.
+
+
+
+DO NOT TOUCH
+Vanilla.css
+Vanilla.html
+{templates for customers}
+Vanilla.Accounting.html
+Vanilla.Services.html  
+{templates for perspectives}
+Vanilla.Quotes.html
+Vanilla.Information.html
+
+
+Accounting
+
+MosquitoSquad.com Pictures
+
+kids on head in grass
+https://d10k7k7mywg42z.cloudfront.net/assets/5335c6e04f720a5a1d000258/mosquito_control_barrier_spray.jpg
+
+boy blowing bubbles
+https://d10k7k7mywg42z.cloudfront.net/assets/5334dc47f002ff34d5001472/outdoor_blowing_bubbles.jpg 
+
+girl/dog in grass
+https://d10k7k7mywg42z.cloudfront.net/assets/53348ae8d6af6819b00000c6/girl_whispering_to_dog_bg.jpg 
+
+mature woman in garden
+https://www.mosquitosquad.com/theme/53347474d6af6842f9000479/stylesheets/images/woman-gardening-in-yard.jpg
+
+picnic on patio
+https://www.mosquitosquad.com/theme/53347474d6af6842f9000479/stylesheets/images/picnic-on-patio.jpg
+
+dog in yard
+https://www.mosquitosquad.com/theme/53347474d6af6842f9000479/stylesheets/images/dog-enjoying-yard.jpg
+
+Satisfaction Guaranteed
+https://www.mosquitosquad.com/theme/53347474d6af6842f9000479/stylesheets/images/satisfaction-guaranteed.png
+
+enjoy your lawn  ***Hugh's best
+https://www.mosquitosquad.com/theme/53347474d6af6842f9000479/stylesheets/images/enjoy-your-lawn.jpg
+
+
+
+
+
+
+
+Accounting—use TRIAD.mosquitosquad.com
+Invoice
+Refund
+CC Expiring
+Inv Reminder ???what is that???
+Payment Reminder
+Recurring Payment
+Credit Memo
+Payment Rejected
+
+Service—use TRIAD.mosquitosquad.com
+Customer Service Dates
+Service Date Reminder
+DRAG
+Move Bulk
+Follow Up after First Treatment
+Request for Reviews
+Share the Squad
+
+Quotes—use www.mosquitosquad.com
+Quote
+Renew Quotes
+
+Information—use www.mosquitosquad.com
+Inquiry All Natural
+Inquiry Traditional
+Season Packages
+Season Packages Follow Up
+
+
+
+
+
+

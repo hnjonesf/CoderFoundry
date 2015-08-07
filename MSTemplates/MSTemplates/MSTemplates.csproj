@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CDB0DE8F-A7AD-4379-A19E-06EF5ADE1FD9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MSTemplates</RootNamespace>
+    <AssemblyName>MSTemplates</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\PublishProfiles\mosquitosquadtemplates %282%29.pubxml" />
+    <None Include="App_Data\PublishProfiles\mosquitosquadtemplates %283%29.pubxml" />
+    <None Include="App_Data\PublishProfiles\mosquitosquadtemplates.pubxml" />
+    <Content Include="Other\Mosquito Squad Web Site Specifications.docx" />
+    <Content Include="Other\Templates 2015.xls" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExternalTemplates.html" />
+    <Content Include="index.html" />
+    <Content Include="InternalTemplates.html" />
+    <Content Include="Media\Credit Card Expiring-Default.html" />
+    <Content Include="Media\Credit Memo-Default Credit Memo.html" />
+    <Content Include="Media\Customer Service Dates-Default Customer Service Dates.html" />
+    <Content Include="Media\Customer Service Dates-Dogs.html" />
+    <Content Include="Media\Customer Service Dates-Gates.html" />
+    <Content Include="Media\Customer Service Dates-Holiday.html" />
+    <Content Include="Media\Customer Service Dates-Rain.html" />
+    <Content Include="Media\Customer Service Dates-Workers.html" />
+    <Content Include="Media\Customer-Inquiry All Natural.html" />
+    <Content Include="Media\Customer-Inquiry Traditional.html" />
+    <Content Include="Media\Customer-Request for Reviews.html" />
+    <Content Include="Media\Customer-Season Packages Follow Up.html" />
+    <Content Include="Media\Customer-Share The Squad.html" />
+    <Content Include="Media\Default Invoice.html" />
+    <Content Include="Media\Invoice Reminder-Default Invoice Reminder.html" />
+    <Content Include="Media\Payment Rejected-Payment Rejected.html" />
+    <Content Include="Media\Payment Reminder-Default Payment Reminder.html" />
+    <Content Include="Media\Payment-Payment Receipt with Service Dates.html" />
+    <Content Include="Media\Quote-Renewal with Payment Plans and Service Dates.html" />
+    <Content Include="Media\Recurring Invoice-Default Recurring Invoice.html" />
+    <Content Include="Media\Recurring Payment-Default Recurring Payment.html" />
+    <Content Include="Media\Refund-Default Refund.html" />
+    <Content Include="Media\Service Date-Follow Up To Initial Treatment.html" />
+    <Content Include="Media\Service Date-Service Date Completed.html" />
+    <Content Include="Media\Service Date-Service Date Reminder.html" />
+    <Content Include="Media\VanillaAccounting.html" />
+    <Content Include="Media\VanillaInformation.html" />
+    <Content Include="Media\VanillaQuote.html" />
+    <Content Include="Media\VanillaService.html" />
+    <Content Include="Other\Email Templates.txt" />
+    <Content Include="Other\RemarketingTagGoogle.txt" />
+    <Content Include="Site.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53042</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53042/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

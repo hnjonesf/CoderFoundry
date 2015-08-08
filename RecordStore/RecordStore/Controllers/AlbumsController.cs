@@ -17,7 +17,8 @@ namespace RecordStore.Controllers
         // GET: Albums
         public ActionResult Index()
         {
-            return View(db.Albums.ToList());
+            var albums = db.Albums.Include(a => a.Artist);
+            return View(albums.ToList());
         }
 
         // GET: Albums/Details/5
@@ -38,6 +39,7 @@ namespace RecordStore.Controllers
         // GET: Albums/Create
         public ActionResult Create()
         {
+            ViewBag.ArtistId = new SelectList(db.Artists, "Id", "Name");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace RecordStore.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AlbumId,Name")] Album album)
+        public ActionResult Create([Bind(Include = "Id,ArtistId,Name")] Album album)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace RecordStore.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ArtistId = new SelectList(db.Artists, "Id", "Name", album.ArtistId);
             return View(album);
         }
 
@@ -70,6 +73,7 @@ namespace RecordStore.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ArtistId = new SelectList(db.Artists, "Id", "Name", album.ArtistId);
             return View(album);
         }
 
@@ -78,7 +82,7 @@ namespace RecordStore.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AlbumId,Name")] Album album)
+        public ActionResult Edit([Bind(Include = "Id,ArtistId,Name")] Album album)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace RecordStore.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ArtistId = new SelectList(db.Artists, "Id", "Name", album.ArtistId);
             return View(album);
         }
 

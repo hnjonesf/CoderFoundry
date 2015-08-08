@@ -10,13 +10,15 @@ namespace RecordStore.Models
     public class Album
     {
         //constructor with hash to Reviews
-        //public Album()
-        //{
-        //    this.Reviews = new HashSet<Review>();
-        //}
+        public Album()
+        {
+            this.Reviews = new HashSet<Review>();
+        }
 
         [Key]
-        public int AlbumId { get; set; }
+        public int Id { get; set; }
+
+        public int ArtistId { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -25,6 +27,7 @@ namespace RecordStore.Models
         public string Name { get; set; }
 
         public virtual Artist Artist { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
 
 
     }

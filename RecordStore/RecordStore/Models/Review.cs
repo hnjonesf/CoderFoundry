@@ -18,11 +18,11 @@ namespace RecordStore.Models
         [Required]
         public string Title { get; set; }
 
-        [MaxLength(1250)]
+        [MaxLength(4250)]
         [Display(Name = "Review Contents")]
         public string Contents { get; set; }
 
-        [Display(Name = "Created or Last Saved")]
+        [Display(Name = "Created or Saved")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTimeOffset CreatedDate { get; set; }
 

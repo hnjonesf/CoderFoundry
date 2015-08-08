@@ -57,7 +57,7 @@ namespace mvcTesting0113.Migrations
                     DisplayName = "Hugh Jones"
                 };
 
-                manager.Create(user,"LearnToCode1");
+                manager.Create(user,"LearnTocode1");
                 manager.AddToRoles(user.Id, new string[] { "Admin", "Moderator" });
             }
 

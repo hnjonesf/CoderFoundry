@@ -39,7 +39,7 @@ namespace RecordStore.Controllers
         // GET: Reviews/Create
         public ActionResult Create()
         {
-            ViewBag.AlbumId = new SelectList(db.Albums, "AlbumId", "Name");
+            ViewBag.AlbumId = new SelectList(db.Albums, "Id", "Name");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace RecordStore.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReviewId,AlbumId,Title,Contents,CreatedDate")] Review review)
+        public ActionResult Create([Bind(Include = "Id,AlbumId,Title,Contents,CreatedDate")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace RecordStore.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AlbumId = new SelectList(db.Albums, "AlbumId", "Name", review.AlbumId);
+            ViewBag.AlbumId = new SelectList(db.Albums, "Id", "Name", review.AlbumId);
             return View(review);
         }
 
@@ -74,7 +74,7 @@ namespace RecordStore.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AlbumId = new SelectList(db.Albums, "AlbumId", "Name", review.AlbumId);
+            ViewBag.AlbumId = new SelectList(db.Albums, "Id", "Name", review.AlbumId);
             return View(review);
         }
 
@@ -83,7 +83,7 @@ namespace RecordStore.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ReviewId,AlbumId,Title,Contents,CreatedDate")] Review review)
+        public ActionResult Edit([Bind(Include = "Id,AlbumId,Title,Contents,CreatedDate")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace RecordStore.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AlbumId = new SelectList(db.Albums, "AlbumId", "Name", review.AlbumId);
+            ViewBag.AlbumId = new SelectList(db.Albums, "Id", "Name", review.AlbumId);
             return View(review);
         }
 

@@ -20,6 +20,7 @@ namespace RecordStore.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        public virtual ICollection<Album> Albums { get; set; }
 
     }
 }

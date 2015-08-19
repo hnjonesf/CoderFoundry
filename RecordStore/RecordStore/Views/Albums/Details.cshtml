@@ -1,10 +1,10 @@
 ﻿@model RecordStore.Models.Album
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Album Details";
 }
 
-<h2>Details</h2>
+<h2>Album Details</h2>
 
 <div>
     <h4>Album</h4>
@@ -28,7 +28,38 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            Review Title
+        </th>
+        <th>
+            Review Contents
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var review in Model.Reviews)
+    {
+        <tr>
+            <td>
+                @review.Title, @review.CreatedDate.Date.ToShortDateString()
+            </td>
+            <td>
+                @review.Contents
+            </td>
+            <td>
+                <p>
+                    @*Next line is to add a review to the album*@
+                    @Html.ActionLink("Edit this Review", "Edit", "Reviews", new { id = review.Id }, null)
+                </p>
+            </td>
+        </tr>
+    }
+
+</table>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

@@ -36,6 +36,7 @@ namespace BugTracker_The_Reckoning.Models
         public string Comment { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public DateTimeOffset Created { get; set; }
+        //navigation
         public virtual Ticket Ticket { get; set; }
         public virtual ApplicationUser Creator { get; set; }
     }

@@ -24,6 +24,7 @@ namespace BugTracker_The_Reckoning.Models
         public DateTimeOffset Created { get; set; }
         [Display(Name = "File Url")]
         public string FileUrl { get; set; }
+        //Navigation
         public virtual Ticket Ticket { get; set; }
         public virtual ApplicationUser Owner { get; set; }
     }

@@ -1,5 +1,8 @@
 namespace SquadClock.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -14,18 +17,66 @@ namespace SquadClock.Migrations
 
         protected override void Seed(SquadClock.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            if (!context.Roles.Any(r => r.Name == "Administrator"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Administrator" };
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+                manager.Create(role);
+            }
+
+            if (!context.Roles.Any(r => r.Name == "Owner"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Owner" };
+
+                manager.Create(role);
+            }
+
+            if (!context.Roles.Any(r => r.Name == "Manager"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Manager" };
+
+                manager.Create(role);
+            }
+
+            if (!context.Users.Any(u => u.Email == "hughjones@libreworx.com"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser
+                {
+                    UserName = "hughjones@libreworx.com",
+                    Email = "hughjones@librewor.com",
+                    FirstName = "Hugh",
+                    LastName = "Jones",
+                    DisplayName = "Hugh Jones"
+                };
+
+                manager.Create(user, "Abc123!");
+                manager.AddToRoles(user.Id, new string[] { "Administrator", "Manager" });
+            }
+
+            if (!context.Users.Any(u => u.Email == "gus@grasscutter.com"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser
+                {
+                    UserName = "gus@grasscutter.com",
+                    Email = "gus@grasscutter.com",
+                    FirstName = "Gus",
+                    LastName = "Grassclipper",
+                    DisplayName = "Gus Grassclipper"
+                };
+
+                manager.Create(user, "Abc123!");
+                manager.AddToRoles(user.Id, new string[] { "Manager" });
+            }
         }
     }
 }

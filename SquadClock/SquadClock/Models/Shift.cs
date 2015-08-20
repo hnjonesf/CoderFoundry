@@ -13,7 +13,7 @@ namespace SquadClock.Models
         public int Id { get; set; }
 
         [Required]
-        public int EmployeeId { get; set; }
+        public string EmployeeId { get; set; }
 
         [Display(Name="Punch In")]
         [DataType(DataType.DateTime)]

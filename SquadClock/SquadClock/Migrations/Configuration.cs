@@ -8,7 +8,6 @@ namespace SquadClock.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using SquadClock.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<SquadClock.Models.ApplicationDbContext>
     {
@@ -54,7 +53,7 @@ namespace SquadClock.Migrations
                 var user = new ApplicationUser
                 {
                     UserName = "hughjones@libreworx.com",
-                    Email = "hughjones@librewor.com",
+                    Email = "hughjones@libreworx.com",
                     FirstName = "Hugh",
                     LastName = "Jones",
                     DisplayName = "Hugh Jones"

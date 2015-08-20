@@ -1,9 +1,11 @@
 namespace SquadClock.Migrations
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using SquadClock.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<SquadClock.Models.ApplicationDbContext>
     {
@@ -14,6 +16,7 @@ namespace SquadClock.Migrations
 
         protected override void Seed(SquadClock.Models.ApplicationDbContext context)
         {
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

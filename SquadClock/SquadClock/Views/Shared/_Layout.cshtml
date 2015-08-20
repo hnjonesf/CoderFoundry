@@ -17,11 +17,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("SquadClock", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Squad Clock", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
 
                     @if (Request.IsAuthenticated)
                     {
@@ -55,7 +55,7 @@
                                 </ul>
                             </li>
                         }
-                        if (User.IsInRole("Owner, Manager"))
+                        if (User.IsInRole("Manager") && (!User.IsInRole("Administrator")))
                         {
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Managers<b class="caret"></b></a>
@@ -71,7 +71,7 @@
                             </li>
                         }
                     }
-                    @* For unknown user *@
+                    @* Not Logged In User *@
                     else
                     {
                         <li class="dropdown">

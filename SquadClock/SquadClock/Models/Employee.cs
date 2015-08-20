@@ -26,10 +26,10 @@ namespace SquadClock.Models
         }
 
         [Display(Name = "First Name")]
-        [Range(0, 50)]
+        [StringLength(80, ErrorMessage = "{0} cannot be longer than 50 characters.")]
         public string FirstName { get; set;}
         [Display(Name = "Last Name")]
-        [Range(0, 50)]
+        [StringLength(80, ErrorMessage = "{0} cannot be longer than 50 characters.")]
         public string LastName { get; set; }
         [EmailAddress]
         public string EmployeeEmail { get; set; }

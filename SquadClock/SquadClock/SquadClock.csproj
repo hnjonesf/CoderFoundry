@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -258,19 +258,6 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
-    <Content Include="__MACOSX\._Thanks.txt" />
-    <Content Include="__MACOSX\theme\._index.html" />
-    <Content Include="__MACOSX\theme\assets\css\._bootstrap.css" />
-    <Content Include="__MACOSX\theme\assets\css\._main.css" />
-    <Content Include="__MACOSX\theme\assets\fonts\._glyphicons-halflings-regular.svg" />
-    <Content Include="__MACOSX\theme\assets\img\._ipad-hand.png" />
-    <Content Include="__MACOSX\theme\assets\img\._p01.png" />
-    <Content Include="__MACOSX\theme\assets\img\._p02.png" />
-    <Content Include="__MACOSX\theme\assets\img\._p03.png" />
-    <Content Include="__MACOSX\theme\assets\img\._pic1.jpg" />
-    <Content Include="__MACOSX\theme\assets\img\._pic2.jpg" />
-    <Content Include="__MACOSX\theme\assets\img\._pic3.jpg" />
-    <Content Include="__MACOSX\theme\assets\js\._bootstrap.min.js" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Assets\icons\manifest.json" />
@@ -315,23 +302,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="__MACOSX\theme\._.DS_Store" />
-    <Content Include="__MACOSX\theme\assets\._.DS_Store" />
-    <Content Include="__MACOSX\theme\assets\._css" />
-    <Content Include="__MACOSX\theme\assets\._fonts" />
-    <Content Include="__MACOSX\theme\assets\._js" />
-    <Content Include="__MACOSX\theme\assets\css\._.DS_Store" />
-    <Content Include="__MACOSX\theme\assets\fonts\._glyphicons-halflings-regular.eot" />
-    <Content Include="__MACOSX\theme\assets\fonts\._glyphicons-halflings-regular.ttf" />
-    <Content Include="__MACOSX\theme\assets\fonts\._glyphicons-halflings-regular.woff" />
-    <Content Include="__MACOSX\theme\assets\img\._.DS_Store" />
-    <Content Include="__MACOSX\theme\assets\js\._.DS_Store" />
-    <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Employees\Punch.cshtml" />
-    <Content Include="Views\Employees\Delete.cshtml" />
     <Content Include="Views\Employees\Details.cshtml" />
-    <Content Include="Views\Employees\Edit.cshtml" />
-    <Content Include="Views\Employees\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,7 +330,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58644</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58644/</IISUrl>
+          <IISUrl>https://localhost:44300/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

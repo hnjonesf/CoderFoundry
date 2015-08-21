@@ -133,13 +133,16 @@ namespace SquadClock.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Employee
+        [AllowAnonymous]
+        // GET: Punch In Unregistered User based on Employee Code/Verification
         public ActionResult Punch()
         {
             return View();
         }
 
-        // GET: Employees/Details/5
+        [AllowAnonymous]
+        // GET: Employees/Punch Post Employee Code/Verification punch in/out
+        [HttpPost]
         public ActionResult Punch(int? id)
         {
             if (id == null)
@@ -147,7 +150,8 @@ namespace SquadClock.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Employee employee = db.Employees.Find(id);
-            if (employee == null)
+
+            if ((employee == null))
             {
                 return HttpNotFound();
             }

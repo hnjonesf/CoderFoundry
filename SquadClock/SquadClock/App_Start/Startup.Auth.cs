@@ -58,11 +58,11 @@ namespace SquadClock
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "547071743623-3nvm3s9eo3tbal2708hrri39jaoanmme.apps.googleusercontent.com",
+                ClientSecret = "fNjmzpTo3QHosoZrIznd_NaB"
+            });
         }
     }
 }

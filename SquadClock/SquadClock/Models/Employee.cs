@@ -26,16 +26,21 @@ namespace SquadClock.Models
         }
 
         [Display(Name = "First Name")]
-        [StringLength(80, ErrorMessage = "{0} cannot be longer than 50 characters.")]
+        [StringLength(50, ErrorMessage = "{0} cannot be longer than 50 characters.")]
         public string FirstName { get; set;}
         [Display(Name = "Last Name")]
-        [StringLength(80, ErrorMessage = "{0} cannot be longer than 50 characters.")]
+        [StringLength(50, ErrorMessage = "{0} cannot be longer than 50 characters.")]
         public string LastName { get; set; }
         [EmailAddress]
-        public string EmployeeEmail { get; set; }
+        [Display(Name = "Your Email/Login")]
+        [StringLength(50, ErrorMessage = "{0} cannot be longer than 50 characters.")]
+        public string Email { get; set; }
         public bool Active { get; set; }
-        public string EmployeePassword { get; set; }
-        public double EmployeeTimezone { get; set; }
+        [Display(Name = "Your Password")]
+        [StringLength(30, ErrorMessage = "{0} cannot be longer than 30 characters.")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+        public double Timezone { get; set; }
         public bool AllowChangePassword { get; set; }
         
         //Navigation Properties

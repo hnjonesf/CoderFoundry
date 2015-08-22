@@ -149,12 +149,27 @@ namespace SquadClock.Controllers
 
             if ((employee == null) || employee.Email != model.Email)
             {
+                ViewBag.NoId = "No such Email/Password Combination";
                 return HttpNotFound();
             }
-            return RedirectToAction("DetailPunch", "Employees");
+            return RedirectToAction("Dashboard", "Employees");
         }
 
-
+        [AllowAnonymous]
+        // GET: Employees/Dashboard/5
+        public ActionResult Dashboard(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Employee employee = db.Employees.Find(id);
+            if (employee == null)
+            {
+                return HttpNotFound();
+            }
+            return View(employee);
+        }
 
 
         protected override void Dispose(bool disposing)

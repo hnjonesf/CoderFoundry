@@ -4,9 +4,6 @@
     ViewBag.Title = "Sign In to Punch Your Time";
 }
 
-<h2>@ViewBag.NoId</h2>
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -14,7 +11,7 @@
     <div class="form-horizontal">
         <h4>@ViewBag.Title</h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.ValidationSummary(true, "Punch", new { @class = "text-danger" })
 
         <div class="form-group">
             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })

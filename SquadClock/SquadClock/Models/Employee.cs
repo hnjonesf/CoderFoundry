@@ -30,15 +30,18 @@ namespace SquadClock.Models
         [Display(Name = "Last Name")]
         [StringLength(50, ErrorMessage = "{0} cannot be longer than 50 characters.")]
         public string LastName { get; set; }
-        [EmailAddress]
-        [Display(Name = "Your Email/Login")]
+
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email/Login")]
         [StringLength(50, ErrorMessage = "{0} cannot be longer than 50 characters.")]
         public string Email { get; set; }
+
         public bool Active { get; set; }
-        [Display(Name = "Your Password")]
+        [Display(Name = "Password")]
         [StringLength(30, ErrorMessage = "{0} cannot be longer than 30 characters.")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
         public double Timezone { get; set; }
         public bool AllowChangePassword { get; set; }
         

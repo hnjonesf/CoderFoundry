@@ -38,7 +38,7 @@ namespace SquadClock.Models
 
         public bool Active { get; set; }
         [Display(Name = "Password")]
-        [StringLength(30, ErrorMessage = "{0} cannot be longer than 30 characters.")]
+        [StringLength(30, ErrorMessage = "{0} must be between 6 and {1} characters.",MinimumLength =6)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 

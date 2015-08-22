@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SquadClock.Models;
+using System.Web.Helpers;
 
 namespace SquadClock.Controllers
 {
@@ -145,30 +146,30 @@ namespace SquadClock.Controllers
         [HttpPost]
         public ActionResult Punch(Employee model)
         {
-            Employee employee = db.Employees.FirstOrDefault(e => e.Email == model.Email);
+            //Employee employee = db.Employees.FirstOrDefault(e => e.Email == model.Email);
 
-            if ((employee == null) || employee.Email != model.Email)
-            {
-                ViewBag.NoId = "No such Email/Password Combination";
-                return HttpNotFound();
-            }
+            //if ((employee == null) || employee.Email != model.Email)
+            //{
+            //    ModelState.AddModelError("Punch", "No such Email/Password Combination");
+            //    return RedirectToAction("Punch", "Employees");
+            //}
             return RedirectToAction("Dashboard", "Employees");
         }
 
         [AllowAnonymous]
         // GET: Employees/Dashboard/5
-        public ActionResult Dashboard(int? id)
+        public ActionResult Dashboard()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Employee employee = db.Employees.Find(id);
-            if (employee == null)
-            {
-                return HttpNotFound();
-            }
-            return View(employee);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //Employee employee = db.Employees.Find(id);
+            //if (employee == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            return View();
         }
 
 

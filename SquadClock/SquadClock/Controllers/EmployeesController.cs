@@ -143,19 +143,15 @@ namespace SquadClock.Controllers
         [AllowAnonymous]
         // GET: Employees/Punch Post Employee Code/Verification punch in/out
         [HttpPost]
-        public ActionResult Punch(int? id)
+        public ActionResult Punch(Employee model)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Employee employee = db.Employees.Find(id);
+            Employee employee = db.Employees.FirstOrDefault(e => e.Email == model.Email);
 
-            if ((employee == null))
+            if ((employee == null) || employee.Email != model.Email)
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            return RedirectToAction("DetailPunch", "Employees");
         }
 
 

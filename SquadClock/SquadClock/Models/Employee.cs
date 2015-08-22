@@ -22,7 +22,6 @@ namespace SquadClock.Models
         public Employee()
         {
             this.Shifts = new HashSet<Shift>();
-            //FUTUREthis.Schedules = new HashSet<Schedule>();
         }
 
         [Display(Name = "First Name")]

@@ -7,17 +7,19 @@ White space.
 Call to action-clear.
 Social: use buttons to keep their role small.
 Test before production.
+
 Unsubscribe: <a HREF="mailto:?subject=look at this website&body=Hi,I found this website
 and thought you might like it http://www.geocities.com/wowhtml/">tell a friend</a>
+
 Could we roll Constant Contact's role into MSO? Save $, track responses.
 
 
 Process for Template Generation
-1. Select version of Vanilla.[???].html with which to begin.  Make the changes.
-2. Copy Vanilla.css and replace the <style> link with this actual css.
-3. Copy the entire document and paste it into http://templates.mailchimp.com/resources/inline-css/ 
+1. Select version of Vanilla.[???].html with which to begin.  Make the changes. Save as a template.
+2. Copy Site.css and replace the <style> link with this actual css.
+3. Copy the entire document and paste it into http://zurb.com/ink/inliner.php
 5. Save it, and then copy and paste the same markup into the CRM.
-6. Inside the CRM, adjust the merge fields.
+6. Inside the CRM, adjust 1). CRM merge fields and 2).any local data for a franchisee.
 
 
 

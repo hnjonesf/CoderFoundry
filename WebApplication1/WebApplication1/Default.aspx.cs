@@ -16,8 +16,8 @@ namespace WebApplication1
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            string firstName = firstNameTextBox.Text;
-            string lastName = lastNameCheckBox.Text;
+            string firstName = firstNameTextBox.Text.Trim();
+            string lastName = lastNameCheckBox.Text.Trim();
             string result = "Hello, " + firstName + " " + lastName +"!";
             resultLabel.Text = result;
         }

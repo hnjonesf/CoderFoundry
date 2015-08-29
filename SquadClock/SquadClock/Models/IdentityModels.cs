@@ -53,7 +53,8 @@ namespace SquadClock.Models
         public DbSet<SquadClock.Models.Setting> Settings { get; set; }
         public DbSet<SquadClock.Models.Shift> Shifts { get; set; }
 
-        public System.Data.Entity.DbSet<SquadClock.Models.ApplicationUser> ApplicationUsers { get; set; }
+        //believe error below: Multiple object sets per type are not supported.
+        //public System.Data.Entity.DbSet<SquadClock.Models.ApplicationUser> Users { get; set; }
         //FUTURE public DbSet<SquadClock.Models.Schedule> Schedules { get; set; }
     }
 }

@@ -10,7 +10,16 @@ namespace CodingExercisesC.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Answer = "Hello World";
+            return View();
+        }
+
+        public ActionResult Jump1()
+        {
+            return View();
+        }
+
+        public ActionResult Jump2()
+        {
             return View();
         }
 

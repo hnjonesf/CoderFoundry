@@ -29,5 +29,7 @@ namespace CodingExercisesC.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<CodingExercisesC.Models.Student> Students { get; set; }
     }
 }

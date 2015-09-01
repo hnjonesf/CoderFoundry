@@ -21,5 +21,22 @@ namespace WebApplication1
             string result = "Hello, " + firstName + " " + lastName +"!";
             resultLabel.Text = result;
         }
+
+        protected void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            string age = TextBox1.Text.Trim();
+            string wealth = TextBox2.Text;
+            int num = Convert.ToInt32(TextBox2.Text);
+            Label1.Text = age;
+            Label2.Text = wealth;
+            if (num < 33)
+            {
+                Label3.Text = "You Suck";
+            }
+            else
+            {
+                Label3.Text = "";
+            }
+        }
     }
 }

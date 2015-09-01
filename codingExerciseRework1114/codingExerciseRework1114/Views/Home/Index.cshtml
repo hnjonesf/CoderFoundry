@@ -9,7 +9,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <h2>Max of five</h2>
         <p>
             A Function to show the maximum of five numbers.
@@ -19,7 +19,19 @@
             </button>
         </p>
     </div>
-    <div class="col-md-6">
+
+    <div class="col-md-4">
+        <h2>Strings and Ints</h2>
+        <p>
+            C# conversions.
+        </p><p>
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#conversion">
+                Click to Convert &raquo;
+            </button>
+        </p>
+    </div>
+
+    <div class="col-md-4">
         <h2>Sum or Multiply Numbers</h2>
         <p>Your choice, add or multiply numbers.</p>
         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sum">
@@ -58,7 +70,7 @@
 
 <div class="row">
     <div class="col-md-6">
-        <h2>Alice is Wondering</h2>
+        <h2>Biggest Alice?</h2>
         <p>Count the longest word.</p>
         <p><a class="btn btn-default" href="" data-toggle="model" data-target="#longestWord">Click for longest word &raquo;</a></p>
     </div>
@@ -381,6 +393,70 @@ code here when working
         $("#fizzResult").text(collector);
     }
 </script>
+
+    //ALICE Longest Word
+
+<!-- Modal -->
+<div class="modal fade" id="longestWord" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Longest Word</h4>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="col-sm-5">
+                    <p>This will compute the longest word in the first chapter of Alice in Wonderland(r).</p>
+                    <p>
+                        <button onclick="longestWord()" class="btn btn-default">Longest Word</button>
+                    </p>
+                    <hr />
+                    <div class="">
+                        <h6 id="longestWord"></h6>
+                    </div>
+                </div>
+                <div class="col-sm-7 margin-small">
+                    <pre class="brush: js text">
+code here when working
+                </pre>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //start with string:first word
+    //if next is longer, replace string
+    //at end, display string
+    function aliceCounting() {
+        //begin with first word
+        var collector = "";
+        //Rotate Up to 100
+        for (var i = 1; i <= 100; i++) {
+            var str = "";
+            //compare 3 = Fizz
+            if (i % 3 === 0) {
+                //Fizz
+                str += "Fizz";
+            }
+            if (i % 5 === 0) {
+                //Buzz if / 5
+                str += "Buzz";
+            }
+            else if (str === "") {
+                str += i;
+            }
+            collector += str + "<br>";
+        }
+        $("#fizzResult").text(collector);
+    }
+</script>
+
+
+
 @*
     ///////////////////////////////////////////////////////////////////////////////////
 
@@ -451,11 +527,7 @@ code here when working
         return armStrongNumber;
     }
 
-    //WORKING ON ALICE COUNTING
-    //DOES NOT COUNT FOR CASE DIFFERENCE
 
-    foreach (Match M in Regex.Matches(string, "Alice"))
-    { wordCount++ }
 
 
 *@

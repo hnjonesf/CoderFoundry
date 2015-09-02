@@ -13,11 +13,11 @@
         Enter another:<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
     </p>
     <p>
-        <asp:Button ID="Button1" runat="server" Text="Click to Add Em Up" />
+        <asp:Button ID="Button1" runat="server" Text="Click to Add Em Up" OnClick="Button1_Click" />
     </p>
     <p>
         <asp:Label ID="Label1" runat="server"></asp:Label>
-    </p>
+    &nbsp;is the Answer!</p>
     <p>
     </p>
 

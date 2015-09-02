@@ -18,9 +18,12 @@ namespace CodingExercisesC.Controllers
             return View();
         }
 
-        public ActionResult Jump2()
+        public ActionResult Jump2(string url)
         {
-            return View();
+            var one = ViewBag.One;
+            var two = ViewBag.Two;
+            ViewBag.Answer = one + two;
+            return Redirect(url);
         }
 
         public ActionResult About()

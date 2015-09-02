@@ -13,5 +13,13 @@ namespace LearningC
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int number1 = int.Parse(TextBox1.Text.Trim());
+            var number2 = int.Parse(TextBox2.Text.Trim());
+            var result = number1 * number2;
+            Label1.Text = result.ToString();
+        }
     }
 }

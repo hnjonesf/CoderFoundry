@@ -31,5 +31,6 @@ namespace CodingExercisesC.Models
         }
 
         public System.Data.Entity.DbSet<CodingExercisesC.Models.Student> Students { get; set; }
+
     }
 }

@@ -38,12 +38,6 @@ namespace ContosoUniversity.Controllers
 
             return View(data.ToList());
         }
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
 
         protected override void Dispose(bool disposing)
         {

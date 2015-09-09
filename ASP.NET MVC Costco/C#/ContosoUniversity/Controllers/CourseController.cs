@@ -159,7 +159,7 @@ namespace ContosoUniversity.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateCourseCredits(int? multiplier)
+        public ActionResult UpdateCourseCredits(double? multiplier)
         {
             if (multiplier != null)
             {

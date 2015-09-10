@@ -1,3 +1,14 @@
+
+https/ssl on AWS. Need a certificate?
+
+Map flow in pencil for Employee =>enter email/login=>display name/last punches/totals=>ack this.login=>logoff (in x seconds?)
+
+Map flow for Administrator from Dashboard. Settings. CRUD for Owners. Billing.
+
+Map flow for Owner/Manager 	
+
+
+
 Facebook:
 Like the facebook page, and I will add you as an admin.
 

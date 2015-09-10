@@ -1,7 +1,7 @@
 
 https/ssl on AWS. Need a certificate?
 
-Map flow in pencil for Employee =>enter email/login=>display name/last punches/totals=>ack this.login=>logoff (in x seconds?)
+Map flow in pencil for Employee =>enter email/login=>display name/last punches/totals=>ack this.login=>logoff (in x seconds?) display current period hours worked, and eventually schedule.
 
 Map flow for Administrator from Dashboard. Settings. CRUD for Owners. Billing.
 

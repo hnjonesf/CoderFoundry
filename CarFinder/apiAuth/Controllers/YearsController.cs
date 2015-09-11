@@ -40,7 +40,5 @@ namespace CarFinder.Controllers
             }
             return retval.ToArray<string>();
         }
-
-
     }
-}​
+}

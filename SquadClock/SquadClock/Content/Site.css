@@ -52,6 +52,13 @@ i {
     margin: 15px;
 }
 
-.Lato {
-    font-family: Lato, sans-serif;
+.navbar {
+    display: block;
+    background-color: #106fc1
+}
+.navbar-header {
+    background-color: #106fc1
+}
+nav {
+    background-color: #106fc1
 }

@@ -7,6 +7,15 @@ Map flow for Administrator from Dashboard. Settings. CRUD for Owners. Billing.
 
 Map flow for Owner/Manager 	
 
+KNOWN BUGS: 
+
+1. Html.LabelFor on Index.cshtml/Home gives bug: "The type 'Expression<>' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'."
+			-Added said assembly in Web.config. It did not fix it. Could not find any other solutions.
+
+
+
+
+
 
 
 Facebook:
@@ -28,55 +37,5 @@ Btw, can you add me as an admin on the FB SquadClock page.
 
   HJ
 
-Features:
--The abilty for employees to clock in and out
--The application keeps track of times and outputs a number of hours
--All employee Views created:
-	-Log in screen
-	-Punch in/Punch out
-	-Timecard
-	-Settings
--All Manager Views created:
-	-Employees:
-		-Create
-		-Index
-		-Details
-		-Delete
-		-Manage and edit hours
-	-Settings
-	-Departments
-		-Create
-		-Details
-		-Delete
-	-Jobs
-		-Create
-		-Details
-		-Delete
--All Administrator Views created:
-	-Employees:
-		-Create
-		-Index
-		-Details
-		-Delete
-		-Manage and edit hours
-	-Settings
-	-Company
-		-Edit
-		-Details
-		-Delete
-	-Managers
-		-Create
-		-Index
-		-Details
-		-Delete
-		-Manage and edit hours
-	-Departments
-		-Create
-		-Details
-		-Delete
-	-Jobs
-		-Create
-		-Details
-		-Delete
--The applications only shows certain Views to different levels of user (ie Admin can only see Admin Views, Employees can only see employee Views, etc.)
--A kind of blog system that allows us to relate news and updates to our users. (This will go on the dashboard.)
+
+

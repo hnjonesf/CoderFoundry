@@ -1,6 +1,7 @@
 ﻿@model SquadClock.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
+    //This page, in my opinion, is now unecessary, but will be kept for reference.
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -12,7 +13,6 @@
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
 
-    //added extra ApplicationUser field input
     <div class="form-group">
         @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">

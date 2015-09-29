@@ -52,13 +52,7 @@ i {
     margin: 15px;
 }
 
-.navbar {
-    display: block;
-    background-color: #106fc1
-}
-.navbar-header {
-    background-color: #106fc1
-}
-nav {
-    background-color: #106fc1
+.logo {
+    max-width: 200px;
+    max-height: 75px;
 }

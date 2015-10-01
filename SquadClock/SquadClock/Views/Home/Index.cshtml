@@ -1,31 +1,50 @@
-﻿@{
+﻿@model SquadClock.Models.RegisterViewModel 
+@{
     ViewBag.Title = "Home Page";
 }
-
-<div class="jumbotron">
-
-    <img src="~/Assets/Logo.png" />
-    <h3 class="Lato">
-        Your new way of keeping<br />
-        track of your work hours.
-
-    </h3>
-</div>
-
+@*Removed double jumbotron.*@
 <div id="headerwrap">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                    <h1 class="Lato">SquadClock has a hierarchy that focuses the power of the paycheck in one person: You!</h1>
+                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h4>Create a new account.</h4>
+                        <hr />
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                        //Removed extra input. Not needed for landing page. Submit button will take ApplicationUser directly into our system and ask them to fill out the remaining information. 
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" class="btn btn-default" value="Register" />
+                            </div>
+                        </div>
             </div><!-- /col-lg-6 -->
             <div class="col-lg-6">
-                <img class="img-responsive" src="~/Assets/ipad-hand.png" alt="">
+                <img class="img-responsive" src="~/Assets/ipad-hand.png" alt="The thing which you most love.">
             </div><!-- /col-lg-6 -->
-
         </div><!-- /row -->
     </div><!-- /container -->
 </div><!-- /headerwrap -->
-
 <div class="container">
     <hr />
     <h3>There are three different levels of users:</h3>

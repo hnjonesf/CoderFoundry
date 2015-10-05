@@ -191,6 +191,36 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\CarsonHeadshot.jpg" />
+    <Content Include="Assets\HughHeadshot.jpg" />
+    <Content Include="Assets\icons\android-icon-144x144.png" />
+    <Content Include="Assets\icons\android-icon-192x192.png" />
+    <Content Include="Assets\icons\android-icon-36x36.png" />
+    <Content Include="Assets\icons\android-icon-48x48.png" />
+    <Content Include="Assets\icons\android-icon-72x72.png" />
+    <Content Include="Assets\icons\android-icon-96x96.png" />
+    <Content Include="Assets\icons\apple-icon-114x114.png" />
+    <Content Include="Assets\icons\apple-icon-120x120.png" />
+    <Content Include="Assets\icons\apple-icon-144x144.png" />
+    <Content Include="Assets\icons\apple-icon-152x152.png" />
+    <Content Include="Assets\icons\apple-icon-180x180.png" />
+    <Content Include="Assets\icons\apple-icon-57x57.png" />
+    <Content Include="Assets\icons\apple-icon-60x60.png" />
+    <Content Include="Assets\icons\apple-icon-72x72.png" />
+    <Content Include="Assets\icons\apple-icon-76x76.png" />
+    <Content Include="Assets\icons\apple-icon-precomposed.png" />
+    <Content Include="Assets\icons\apple-icon.png" />
+    <Content Include="Assets\icons\browserconfig.xml" />
+    <Content Include="Assets\icons\favicon-16x16.png" />
+    <Content Include="Assets\icons\favicon-32x32.png" />
+    <Content Include="Assets\icons\favicon-96x96.png" />
+    <Content Include="Assets\icons\favicon.ico" />
+    <Content Include="Assets\icons\ms-icon-144x144.png" />
+    <Content Include="Assets\icons\ms-icon-150x150.png" />
+    <Content Include="Assets\icons\ms-icon-310x310.png" />
+    <Content Include="Assets\icons\ms-icon-70x70.png" />
+    <Content Include="Assets\ipad-hand.png" />
+    <Content Include="Assets\Logo.png" />
     <Content Include="Betav5.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -207,6 +237,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Assets\icons\manifest.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Clockinout.js" />
     <Content Include="Scripts\Clockinout.php" />
@@ -267,7 +298,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\" />
     <Folder Include="Views\Employees\" />
     <Folder Include="Views\Managers\" />
   </ItemGroup>

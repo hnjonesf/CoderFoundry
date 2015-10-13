@@ -7,24 +7,23 @@ namespace Hello
     {
         static void Main(string[] args)
         {
+            GradeBook myGradeBook = new GradeBook();
+            GradeBook myOtherGradeBook = new GradeBook();
+            GradeBook myFirstBookAgain = myGradeBook;
 
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            DateTime date = new DateTime();
-            date = date.AddDays(54);
-            synth.Speak("Hi, Greatest Programmer ever"+date.DayOfWeek);
+            myGradeBook.AddGrade(55);
+            myGradeBook.AddGrade(65);
+            myGradeBook.AddGrade(75);
+            myGradeBook.AddGrade(85);
+            myGradeBook.AddGrade(95);
 
-            GradeBook book = new GradeBook();
-            book.AddGrade(93f);
-            book.AddGrade(88f);
-            book.AddGrade(99.4f);
-            book.AddGrade(73.333f);
+            myOtherGradeBook.AddGrade(100);
+            myFirstBookAgain.AddGrade(99);
 
-            GradeStatistics stats = book.ComputeStatistics();
-
-            Console.WriteLine("Highest: "+stats.HighestGrade);
-            Console.WriteLine("Lowest: "+stats.LowestGrade);
-            Console.WriteLine("Average: "+stats.AverageGrade);
+            Console.WriteLine(myGradeBook.NumberOfGrades);
+            Console.WriteLine(myOtherGradeBook.NumberOfGrades);
             Console.ReadLine();
+
         }
     }
 }

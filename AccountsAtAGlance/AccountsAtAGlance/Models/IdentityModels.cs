@@ -29,5 +29,9 @@ namespace AccountsAtAGlance.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Car> Cars { get; set; }
+
+        public System.Data.Entity.DbSet<AccountsAtAGlance.Models.Blog> Blogs { get; set; }
     }
 }

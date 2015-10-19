@@ -29,5 +29,7 @@ namespace AccountsAtAGlance.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<AccountsAtAGlance.Models.Car> Cars { get; set; }
     }
 }

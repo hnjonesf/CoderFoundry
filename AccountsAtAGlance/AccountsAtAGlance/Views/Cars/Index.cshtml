@@ -9,6 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<<<<<<< HEAD
 <table class="table">
     <tr>
         <th>
@@ -25,10 +26,38 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Cost)
+=======
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table table-responsive table-striped">
+
+    <tr>
+        <th>
+            @Html.ActionLink("Make", "Index", new { sortOrder = ViewBag.MakeSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Year", "Index", new { sortOrder = ViewBag.YearSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Model", "Index", new { sortOrder = ViewBag.ModelSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Trim", "Index", new { sortOrder = ViewBag.TrimSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Cost", "Index", new { sortOrder = ViewBag.CostSortParm })
+>>>>>>> origin/master
         </th>
         <th></th>
     </tr>
 
+<<<<<<< HEAD
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -54,4 +83,43 @@
     </tr>
 }
 
+=======
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+    <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Displayed Cost:</td>
+            <td>@(ViewBag.PageCost.ToString("C2"))</td>
+            <td></td>
+        </tr>
+    </tfoot>
+>>>>>>> origin/master
 </table>

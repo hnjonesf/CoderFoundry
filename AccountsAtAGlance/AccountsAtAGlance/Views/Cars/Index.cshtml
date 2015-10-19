@@ -9,24 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<<<<<<< HEAD
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Make)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Year)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Model)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Trim)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cost)
-=======
+
 
 @using (Html.BeginForm())
 {
@@ -52,12 +35,12 @@
         </th>
         <th>
             @Html.ActionLink("Cost", "Index", new { sortOrder = ViewBag.CostSortParm })
->>>>>>> origin/master
+
         </th>
         <th></th>
     </tr>
 
-<<<<<<< HEAD
+
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -83,33 +66,6 @@
     </tr>
 }
 
-=======
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Make)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Model)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Trim)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cost)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
 
     <tfoot>
         <tr>
@@ -121,5 +77,4 @@
             <td></td>
         </tr>
     </tfoot>
->>>>>>> origin/master
 </table>

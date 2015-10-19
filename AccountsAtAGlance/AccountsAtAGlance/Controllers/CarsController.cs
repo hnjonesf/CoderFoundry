@@ -15,11 +15,6 @@ namespace AccountsAtAGlance.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Cars
-<<<<<<< HEAD
-        public ActionResult Index()
-        {
-            return View(db.Cars.ToList());
-=======
         public ActionResult Index(string sortOrder, string searchString)
         {
             ViewBag.MakeSortParm = String.IsNullOrEmpty(sortOrder) ? "make_desc" : "";
@@ -79,7 +74,7 @@ namespace AccountsAtAGlance.Controllers
             ViewBag.PageCost = pageCost;
 
             return View(cars.ToList());
->>>>>>> origin/master
+
         }
 
         // GET: Cars/Details/5

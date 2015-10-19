@@ -30,12 +30,8 @@ namespace AccountsAtAGlance.Models
             return new ApplicationDbContext();
         }
 
-<<<<<<< HEAD
-        public System.Data.Entity.DbSet<AccountsAtAGlance.Models.Car> Cars { get; set; }
-=======
         public DbSet<Car> Cars { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
 
-        public System.Data.Entity.DbSet<AccountsAtAGlance.Models.Blog> Blogs { get; set; }
->>>>>>> origin/master
     }
 }

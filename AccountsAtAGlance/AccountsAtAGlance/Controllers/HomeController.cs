@@ -13,11 +13,8 @@ namespace AccountsAtAGlance.Controllers
 
         public ActionResult Index()
         {
-<<<<<<< HEAD
             ViewBag.NumberCars = db.Cars.Count();
-=======
-            ViewBag.CarCount = db.Cars.Count();
->>>>>>> origin/master
+
             return View();
         }
 

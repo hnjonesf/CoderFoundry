@@ -19,8 +19,11 @@ namespace AccountsAtAGlance.Controllers
         {
             ViewBag.MakeSortParm = String.IsNullOrEmpty(sortOrder) ? "make_desc" : "";
             ViewBag.YearSortParm = sortOrder == "Year" ? "year_desc" : "Year";
+            ViewBag.ModelSortParm = sortOrder == "Model" ? "model_desc" : "Model";
+            ViewBag.TrimSortParm = sortOrder == "Trim" ? "trim_desc" : "Trim";
+            ViewBag.CostSortParm = sortOrder == "Cost" ? "cost_desc" : "Cost";
             var cars = from s in db.Cars
-                           select s;
+                       select s;
             if (!String.IsNullOrEmpty(searchString))
             {
                 cars = cars.Where(s => s.Make.Contains(searchString)
@@ -40,10 +43,35 @@ namespace AccountsAtAGlance.Controllers
                 case "year_desc":
                     cars = cars.OrderByDescending(s => s.Year);
                     break;
+                case "Model":
+                    cars = cars.OrderBy(s => s.Model);
+                    break;
+                case "model_desc":
+                    cars = cars.OrderByDescending(s => s.Model);
+                    break;
+                case "Trim":
+                    cars = cars.OrderBy(s => s.Trim);
+                    break;
+                case "trim_desc":
+                    cars = cars.OrderByDescending(s => s.Trim);
+                    break;
+                case "Cost":
+                    cars = cars.OrderBy(s => s.Cost);
+                    break;
+                case "cost_desc":
+                    cars = cars.OrderByDescending(s => s.Cost);
+                    break;
                 default:
                     cars = cars.OrderBy(s => s.Make);
                     break;
             }
+
+            double pageCost = 0;
+            foreach (var car in cars)
+            {
+                pageCost += car.Cost;
+            }
+            ViewBag.PageCost = pageCost;
 
             return View(cars.ToList());
         }

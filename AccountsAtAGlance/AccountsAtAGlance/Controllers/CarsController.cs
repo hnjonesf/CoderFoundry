@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using AccountsAtAGlance.Models;
 
 namespace AccountsAtAGlance.Controllers
@@ -15,15 +14,30 @@ namespace AccountsAtAGlance.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Cars
-        public ActionResult Index(string sortOrder, string searchString)
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
+            ViewBag.CurrentSort = sortOrder;
             ViewBag.MakeSortParm = String.IsNullOrEmpty(sortOrder) ? "make_desc" : "";
             ViewBag.YearSortParm = sortOrder == "Year" ? "year_desc" : "Year";
             ViewBag.ModelSortParm = sortOrder == "Model" ? "model_desc" : "Model";
             ViewBag.TrimSortParm = sortOrder == "Trim" ? "trim_desc" : "Trim";
             ViewBag.CostSortParm = sortOrder == "Cost" ? "cost_desc" : "Cost";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+
             var cars = from s in db.Cars
                        select s;
+
             if (!String.IsNullOrEmpty(searchString))
             {
                 cars = cars.Where(s => s.Make.Contains(searchString)
@@ -73,7 +87,11 @@ namespace AccountsAtAGlance.Controllers
             }
             ViewBag.PageCost = pageCost;
 
-            return View(cars.ToList());
+
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+            return View(cars.ToPagedList(pageNumber, pageSize));
+            //return View(cars.ToList());
 
         }
 

@@ -31,7 +31,7 @@ namespace AccountsAtAGlance.Models
         }
 
         public DbSet<Car> Cars { get; set; }
-        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
     }
 }

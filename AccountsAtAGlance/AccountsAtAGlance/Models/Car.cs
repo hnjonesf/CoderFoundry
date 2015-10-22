@@ -16,5 +16,8 @@ namespace AccountsAtAGlance.Models
 
         [DataType(DataType.Currency)]
         public double Cost { get; set; }
+
+        //navigation
+        public virtual List<Comment> Comments { get; set; }
     }
 }

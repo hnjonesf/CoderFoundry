@@ -17,8 +17,12 @@ namespace AccountsAtAGlance.Controllers
         // GET: Comments
         public ActionResult Index(int carId)
         {
-            var comments = db.Comments.Include(c => c.Car).Where(c => c.CarId == carId);
-            return View(comments.ToList());
+            var car = db.Cars.Find(carId);
+            if (car != null)
+            {
+                return View(car);
+            }
+            return HttpNotFound();
         }
 
         // GET: Comments/Details/5
@@ -37,22 +41,18 @@ namespace AccountsAtAGlance.Controllers
         }
 
         // GET: Comments/Create
-        public ActionResult Create()
+        public ActionResult Create(int carId)
         {
-            //ViewBag.CarId = new SelectList(db.Cars, "Id", "Make");
             return View();
         }
 
         // POST: Comments/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,CarId,CreatedDate,CommentBody")] Comment comment)
         {
             if (ModelState.IsValid)
             {
-                comment.CarId = 3;
                 comment.CreatedDate = DateTime.Now;
                 db.Comments.Add(comment);
                 db.SaveChanges();
@@ -62,6 +62,8 @@ namespace AccountsAtAGlance.Controllers
             ViewBag.CarId = new SelectList(db.Cars, "Id", "Make", comment.CarId);
             return View(comment);
         }
+
+
 
         // GET: Comments/Edit/5
         public ActionResult Edit(int? id)

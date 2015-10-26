@@ -1,45 +1,17 @@
-﻿@model IEnumerable<AccountsAtAGlance.Models.Comment>
+﻿@model AccountsAtAGlance.Models.Car
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Comments";
 }
 
-<h2>Index</h2>
+<h2>Comments on @Model.Year @Model.Make @Model.Model</h2>
+
+<br />
+
+@Html.Partial("_Comments", Model.Comments)
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", new { carId = Model.Id })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Car.Make)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CommentBody)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Car.Make)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CommentBody)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
 
-</table>

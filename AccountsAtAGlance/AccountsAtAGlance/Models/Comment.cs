@@ -20,8 +20,5 @@ namespace AccountsAtAGlance.Models
             "Comments must be between 3 and 250 characters long.")]
         public string CommentBody { get; set; }
 
-        //navigation
-        public virtual Car Car { get; set; }
-
     }
 }

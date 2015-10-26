@@ -11,6 +11,8 @@ namespace AccountsAtAGlance.Models
         public int Id { get; set; }
         public string Make { get; set; }
         public int Year { get; set; }
+
+
         public string Model { get; set; }
         public string Trim { get; set; }
 
@@ -18,6 +20,6 @@ namespace AccountsAtAGlance.Models
         public double Cost { get; set; }
 
         //navigation
-        public virtual List<Comment> Comments { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

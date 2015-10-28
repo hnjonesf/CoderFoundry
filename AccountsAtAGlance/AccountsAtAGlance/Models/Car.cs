@@ -8,6 +8,10 @@ namespace AccountsAtAGlance.Models
 {
     public class Car
     {
+        public Car()
+        {
+            this.Comments = new HashSet<Comment>();
+        }
         public int Id { get; set; }
         public string Make { get; set; }
         public int Year { get; set; }
@@ -18,6 +22,6 @@ namespace AccountsAtAGlance.Models
         public double Cost { get; set; }
 
         //navigation
-        public virtual List<Comment> Comments { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

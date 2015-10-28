@@ -1,0 +1,17 @@
+﻿@model AccountsAtAGlance.Models.Car
+
+@{
+    ViewBag.Title = "Comments";
+}
+
+<h2>Comments on @Model.Year @Model.Make @Model.Model</h2>
+
+<br />
+
+@Html.Partial("_Comments", Model.Comments)
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { carId = Model.Id })
+</p>
+
+

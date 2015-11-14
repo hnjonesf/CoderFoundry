@@ -54,11 +54,13 @@ namespace BugTracker_The_Reckoning.Models
         [StringLength(50, ErrorMessage = "Last Name cannot be longer than 30 characters.")]
         public string LastName { get; set; }
         public string DisplayName { get; set; }
+
         public ApplicationUser()
         {
             this.Tickets = new HashSet<Ticket>();
             this.Projects = new HashSet<Project>();
         }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

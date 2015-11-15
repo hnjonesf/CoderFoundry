@@ -16,17 +16,12 @@ namespace SquadClock.Models
         public string EmployeeId { get; set; }
         public DateTimeOffset ClockIn { get; set; }
         public DateTimeOffset ClockOut { get; set; }
+        public double HoursWorked { get; set; }
         public string ShiftDepartment { get; set; }
         public string ShiftManager { get; set; }
         public string ShiftJob { get; set; }
-        public double HoursWorked { get; set; }
         public bool ManualTimeEntry { get; set; }
         public string Notes { get; set; }
-        public double OvertimeHours1 { get; set; }
-        public double OvertimeHours2 { get; set; }
-        public double HolidayHours { get; set; }
-        public double PTOHours { get; set; }
-        public double VacationHours { get; set; }
         public string Log { get; set; }
 
         //Navigation
@@ -34,9 +29,5 @@ namespace SquadClock.Models
         public virtual ICollection<Department> Departments { get; set; }
         public virtual ICollection<Manager> Managers { get; set; }
         public virtual ICollection<Job> Jobs { get; set; }
-
-        //Methods
-
-
     }
 }

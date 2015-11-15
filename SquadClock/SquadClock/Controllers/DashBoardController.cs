@@ -10,7 +10,7 @@ namespace SquadClock.Controllers
     public class DashBoardController : Controller
     {
         // GET: DashBoard/Details/5
-        public ActionResult Details(int id)
+        public ActionResult DashBoard(int id)
         {
             //limit to employee company, only from identity in ApplicationUser
             return View();

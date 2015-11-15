@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace SquadClock.Models
 {
@@ -19,8 +20,11 @@ namespace SquadClock.Models
         public string LastName { get; set; }
         public string DisplayName { get; set; }
 
+        //Foreign Key
+        public int CompanyId { get; set; }
+
         //NAVIGATION
-        //HUGH SET UP public virtual ICollection<Comment> BlogComments { get; set; }
+        public virtual ICollection<Shift> Shifts { get; set; }
 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -52,9 +56,5 @@ namespace SquadClock.Models
         public DbSet<SquadClock.Models.Job> Jobs { get; set; }
         public DbSet<SquadClock.Models.Setting> Settings { get; set; }
         public DbSet<SquadClock.Models.Shift> Shifts { get; set; }
-
-        //believe error below: Multiple object sets per type are not supported.
-        //public System.Data.Entity.DbSet<SquadClock.Models.ApplicationUser> Users { get; set; }
-        //FUTURE public DbSet<SquadClock.Models.Schedule> Schedules { get; set; }
     }
 }

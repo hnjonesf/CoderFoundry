@@ -12,13 +12,9 @@ namespace SquadClock.Models
     {
         [Key]
         public int Id { get; set; }
-
-        [Required]
         public int CompanyId { get; set; }
-
-        [Display(Name = "Job Name")]
-        [Range(0, 50)]
         public string JobName { get; set; }
+
 
         //Navigation
         public virtual Company Company { get; set; }

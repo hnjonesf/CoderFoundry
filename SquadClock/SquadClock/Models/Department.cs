@@ -11,13 +11,17 @@ namespace SquadClock.Models
     public class Department
     {
         public int Id { get; set; }
-
-        [Required]
         public int CompanyId { get; set; }
-
-        [Display(Name = "Department Name")]
-        [Range(0, 50)]
         public string DepartmentName { get; set; }
+        public string Address1 { get; set; }
+        public string Address2 { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zip { get; set; }
+        public string Country { get; set; }
+        public string ContactName { get; set; }
+        public string Phone { get; set; }
+        public string Notes { get; set; }
 
         //Navigation
         public virtual Company Company { get; set; }

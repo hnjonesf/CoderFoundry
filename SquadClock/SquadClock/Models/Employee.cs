@@ -9,6 +9,7 @@ namespace SquadClock.Models
 {
     public class Employee
     {
+        //Eliminate Employee, and move to ApplicationUser using roles: Administrator, Owner, Manager, Employee
         [Key]
         public int Id { get; set; }
 
@@ -24,24 +25,11 @@ namespace SquadClock.Models
             this.Shifts = new HashSet<Shift>();
         }
 
-        [Display(Name = "First Name")]
-        [StringLength(50, ErrorMessage = "{0} cannot be longer than 50 characters.")]
         public string FirstName { get; set;}
-        [Display(Name = "Last Name")]
-        [StringLength(50, ErrorMessage = "{0} cannot be longer than 50 characters.")]
         public string LastName { get; set; }
-
-        [DataType(DataType.EmailAddress)]
-        [Display(Name = "Email/Login")]
-        [StringLength(50, ErrorMessage = "{0} cannot be longer than 50 characters.")]
         public string Email { get; set; }
-
         public bool Active { get; set; }
-        [Display(Name = "Password")]
-        [StringLength(30, ErrorMessage = "{0} must be between 6 and {1} characters.",MinimumLength =6)]
-        [DataType(DataType.Password)]
         public string Password { get; set; }
-
         public double Timezone { get; set; }
         public bool AllowChangePassword { get; set; }
         

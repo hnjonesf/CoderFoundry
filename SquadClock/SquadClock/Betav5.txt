@@ -9,14 +9,6 @@ Map flow for Owner/Manager
 
 KNOWN BUGS: 
 
-1. Html.LabelFor on Index.cshtml/Home gives bug: "The type 'Expression<>' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'."
-			-Added said assembly in Web.config. It did not fix it. Could not find any other solutions.
-
-
-
-
-
-
 
 Facebook:
 Like the facebook page, and I will add you as an admin.
@@ -29,13 +21,7 @@ Gmail:
 Email: Squadclock@gmail.com
 Password: The M row
 
-Beta v.5
-
-CARSON, I am working on the UML, and will be transferring this to that document shortly.
-
-Btw, can you add me as an admin on the FB SquadClock page.
-
-  HJ
+Beta v.6
 
 
 

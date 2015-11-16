@@ -10,21 +10,38 @@ namespace SquadClock.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        //HUGH SETUP CONSTRUCTOR0--WHAT HANGS BELOW THE APPLICATIONUSER?
-        //public ApplicationUser()
-        //{
-        //    this.BlogComments = new HashSet<Comment>();
-        //}
+        //Constructor
+        public ApplicationUser()
+        {
+            this.Shifts = new HashSet<Shift>();
+        }
+
+        //Foreign Keys
+        public int? CompanyId { get; set; }
+        public int? DepartmentId { get; set; }
+        public int? ManagerId { get; set; }
+        public int? JobId { get; set; }
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string DisplayName { get; set; }
-
-        //Foreign Key
-        public int CompanyId { get; set; }
+        public string Address1 { get; set; }
+        public string Address2 { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zip { get; set; }
+        public string Country { get; set; }
+        public string Notes { get; set; }
+        public bool Active { get; set; }
+        public double Timezone { get; set; }
 
         //NAVIGATION
         public virtual ICollection<Shift> Shifts { get; set; }
+
+        //Methods
+        public string DisplayName()
+        {
+            return FirstName + " " + LastName;
+        }
 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)

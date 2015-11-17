@@ -230,7 +230,10 @@
     <Content Include="Content\main.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\simple-sidebar.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -248,6 +251,11 @@
     <Content Include="Scripts\flattybootstrap.min.js" />
     <Content Include="Scripts\GetTest.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />

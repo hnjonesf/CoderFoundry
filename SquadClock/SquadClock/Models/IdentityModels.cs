@@ -66,7 +66,6 @@ namespace SquadClock.Models
 
         //EF6: build these in MySQL
         public DbSet<SquadClock.Models.Company> Companies { get; set; }
-        public DbSet<SquadClock.Models.Employee> Employees { get; set; }
         public DbSet<SquadClock.Models.Department> Departments { get; set; }
         public DbSet<SquadClock.Models.Manager> Managers { get; set; }
         public DbSet<SquadClock.Models.Job> Jobs { get; set; }

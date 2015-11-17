@@ -16,7 +16,6 @@ namespace SquadClock.Models
         //Constructor
         public Company()
         {
-            Employees = new HashSet<Employee>();
             Departments = new HashSet<Department>();
             Managers = new HashSet<Manager>();
             Jobs = new HashSet<Job>();
@@ -58,7 +57,6 @@ namespace SquadClock.Models
         public string BillingEmail { get; set; }
 
         //Navigation Properties
-        public virtual ICollection<Employee> Employees { get; set; }
         public virtual ICollection<Department> Departments { get; set; }
         public virtual ICollection<Manager> Managers { get; set; }
         public virtual ICollection<Job> Jobs { get; set; }

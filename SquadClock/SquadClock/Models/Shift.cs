@@ -25,7 +25,6 @@ namespace SquadClock.Models
         public string Log { get; set; }
 
         //Navigation
-        public virtual Employee Employee { get; set; }
         public virtual ICollection<Department> Departments { get; set; }
         public virtual ICollection<Manager> Managers { get; set; }
         public virtual ICollection<Job> Jobs { get; set; }

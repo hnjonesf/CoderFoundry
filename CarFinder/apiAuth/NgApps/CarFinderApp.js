@@ -35,7 +35,7 @@ app.run(['authService', function (authService) {
     authService.fillAuthData();
 }]);
 
-// controller declaration (DisplayController) for module
+// controller declaration (DisplayController) for modules
 angular.module('CarFinderApp')
 
     .controller('DisplayController', ['$scope', '$http', function ($scope, $http) {

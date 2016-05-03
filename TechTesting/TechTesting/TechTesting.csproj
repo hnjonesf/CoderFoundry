@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\custom.css" />
     <Content Include="packages.config" />
     <Content Include=".DS_Store" />
     <None Include="Web.Debug.config">
@@ -83,7 +84,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="css\" />
     <Folder Include="fonts\" />
     <Folder Include="js\" />
   </ItemGroup>

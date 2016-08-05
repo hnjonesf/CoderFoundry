@@ -134,8 +134,10 @@ namespace BugTracker_The_Reckoning.Models
         {
             return db.Users.Find(userId).Projects.Any(p => p.Id == projectId);
         }
-        //public async Task AddUserToProject(string userId, int projectId){
-        //    if(!await this.IsOnProject(userId, projectId)){
+        //public async Task AddUserToProject(string userId, int projectId)
+        //{
+        //    if (await !this.IsOnProject(userId, projectId))
+        //    {
         //        // add a ProjectUsers entry for this user and project
         //        var pu = new ProjectUsers { ProjectId = projectId, UserId = userId };
         //        db.ProjectUsers.Add(pu);

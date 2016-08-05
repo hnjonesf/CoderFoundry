@@ -54,7 +54,7 @@ namespace BugTracker_The_Reckoning.Models
         [Display(Name = "New Value")]
         public string NewValue { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:mm/dd/yyyy}")]
-        public Nullable<DateTimeOffset> Changed { get; set; }
+        public DateTimeOffset? Changed { get; set; }
     }
     public class TicketNotification 
     {
@@ -75,7 +75,7 @@ namespace BugTracker_The_Reckoning.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public DateTimeOffset Created { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
-        public Nullable<DateTimeOffset> Updated { get; set; }
+        public DateTimeOffset? Updated { get; set; }
 
         //Foreign keys
         public int ProjectId { get; set; }
@@ -124,11 +124,13 @@ namespace BugTracker_The_Reckoning.Models
     {
 
         public int Id { get; set; }
-        public TicketPriority(){
+        public string Name { get; set; }
+
+        public TicketPriority()
+        {
             this.Tickets = new HashSet<Ticket>();
         }
         public virtual ICollection<Ticket> Tickets { get; set; }
-        public string Name { get; set; }
     }
     public class TicketType 
     {
